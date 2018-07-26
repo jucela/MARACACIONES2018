@@ -13,10 +13,24 @@
         android:gravity="center"
         android:background="#771976D2">
         <LinearLayout
-            android:layout_width="400dp"
-            android:layout_height="300dp"
+            android:layout_width="600dp"
+            android:layout_height="400dp"
             android:background="@color/colorIcons"
             android:orientation="vertical">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/colorPrimary">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/logo_ece" />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,25 +41,13 @@
                     android:id="@+id/login_titulo_encuesta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="COBERTURA DE ASISTENCIA"
+                    android:text="Asistencia Preseleccion"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:paddingTop="@dimen/margin5dp"
                     android:paddingBottom="@dimen/margin5dp"
                     android:textColor="@color/colorIcons"
-                    android:textSize="@dimen/textGrande"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="@color/colorPrimary">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/logo_inei_blanco"/>
+                    android:textSize="@dimen/textChico"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,7 +69,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
-                        android:hint="CONTRASEÑA"/>
+                        android:textSize="@dimen/textChico"
+                        android:hint="Ingrese Clave  del Local"/>
                 </android.support.design.widget.TextInputLayout>
                 <Button
                     android:id="@+id/login_btnIngresar"
