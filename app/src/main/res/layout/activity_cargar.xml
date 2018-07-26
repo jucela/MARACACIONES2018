@@ -7,21 +7,24 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".activities.CargarActivity">
+
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="@color/colorPrimaryDark">
+        app:cardBackgroundColor="@android:color/white"
+        tools:cardBackgroundColor="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1000dp"
+            android:layout_height="220dp"
             android:layout_gravity="center"
-            android:background="#f7f1f1"
+            android:layout_margin="100dp"
+            android:background="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="10dp"
-            tools:background="@android:color/background_light">
+            android:padding="50dp"
+            tools:background="@android:color/white">
 
             <Button
                 android:id="@+id/btn_cargar"
