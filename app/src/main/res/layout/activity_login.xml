@@ -81,6 +81,19 @@
                     android:textColor="@color/colorIcons"
                     android:layout_marginTop="15dp"
                     android:background="@color/colorPrimaryDark"/>
+
+                <TextView
+                    android:id="@+id/txt_cargarmarco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:freezesText="false"
+                    android:paddingBottom="@dimen/margin5dp"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:text="Cargar Marco"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textChico" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -9,11 +9,11 @@
     <item
         android:id="@+id/menu_listado"
         android:icon="@drawable/ic_library_books"
-        android:title="Listado de Asistencia Local" />
+        android:title="Elementos Registrados" />
     <item
         android:id="@+id/menu_nube"
         android:icon="@drawable/ic_file_upload"
-        android:title="Elementos enviados" />
+        android:title="Elementos Enviados" />
     <item
         android:id="@+id/menu_reset_bd"
         android:icon="@drawable/ic_autorenew"

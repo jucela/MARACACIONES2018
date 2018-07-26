@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.R;
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText edtClave;
     Button btnIngresar;
+    TextView btncargar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +28,21 @@ public class LoginActivity extends AppCompatActivity {
 
         edtClave = (TextInputEditText) findViewById(R.id.login_edtClave);
         btnIngresar = (Button) findViewById(R.id.login_btnIngresar);
+        btncargar =(TextView) findViewById(R.id.txt_cargarmarco);
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ingresar(edtClave.getText().toString());
+            }
+        });
+
+        btncargar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,CargarActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
