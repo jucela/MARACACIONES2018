@@ -5,11 +5,11 @@
     <item
         android:id="@+id/menu_registro"
         android:icon="@drawable/ic_account_box"
-        android:title="Registro de Asistencia" />
+        android:title="Registro de Entrada" />
     <item
         android:id="@+id/menu_listado"
         android:icon="@drawable/ic_library_books"
-        android:title="Elementos Registrados" />
+        android:title="Elementos de Entrada" />
     <item
         android:id="@+id/menu_nube"
         android:icon="@drawable/ic_file_upload"
@@ -19,7 +19,16 @@
         android:icon="@drawable/ic_autorenew"
         android:title="Reset BD" />
     <item
+        android:id="@+id/menu_salida"
+        android:icon="@drawable/ic_arrow_back"
+        android:title="Registro de Salida" />
+    <item
+        android:id="@+id/menu_listadosalida"
+        android:icon="@drawable/ic_library_books"
+        android:title="Elementos de Salida" />
+    <item
         android:id="@+id/menu_cerrar_sesion"
         android:icon="@drawable/ic_power_settings_new"
         android:title="Cerrar Sesión" />
+
 </menu>

@@ -16,8 +16,10 @@ import android.view.MenuItem;
 
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment;
+import com.example.dmorales.evaluacion2018.fragments.ListadoSalidaFragment;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
 import com.example.dmorales.evaluacion2018.fragments.RegistroFragment;
+import com.example.dmorales.evaluacion2018.fragments.SalidaFragment;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
 
@@ -33,7 +35,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         sede = getIntent().getExtras().getString("sede");
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -139,7 +140,16 @@ public class MainActivity extends AppCompatActivity
             alert.show();
 
 
-        } else if (id == R.id.menu_cerrar_sesion) {
+        } else  if (id == R.id.menu_salida) {
+            SalidaFragment salidaFragment = new SalidaFragment(sede,MainActivity.this);
+            fragmentTransaction.replace(R.id.fragment_layout,salidaFragment);
+            fragmentTransaction.commit();
+
+        } else if (id == R.id.menu_listadosalida) {
+            ListadoSalidaFragment listadosalidaFragment = new ListadoSalidaFragment(sede,MainActivity.this);
+            fragmentTransaction.replace(R.id.fragment_layout, listadosalidaFragment);
+            fragmentTransaction.commit();
+        }  else if (id == R.id.menu_cerrar_sesion) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("¿Está seguro que desea cerrar sesión en la aplicación?")
                     .setTitle("Aviso")

@@ -19,8 +19,8 @@ import android.widget.TextView;
 import com.example.dmorales.evaluacion2018.NumericKeyBoardTransformationMethod;
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.modelo.Data;
-import com.example.dmorales.evaluacion2018.modelo.Registrado;
 import com.example.dmorales.evaluacion2018.modelo.Nacional;
+import com.example.dmorales.evaluacion2018.modelo.Registrado;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -28,7 +28,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RegistroFragment extends Fragment {
+public class SalidaFragment extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -54,13 +54,13 @@ public class RegistroFragment extends Fragment {
 
 
 
-    public RegistroFragment() {
+    public SalidaFragment() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public RegistroFragment(String sede, Context context) {
+    public SalidaFragment(String sede, Context context) {
         this.sede = sede;
         this.context = context;
     }
@@ -69,26 +69,26 @@ public class RegistroFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_registro, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_salida, container, false);
 
-        btnBuscar = (ImageView) rootView.findViewById(R.id.registro_btnBuscar);
-        edtDni = (EditText) rootView.findViewById(R.id.registro_edtDni);
+        btnBuscar = (ImageView) rootView.findViewById(R.id.salida_btnBuscar);
+        edtDni = (EditText) rootView.findViewById(R.id.salida_edtDni);
 
-        cvError = (CardView) rootView.findViewById(R.id.registro_cvError);
-        cvNoregistrado = (CardView) rootView.findViewById(R.id.registro_cvNoRegistrado);
-        cvRegistro = (CardView) rootView.findViewById(R.id.registro_cvRegistro);
-        cvYaregistrado = (CardView) rootView.findViewById(R.id.registro_cvYaRegistrado);
+        cvError = (CardView) rootView.findViewById(R.id.salida_cvError);
+        cvNoregistrado = (CardView) rootView.findViewById(R.id.salida_cvNoRegistrado);
+        cvRegistro = (CardView) rootView.findViewById(R.id.salida_cvsalida);
+        cvYaregistrado = (CardView) rootView.findViewById(R.id.salida_cvYaRegistrado);
 
-        txtErrorCargo = (TextView) rootView.findViewById(R.id.registro_error_txtCargo);
-        txtErrorLocal = (TextView) rootView.findViewById(R.id.registro_error_txtLocal);
-        txtErrorSede = (TextView) rootView.findViewById(R.id.registro_error_txtSede);
+        txtErrorCargo = (TextView) rootView.findViewById(R.id.salida_error_txtCargo);
+        txtErrorLocal = (TextView) rootView.findViewById(R.id.salida_error_txtLocal);
+        txtErrorSede = (TextView) rootView.findViewById(R.id.salida_error_txtSede);
 
-        txtRegistroCargo = (TextView) rootView.findViewById(R.id.registro_txtCargo);
-        txtRegistroDni = (TextView) rootView.findViewById(R.id.registro_txtDni);
-        txtRegistroNombres = (TextView) rootView.findViewById(R.id.registro_txtNombres);
-        txtRegistroSede = (TextView) rootView.findViewById(R.id.registro_txtSede);
-        txtRegistroLocal = (TextView) rootView.findViewById(R.id.registro_txtLocal);
-        txtRegistroAula = (TextView) rootView.findViewById(R.id.registro_txtAula);
+        txtRegistroCargo = (TextView) rootView.findViewById(R.id.salida_txtCargo);
+        txtRegistroAula = (TextView) rootView.findViewById(R.id.salida_txtAula);
+        txtRegistroDni = (TextView) rootView.findViewById(R.id.salida_txtDni);
+        txtRegistroLocal = (TextView) rootView.findViewById(R.id.salida_txtLocal);
+        txtRegistroNombres = (TextView) rootView.findViewById(R.id.salida_txtNombres);
+        txtRegistroSede = (TextView) rootView.findViewById(R.id.salida_txtSede);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());

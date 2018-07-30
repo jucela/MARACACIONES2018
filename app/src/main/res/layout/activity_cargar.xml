@@ -35,7 +35,6 @@
                 android:text="Cargar Marco"
                 android:textColor="@color/colorIcons"
                 android:textSize="20sp" />
-
             <Button
                 android:id="@+id/btn_salir"
                 android:layout_width="match_parent"

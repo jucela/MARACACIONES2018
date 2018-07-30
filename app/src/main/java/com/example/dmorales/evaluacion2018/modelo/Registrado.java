@@ -13,13 +13,36 @@ public class Registrado {
     private String anio;
     private String hora;
     private String minuto;
+    private String sdia;
+    private String smes;
+    private String sanio;
+    private String shora;
+    private String sminuto;
     private int subido;
     private String estado1;
     private String estado2;
     private String local;
 
 
-    public Registrado(String _id, String codigo, String nombres, String sede, String aula, String dia, String mes, String anio, String hora, String minuto, int subido, String estado1, String estado2, String local) {
+//    public Registrado(String _id, String codigo, String nombres, String sede, String aula, String dia, String mes, String anio, String hora, String minuto, int subido, String estado1, String estado2, String local) {
+//        this._id = _id;
+//        this.codigo = codigo;
+//        this.nombres = nombres;
+//        this.sede = sede;
+//        this.aula = aula;
+//        this.dia = dia;
+//        this.mes = mes;
+//        this.anio = anio;
+//        this.hora = hora;
+//        this.minuto = minuto;
+//        this.subido = subido;
+//        this.estado1 = estado1;
+//        this.estado2 = estado2;
+//        this.local = local;
+//    }
+
+
+    public Registrado(String _id, String codigo, String nombres, String sede, String aula, String dia, String mes, String anio, String hora, String minuto, String sdia, String smes, String sanio, String shora, String sminuto, int subido, String estado1, String estado2, String local) {
         this._id = _id;
         this.codigo = codigo;
         this.nombres = nombres;
@@ -30,6 +53,11 @@ public class Registrado {
         this.anio = anio;
         this.hora = hora;
         this.minuto = minuto;
+        this.sdia = sdia;
+        this.smes = smes;
+        this.sanio = sanio;
+        this.shora = shora;
+        this.sminuto = sminuto;
         this.subido = subido;
         this.estado1 = estado1;
         this.estado2 = estado2;
@@ -47,6 +75,11 @@ public class Registrado {
         this.anio = "";
         this.hora = "";
         this.minuto = "";
+        this.sdia = "";
+        this.smes = "";
+        this.sanio = "";
+        this.shora = "";
+        this.sminuto = "";
         this.subido = 0;
         this.estado1 = "1";
         this.estado2 = "0";
@@ -137,6 +170,46 @@ public class Registrado {
         return subido;
     }
 
+    public String getSdia() {
+        return sdia;
+    }
+
+    public void setSdia(String sdia) {
+        this.sdia = sdia;
+    }
+
+    public String getSmes() {
+        return smes;
+    }
+
+    public void setSmes(String smes) {
+        this.smes = smes;
+    }
+
+    public String getSanio() {
+        return sanio;
+    }
+
+    public void setSanio(String sanio) {
+        this.sanio = sanio;
+    }
+
+    public String getShora() {
+        return shora;
+    }
+
+    public void setShora(String shora) {
+        this.shora = shora;
+    }
+
+    public String getSminuto() {
+        return sminuto;
+    }
+
+    public void setSminuto(String sminuto) {
+        this.sminuto = sminuto;
+    }
+
     public void setSubido(int subido) {
         this.subido = subido;
     }
@@ -177,6 +250,12 @@ public class Registrado {
         contentValues.put(SQLConstantes.fecha_de_registro_anio,anio);
         contentValues.put(SQLConstantes.fecha_de_registro_hora,hora);
         contentValues.put(SQLConstantes.fecha_de_registro_minuto,minuto);
+        contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
+        contentValues.put(SQLConstantes.fecha_de_registro_sdia,sdia);
+        contentValues.put(SQLConstantes.fecha_de_registro_smes,smes);
+        contentValues.put(SQLConstantes.fecha_de_registro_sanio,sanio);
+        contentValues.put(SQLConstantes.fecha_de_registro_shora,shora);
+        contentValues.put(SQLConstantes.fecha_de_registro_sminuto,sminuto);
         contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
         contentValues.put(SQLConstantes.fecha_de_registro_estado1,estado1);
         contentValues.put(SQLConstantes.fecha_de_registro_estado2,estado2);

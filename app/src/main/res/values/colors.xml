@@ -14,4 +14,6 @@
     <color name="divider">#BDBDBD</color>
     <color name="disabled">#BDBDBD</color>
     <color name="focus">#90caf9</color>
+    <color name="verde">#04B404</color>
+    <color name="rojo">#DF3A01</color>
 </resources>

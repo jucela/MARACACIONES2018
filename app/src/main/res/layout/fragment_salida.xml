@@ -6,15 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.example.dmorales.evaluacion2018.fragments.RegistroFragment">
+    tools:context="com.example.dmorales.evaluacion2018.fragments.SalidaFragment">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTRO DE ASISTENCIA"
+        android:text="REGISTRO DE SALIDA"
         android:layout_marginTop="@dimen/margin5dp"
         android:textSize="20sp"
         android:gravity="center"
-        android:textColor="@color/verde"/>
+        android:textColor="@color/rojo"/>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
             <EditText
-                android:id="@+id/registro_edtDni"
+                android:id="@+id/salida_edtDni"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="40dp"
@@ -40,7 +40,7 @@
                 android:background="@drawable/borde_edit_text"
                 />
             <ImageView
-                android:id="@+id/registro_btnBuscar"
+                android:id="@+id/salida_btnBuscar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_search"
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <android.support.v7.widget.CardView
-                android:id="@+id/registro_cvYaRegistrado"
+                android:id="@+id/salida_cvYaRegistrado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -89,7 +89,7 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
-                android:id="@+id/registro_cvNoRegistrado"
+                android:id="@+id/salida_cvNoRegistrado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -121,7 +121,7 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
-                android:id="@+id/registro_cvRegistro"
+                android:id="@+id/salida_cvsalida"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp">
                     <TextView
-                        android:id="@+id/registro_txtCargo"
+                        android:id="@+id/salida_txtCargo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -160,7 +160,7 @@
                                 />
 
                             <TextView
-                                android:id="@+id/registro_txtDni"
+                                android:id="@+id/salida_txtDni"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="43372489"
@@ -185,7 +185,7 @@
                                 android:src="@drawable/ic_person"
                                 />
                             <TextView
-                                android:id="@+id/registro_txtNombres"
+                                android:id="@+id/salida_txtNombres"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="MORALES RETAMOZO DENIS RICARDO"
@@ -210,7 +210,7 @@
                                 android:src="@drawable/ic_place"
                                 />
                             <TextView
-                                android:id="@+id/registro_txtSede"
+                                android:id="@+id/salida_txtSede"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="AMAZONAS - CHACHAPOYAS"
@@ -235,7 +235,7 @@
                                 android:src="@drawable/ic_account_balance"
                                 />
                             <TextView
-                                android:id="@+id/registro_txtLocal"
+                                android:id="@+id/salida_txtLocal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="INSTITUCIÓN EDUCATIVA MIGUEL RUBIO"
@@ -260,7 +260,7 @@
                                 android:src="@drawable/ic_near_me"
                                 />
                             <TextView
-                                android:id="@+id/registro_txtAula"
+                                android:id="@+id/salida_txtAula"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="AULA 2"
@@ -273,7 +273,7 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
-                android:id="@+id/registro_cvError"
+                android:id="@+id/salida_cvError"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -311,7 +311,7 @@
                                 android:textColor="@color/icons"/>
                         </LinearLayout>
                         <TextView
-                            android:id="@+id/registro_error_txtCargo"
+                            android:id="@+id/salida_error_txtCargo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -344,7 +344,7 @@
                                     android:src="@drawable/ic_place"
                                     />
                                 <TextView
-                                    android:id="@+id/registro_error_txtSede"
+                                    android:id="@+id/salida_error_txtSede"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="ANCASH - CHIMBOTE"
@@ -370,7 +370,7 @@
                                     android:src="@drawable/ic_account_balance"
                                     />
                                 <TextView
-                                    android:id="@+id/registro_error_txtLocal"
+                                    android:id="@+id/salida_error_txtLocal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="INSTITUCIÓN EDUCATIVA INMACULADA DE LA MERCED"

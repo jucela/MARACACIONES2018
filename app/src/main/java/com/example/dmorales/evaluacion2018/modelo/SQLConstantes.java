@@ -33,6 +33,11 @@ public class SQLConstantes {
     public static String fecha_de_registro_hora = "hora";
     public static String fecha_de_registro_minuto = "minuto";
     public static String fecha_de_registro_subido = "subido";
+    public static String fecha_de_registro_sdia = "sdia";
+    public static String fecha_de_registro_smes = "smes";
+    public static String fecha_de_registro_sanio = "sanio";
+    public static String fecha_de_registro_shora = "shora";
+    public static String fecha_de_registro_sminuto = "sminuto";
     public static String fecha_de_registro_estado1 = "estado1";
     public static String fecha_de_registro_estado2 = "estado2";
     public static String fecha_de_registro_local = "local";
@@ -51,6 +56,11 @@ public class SQLConstantes {
                     fecha_de_registro_anio + " TEXT," +
                     fecha_de_registro_hora + " TEXT," +
                     fecha_de_registro_minuto + " TEXT," +
+                    fecha_de_registro_sdia + " TEXT," +
+                    fecha_de_registro_smes + " TEXT," +
+                    fecha_de_registro_sanio + " TEXT," +
+                    fecha_de_registro_shora + " TEXT," +
+                    fecha_de_registro_sminuto + " TEXT," +
                     fecha_de_registro_subido + " INTEGER," +
                     fecha_de_registro_estado1 + " TEXT," +
                     fecha_de_registro_estado2 + " TEXT," +
@@ -92,7 +102,9 @@ public class SQLConstantes {
             fecha_de_registro_id, fecha_de_registro_codigo, fecha_de_registro_nombres,
             fecha_de_registro_sede, fecha_de_registro_aula, fecha_de_registro_anio,
             fecha_de_registro_dia, fecha_de_registro_hora, fecha_de_registro_mes,
-            fecha_de_registro_minuto, fecha_de_registro_subido,fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_local
+            fecha_de_registro_minuto, fecha_de_registro_sanio,
+            fecha_de_registro_sdia, fecha_de_registro_shora, fecha_de_registro_smes,
+            fecha_de_registro_sminuto,fecha_de_registro_subido,fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_local
     };
 
 }

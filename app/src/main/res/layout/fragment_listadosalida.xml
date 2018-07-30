@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dmorales.evaluacion2018.fragments.ListadoFragment">
+    tools:context="com.example.dmorales.evaluacion2018.fragments.ListadoSalidaFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,13 +12,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ELEMENTOS DE ENTRADA"
+            android:text="ELEMENTOS DE SALIDA"
             android:layout_marginTop="@dimen/margin5dp"
             android:textSize="20sp"
             android:gravity="center"
-            android:textColor="@color/verde"/>
+            android:textColor="@color/rojo"/>
         <TextView
-            android:id="@+id/listado_txtNumero"
+            android:id="@+id/listadosalida_txtNumero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Total registros:"
@@ -77,12 +77,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/listado_recycler"
+                android:id="@+id/listadosalida_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"/>
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/listado_btnUpload"
+                android:id="@+id/listadosalida_btnUpload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
