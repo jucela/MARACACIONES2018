@@ -33,6 +33,9 @@ public class SQLConstantes {
     public static String fecha_de_registro_hora = "hora";
     public static String fecha_de_registro_minuto = "minuto";
     public static String fecha_de_registro_subido = "subido";
+    public static String fecha_de_registro_estado1 = "estado1";
+    public static String fecha_de_registro_estado2 = "estado2";
+    public static String fecha_de_registro_local = "local";
 
 
 
@@ -48,7 +51,10 @@ public class SQLConstantes {
                     fecha_de_registro_anio + " TEXT," +
                     fecha_de_registro_hora + " TEXT," +
                     fecha_de_registro_minuto + " TEXT," +
-                    fecha_de_registro_subido + " INTEGER" + ");"
+                    fecha_de_registro_subido + " INTEGER," +
+                    fecha_de_registro_estado1 + " TEXT," +
+                    fecha_de_registro_estado2 + " TEXT," +
+                    fecha_de_registro_local + " TEXT" + ");"
             ;
 
     public static final String SQL_CREATE_TABLA_FECHA_REGISTRO_TEMPORAL =
@@ -86,7 +92,7 @@ public class SQLConstantes {
             fecha_de_registro_id, fecha_de_registro_codigo, fecha_de_registro_nombres,
             fecha_de_registro_sede, fecha_de_registro_aula, fecha_de_registro_anio,
             fecha_de_registro_dia, fecha_de_registro_hora, fecha_de_registro_mes,
-            fecha_de_registro_minuto, fecha_de_registro_subido
+            fecha_de_registro_minuto, fecha_de_registro_subido,fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_local
     };
 
 }

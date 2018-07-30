@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ListadoFragment">
+    tools:context="com.example.dmorales.evaluacion2018.fragments.ListadoFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

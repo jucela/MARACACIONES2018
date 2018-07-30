@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".activities.CargarActivity">
+    tools:context="com.example.dmorales.evaluacion2018.activities.CargarActivity">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"

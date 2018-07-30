@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -173,7 +172,7 @@ public class RegistroFragment extends Fragment {
                         int minuto = calendario.get(Calendar.MINUTE);
 
                         Registrado registrado1 = new Registrado(dni,dni,nacional.getApepat(), nacional.getSede(), nacional.getAula(),checkDigito(dd),
-                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),0);
+                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),0,"1","0","2");
                         data.insertarFechaRegistro(registrado1);
                     }
                     data.close();

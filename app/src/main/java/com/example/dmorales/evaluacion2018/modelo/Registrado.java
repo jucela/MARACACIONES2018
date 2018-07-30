@@ -14,9 +14,12 @@ public class Registrado {
     private String hora;
     private String minuto;
     private int subido;
+    private String estado1;
+    private String estado2;
+    private String local;
 
 
-    public Registrado(String _id, String codigo, String nombres, String sede, String aula, String dia, String mes, String anio, String hora, String minuto, int subido) {
+    public Registrado(String _id, String codigo, String nombres, String sede, String aula, String dia, String mes, String anio, String hora, String minuto, int subido, String estado1, String estado2, String local) {
         this._id = _id;
         this.codigo = codigo;
         this.nombres = nombres;
@@ -28,6 +31,9 @@ public class Registrado {
         this.hora = hora;
         this.minuto = minuto;
         this.subido = subido;
+        this.estado1 = estado1;
+        this.estado2 = estado2;
+        this.local = local;
     }
 
     public Registrado() {
@@ -42,6 +48,9 @@ public class Registrado {
         this.hora = "";
         this.minuto = "";
         this.subido = 0;
+        this.estado1 = "1";
+        this.estado2 = "0";
+        this.local = "2";
     }
 
     public String get_id() {
@@ -132,6 +141,30 @@ public class Registrado {
         this.subido = subido;
     }
 
+    public String getEstado1() {
+        return estado1;
+    }
+
+    public void setEstado1(String estado1) {
+        this.estado1 = estado1;
+    }
+
+    public String getEstado2() {
+        return estado2;
+    }
+
+    public void setEstado2(String estado2) {
+        this.estado2 = estado2;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.fecha_de_registro_id,_id);
@@ -145,6 +178,9 @@ public class Registrado {
         contentValues.put(SQLConstantes.fecha_de_registro_hora,hora);
         contentValues.put(SQLConstantes.fecha_de_registro_minuto,minuto);
         contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
+        contentValues.put(SQLConstantes.fecha_de_registro_estado1,estado1);
+        contentValues.put(SQLConstantes.fecha_de_registro_estado2,estado2);
+        contentValues.put(SQLConstantes.fecha_de_registro_local,local);
         return contentValues;
     }
 }
