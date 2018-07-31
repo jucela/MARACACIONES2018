@@ -170,10 +170,14 @@ public class RegistroFragment extends Fragment {
                         int dd = calendario.get(Calendar.DAY_OF_MONTH);
                         int hora = calendario.get(Calendar.HOUR_OF_DAY);
                         int minuto = calendario.get(Calendar.MINUTE);
+                        String estado1 = "1";
+                        String estado2 = "";
+                        String local = "0";
 
-                        Registrado registrado1 = new Registrado(dni,dni,nacional.getApepat(), nacional.getSede(), nacional.getAula(),checkDigito(dd),
-                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),checkDigito(dd),
-                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),0,"1","0","2");
+                        Registrado registrado1 = new Registrado(dni,dni,nacional.getApepat(), nacional.getSede(), nacional.getAula(),
+                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),
+                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),
+                                0,estado1,estado2,local);
                         data.insertarFechaRegistro(registrado1);
                     }
                     data.close();

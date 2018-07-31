@@ -7,6 +7,9 @@ public class Nacional {
     private String aula;
     private String apepat;
     private String discapacidad;
+    private String estado1;
+    private String estado2;
+    private String local;
 
     public Nacional(String codigo, String sede, String local_aplicacion, String aula, String apepat, String discapacidad) {
         this.codigo = codigo;
@@ -72,5 +75,29 @@ public class Nacional {
 
     public void setDiscapacidad(String discapacidad) {
         this.discapacidad = discapacidad;
+    }
+
+    public String getEstado1() {
+        return estado1;
+    }
+
+    public void setEstado1(String estado1) {
+        this.estado1 = estado1;
+    }
+
+    public String getEstado2() {
+        return estado2;
+    }
+
+    public void setEstado2(String estado2) {
+        this.estado2 = estado2;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
     }
 }

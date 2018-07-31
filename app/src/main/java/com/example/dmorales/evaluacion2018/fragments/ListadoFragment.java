@@ -95,7 +95,7 @@ public class ListadoFragment extends Fragment {
                 if(agregados.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     for (final Registrado registrado : agregados){
-                        registrado.setSubido(1);
+                        registrado.setSubido(9);
                         String fecha = registrado.getDia() + "-" + registrado.getMes() + "-" + registrado.getAnio();
                         final String c = registrado.getCodigo();
                         Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();

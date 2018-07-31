@@ -216,7 +216,15 @@ public class Data {
                 registrado.setAnio(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio)));
                 registrado.setHora(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora)));
                 registrado.setMinuto(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto)));
+                registrado.setSdia(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sdia)));
+                registrado.setSmes(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_smes)));
+                registrado.setSanio(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sanio)));
+                registrado.setShora(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_shora)));
+                registrado.setSminuto(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sminuto)));
                 registrado.setSubido(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido)));
+                registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
+                registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
+                registrado.setLocal(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local)));
                 registrados.add(registrado);
             }
         }finally{

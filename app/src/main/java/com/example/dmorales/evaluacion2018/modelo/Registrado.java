@@ -81,9 +81,9 @@ public class Registrado {
         this.shora = "";
         this.sminuto = "";
         this.subido = 0;
-        this.estado1 = "1";
-        this.estado2 = "0";
-        this.local = "2";
+        this.estado1 = "";
+        this.estado2 = "";
+        this.local = "";
     }
 
     public String get_id() {
