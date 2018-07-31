@@ -2,6 +2,7 @@ package com.example.dmorales.evaluacion2018.fragments;
 
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -171,14 +172,15 @@ public class RegistroFragment extends Fragment {
                         int hora = calendario.get(Calendar.HOUR_OF_DAY);
                         int minuto = calendario.get(Calendar.MINUTE);
                         String estado1 = "1";
-                        String estado2 = "";
-                        String local = "0";
+                        String estado2 = "0";
+                        String local = "2";
 
                         Registrado registrado1 = new Registrado(dni,dni,nacional.getApepat(), nacional.getSede(), nacional.getAula(),
                                 checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),
-                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),
+                                "","","","","",
                                 0,estado1,estado2,local);
                         data.insertarFechaRegistro(registrado1);
+                        data.insertarFechaRegistroTemporal(registrado1);
                     }
                     data.close();
                 }else{

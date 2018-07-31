@@ -2,6 +2,7 @@ package com.example.dmorales.evaluacion2018.fragments;
 
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -140,30 +141,32 @@ public class SalidaFragment extends Fragment {
         try {
             Data data = new Data(context);
             data.open();
-            Nacional nacional = data.getNacional(dni);
+            //Nacional nacional = data.getNacional(dni);
+            Registrado registrado = data.getRegistrado(dni);
             data.close();
-            if(nacional != null){
+            if(registrado != null){
                 encontrado = true;
-                if(sede.equals(nacional.getSede())){
+                if(sede.equals(registrado.getSede())){
                     data = new Data(context);
                     data.open();
-                    Registrado registrado = data.getFechaRegistro(nacional.getCodigo());
-                    if(registrado != null){
-                        cvError.setVisibility(View.GONE);
-                        cvNoregistrado.setVisibility(View.GONE);
-                        cvYaregistrado.setVisibility(View.VISIBLE);
-                        cvRegistro.setVisibility(View.GONE);
-                    }else{
+                    Registrado registrados = data.getFechaRegistro(registrado.getCodigo());
+//                    if(registrados != null){
+//                        cvError.setVisibility(View.GONE);
+//                        cvNoregistrado.setVisibility(View.GONE);
+//                        cvYaregistrado.setVisibility(View.VISIBLE);
+//                        cvRegistro.setVisibility(View.GONE);
+//                    }
+                    if(registrados != null){
                         cvError.setVisibility(View.GONE);
                         cvNoregistrado.setVisibility(View.GONE);
                         cvYaregistrado.setVisibility(View.GONE);
                         cvRegistro.setVisibility(View.VISIBLE);
-                        txtRegistroSede.setText(nacional.getSede());
-                        txtRegistroNombres.setText(nacional.getApepat());
-                        txtRegistroDni.setText(nacional.getCodigo());
-                        txtRegistroLocal.setText(nacional.getLocal_aplicacion());
-                        txtRegistroCargo.setText(nacional.getDiscapacidad());
-                        txtRegistroAula.setText("Aula " + nacional.getAula());
+                        txtRegistroSede.setText(registrado.getSede());
+                        txtRegistroNombres.setText(registrado.getNombres());
+                        txtRegistroDni.setText(registrado.getCodigo());
+                        txtRegistroLocal.setText(registrado.getSede());
+                        //txtRegistroCargo.setText(nacional.getDiscapacidad());
+                        txtRegistroAula.setText("Aula " + registrado.getAula());
                         Calendar calendario = Calendar.getInstance();
                         int yy = calendario.get(Calendar.YEAR);
                         int mm = calendario.get(Calendar.MONTH)+1;
@@ -171,10 +174,18 @@ public class SalidaFragment extends Fragment {
                         int hora = calendario.get(Calendar.HOUR_OF_DAY);
                         int minuto = calendario.get(Calendar.MINUTE);
 
-                        Registrado registrado1 = new Registrado(dni,dni,nacional.getApepat(), nacional.getSede(), nacional.getAula(),checkDigito(dd),
+                        Registrado registrado1 = new Registrado(dni,dni,registrado.getNombres(),registrado.getSede(), registrado.getAula(),checkDigito(dd),
                                 checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),checkDigito(dd),
-                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),0,"1","0","2");
-                        data.insertarFechaRegistro(registrado1);
+                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),0,"1","1","2");
+                        ContentValues registroactualizado = new ContentValues();
+                        registroactualizado.put("sdia",checkDigito(dd));
+                        registroactualizado.put("smes",checkDigito(mm));
+                        registroactualizado.put("sanio",checkDigito(yy));
+                        registroactualizado.put("shora",checkDigito(hora));
+                        registroactualizado.put("sminuto",checkDigito(minuto));
+                        registroactualizado.put("estado2","1");
+                        data.insertarFechaRegistroTemporal(registrado1);
+                        data.actualizarFechaRegistro(dni,registroactualizado);
                     }
                     data.close();
                 }else{
@@ -182,9 +193,9 @@ public class SalidaFragment extends Fragment {
                     cvNoregistrado.setVisibility(View.GONE);
                     cvRegistro.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.GONE);
-                    txtErrorSede.setText(nacional.getSede());
-                    txtErrorLocal.setText(nacional.getLocal_aplicacion());
-                    txtErrorCargo.setText(nacional.getDiscapacidad());
+                    txtErrorSede.setText(registrado.getSede());
+                    txtErrorLocal.setText(registrado.getSede());
+                    txtErrorCargo.setText(registrado.getSede());
                 }
             }
         } catch (IOException e) {

@@ -83,7 +83,11 @@ public class SQLConstantes {
                     fecha_de_registro_smes + " TEXT," +
                     fecha_de_registro_sanio + " TEXT," +
                     fecha_de_registro_shora + " TEXT," +
-                    fecha_de_registro_sminuto + " TEXT"+");"
+                    fecha_de_registro_sminuto + " TEXT,"+
+                    fecha_de_registro_subido + " INTEGER," +
+                    fecha_de_registro_estado1 + " TEXT," +
+                    fecha_de_registro_estado2 + " TEXT," +
+                    fecha_de_registro_local + " TEXT" + ");"
             ;
 
 
@@ -104,6 +108,14 @@ public class SQLConstantes {
     };
 
     public static final String[] COLUMNAS_FECHA_REGISTRO = {
+            fecha_de_registro_id, fecha_de_registro_codigo, fecha_de_registro_nombres,
+            fecha_de_registro_sede, fecha_de_registro_aula,
+            fecha_de_registro_dia,  fecha_de_registro_mes,fecha_de_registro_anio,fecha_de_registro_minuto,fecha_de_registro_hora,
+            fecha_de_registro_sdia,fecha_de_registro_smes, fecha_de_registro_anio, fecha_de_registro_minuto,fecha_de_registro_hora,
+            fecha_de_registro_subido,fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_local
+    };
+
+    public static final String[] COLUMNAS_FECHA_REGISTRO_TEMPORAL = {
             fecha_de_registro_id, fecha_de_registro_codigo, fecha_de_registro_nombres,
             fecha_de_registro_sede, fecha_de_registro_aula,
             fecha_de_registro_dia,  fecha_de_registro_mes,fecha_de_registro_anio,fecha_de_registro_minuto,fecha_de_registro_hora,

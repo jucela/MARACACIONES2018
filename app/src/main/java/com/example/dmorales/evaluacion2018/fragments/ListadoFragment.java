@@ -87,7 +87,7 @@ public class ListadoFragment extends Fragment {
                 try {
                     data = new Data(context);
                     data.open();
-                    agregados = data.getAllRegistradosTemporal();
+                    agregados = data.getAllRegistradosTemporal2();
                     data.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -95,11 +95,11 @@ public class ListadoFragment extends Fragment {
                 if(agregados.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     for (final Registrado registrado : agregados){
-                        registrado.setSubido(9);
+                        registrado.setSubido(1);
                         String fecha = registrado.getDia() + "-" + registrado.getMes() + "-" + registrado.getAnio();
                         final String c = registrado.getCodigo();
                         Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                        db.collection(fecha).document(registrado.getCodigo()).set(registrado)
+                        db.collection(fecha).document(registrado.get_id()).set(registrado)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
@@ -142,7 +142,7 @@ public class ListadoFragment extends Fragment {
         try {
             Data data = new Data(context);
             data.open();
-            registrados = data.getAllRegistrados(sede);
+            registrados = data.getAllRegistradosTemporal(sede);
             txtNumero.setText("Total registros: " + registrados.size());
             data.close();
         } catch (IOException e) {
