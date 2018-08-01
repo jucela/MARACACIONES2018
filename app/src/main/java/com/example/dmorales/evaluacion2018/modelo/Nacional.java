@@ -3,30 +3,35 @@ package com.example.dmorales.evaluacion2018.modelo;
 public class Nacional {
     private String codigo;
     private String sede;
-    private String local_aplicacion;
+    private String id_local;
+    private String nom_local;
     private String aula;
-    private String apepat;
-    private String discapacidad;
+    private String nombres;
+    private String cargo;
     private String estado1;
     private String estado2;
-    private String local;
 
-    public Nacional(String codigo, String sede, String local_aplicacion, String aula, String apepat, String discapacidad) {
+
+    public Nacional(String codigo, String sede, String id_local, String nom_local, String aula, String nombres, String cargo, String estado1, String estado2) {
         this.codigo = codigo;
         this.sede = sede;
-        this.local_aplicacion = local_aplicacion;
+        this.id_local = id_local;
+        this.nom_local = nom_local;
         this.aula = aula;
-        this.apepat = apepat;
-        this.discapacidad = discapacidad;
+        this.nombres = nombres;
+        this.cargo = cargo;
+        this.estado1 = estado1;
+        this.estado2 = estado2;
     }
 
     public Nacional() {
         this.codigo = "";
         this.sede = "";
-        this.local_aplicacion = "";
+        this.id_local = "";
+        this.nom_local = "";
         this.aula = "";
-        this.apepat = "";
-        this.discapacidad = "";
+        this.nombres = "";
+        this.cargo = "";
     }
 
     public String getCodigo() {
@@ -45,12 +50,20 @@ public class Nacional {
         this.sede = sede;
     }
 
-    public String getLocal_aplicacion() {
-        return local_aplicacion;
+    public String getId_local() {
+        return id_local;
     }
 
-    public void setLocal_aplicacion(String local_aplicacion) {
-        this.local_aplicacion = local_aplicacion;
+    public void setId_local(String id_local) {
+        this.id_local = id_local;
+    }
+
+    public String getNom_local() {
+        return nom_local;
+    }
+
+    public void setNom_local(String nom_local) {
+        this.nom_local = nom_local;
     }
 
     public String getAula() {
@@ -61,20 +74,20 @@ public class Nacional {
         this.aula = aula;
     }
 
-    public String getApepat() {
-        return apepat;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setApepat(String apepat) {
-        this.apepat = apepat;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    public String getDiscapacidad() {
-        return discapacidad;
+    public String getCargo() {
+        return cargo;
     }
 
-    public void setDiscapacidad(String discapacidad) {
-        this.discapacidad = discapacidad;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public String getEstado1() {
@@ -91,13 +104,5 @@ public class Nacional {
 
     public void setEstado2(String estado2) {
         this.estado2 = estado2;
-    }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
     }
 }

@@ -87,7 +87,7 @@ public class ListadoFragment extends Fragment {
                 try {
                     data = new Data(context);
                     data.open();
-                    agregados = data.getAllRegistradosTemporal2();
+                    agregados = data.getAllRegistradosTemporal();
                     data.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -142,7 +142,7 @@ public class ListadoFragment extends Fragment {
         try {
             Data data = new Data(context);
             data.open();
-            registrados = data.getAllRegistradosTemporal(sede);
+            registrados = data.getAllRegistrados(sede);
             txtNumero.setText("Total registros: " + registrados.size());
             data.close();
         } catch (IOException e) {

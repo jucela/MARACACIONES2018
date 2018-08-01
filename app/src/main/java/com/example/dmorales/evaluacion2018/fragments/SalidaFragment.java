@@ -16,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.NumericKeyBoardTransformationMethod;
 import com.example.dmorales.evaluacion2018.R;
@@ -174,9 +175,9 @@ public class SalidaFragment extends Fragment {
                         int hora = calendario.get(Calendar.HOUR_OF_DAY);
                         int minuto = calendario.get(Calendar.MINUTE);
 
-                        Registrado registrado1 = new Registrado(dni,dni,registrado.getNombres(),registrado.getSede(), registrado.getAula(),checkDigito(dd),
+                        /*Registrado registrado1 = new Registrado(dni,dni,registrado.getNombres(),registrado.getSede(), registrado.getAula(),checkDigito(dd),
                                 checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),checkDigito(dd),
-                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),0,"1","1","2");
+                                checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),0,"1","1","2");*/
                         ContentValues registroactualizado = new ContentValues();
                         registroactualizado.put("sdia",checkDigito(dd));
                         registroactualizado.put("smes",checkDigito(mm));
@@ -184,8 +185,9 @@ public class SalidaFragment extends Fragment {
                         registroactualizado.put("shora",checkDigito(hora));
                         registroactualizado.put("sminuto",checkDigito(minuto));
                         registroactualizado.put("estado2","1");
-                        data.insertarFechaRegistroTemporal(registrado1);
+                        //data.insertarFechaRegistroTemporal(registrado1);
                         data.actualizarFechaRegistro(dni,registroactualizado);
+                        Toast.makeText(context, "Se Registro Salida", Toast.LENGTH_SHORT).show();
                     }
                     data.close();
                 }else{

@@ -16,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.NumericKeyBoardTransformationMethod;
 import com.example.dmorales.evaluacion2018.R;
@@ -160,10 +161,10 @@ public class RegistroFragment extends Fragment {
                         cvYaregistrado.setVisibility(View.GONE);
                         cvRegistro.setVisibility(View.VISIBLE);
                         txtRegistroSede.setText(nacional.getSede());
-                        txtRegistroNombres.setText(nacional.getApepat());
+                        txtRegistroNombres.setText(nacional.getNombres());
                         txtRegistroDni.setText(nacional.getCodigo());
-                        txtRegistroLocal.setText(nacional.getLocal_aplicacion());
-                        txtRegistroCargo.setText(nacional.getDiscapacidad());
+                        txtRegistroLocal.setText(nacional.getNom_local());
+                        txtRegistroCargo.setText(nacional.getCargo());
                         txtRegistroAula.setText("Aula " + nacional.getAula());
                         Calendar calendario = Calendar.getInstance();
                         int yy = calendario.get(Calendar.YEAR);
@@ -173,14 +174,13 @@ public class RegistroFragment extends Fragment {
                         int minuto = calendario.get(Calendar.MINUTE);
                         String estado1 = "1";
                         String estado2 = "0";
-                        String local = "2";
 
-                        Registrado registrado1 = new Registrado(dni,dni,nacional.getApepat(), nacional.getSede(), nacional.getAula(),
-                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),
-                                "","","","","",
-                                0,estado1,estado2,local);
+                        Registrado registrado1 = new Registrado(dni,dni,nacional.getSede(),nacional.getId_local(),nacional.getNom_local(),
+                                nacional.getAula(),nacional.getNombres(),checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),
+                                "","","","","",estado1,estado2,0);
                         data.insertarFechaRegistro(registrado1);
                         data.insertarFechaRegistroTemporal(registrado1);
+                        Toast.makeText(context, "Se Registro Entrada", Toast.LENGTH_SHORT).show();
                     }
                     data.close();
                 }else{
@@ -189,8 +189,8 @@ public class RegistroFragment extends Fragment {
                     cvRegistro.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.GONE);
                     txtErrorSede.setText(nacional.getSede());
-                    txtErrorLocal.setText(nacional.getLocal_aplicacion());
-                    txtErrorCargo.setText(nacional.getDiscapacidad());
+                    txtErrorLocal.setText(nacional.getNom_local());
+                    txtErrorCargo.setText(nacional.getCargo());
                 }
             }
         } catch (IOException e) {

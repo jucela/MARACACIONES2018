@@ -5,9 +5,11 @@ import android.content.ContentValues;
 public class Registrado {
     private String _id;
     private String codigo;
-    private String nombres;
     private String sede;
+    private String id_local;
+    private String nom_local;
     private String aula;
+    private String nombres;
     private String dia;
     private String mes;
     private String anio;
@@ -18,36 +20,19 @@ public class Registrado {
     private String sanio;
     private String shora;
     private String sminuto;
-    private int subido;
     private String estado1;
     private String estado2;
-    private String local;
+    private int subido;
 
 
-//    public Registrado(String _id, String codigo, String nombres, String sede, String aula, String dia, String mes, String anio, String hora, String minuto, int subido, String estado1, String estado2, String local) {
-//        this._id = _id;
-//        this.codigo = codigo;
-//        this.nombres = nombres;
-//        this.sede = sede;
-//        this.aula = aula;
-//        this.dia = dia;
-//        this.mes = mes;
-//        this.anio = anio;
-//        this.hora = hora;
-//        this.minuto = minuto;
-//        this.subido = subido;
-//        this.estado1 = estado1;
-//        this.estado2 = estado2;
-//        this.local = local;
-//    }
-
-
-    public Registrado(String _id, String codigo, String nombres, String sede, String aula, String dia, String mes, String anio, String hora, String minuto, String sdia, String smes, String sanio, String shora, String sminuto, int subido, String estado1, String estado2, String local) {
+    public Registrado(String _id, String codigo, String sede, String id_local, String nom_local, String aula, String nombres, String dia, String mes, String anio, String hora, String minuto, String sdia, String smes, String sanio, String shora, String sminuto, String estado1, String estado2, int subido) {
         this._id = _id;
         this.codigo = codigo;
-        this.nombres = nombres;
         this.sede = sede;
+        this.id_local = id_local;
+        this.nom_local = nom_local;
         this.aula = aula;
+        this.nombres = nombres;
         this.dia = dia;
         this.mes = mes;
         this.anio = anio;
@@ -58,18 +43,19 @@ public class Registrado {
         this.sanio = sanio;
         this.shora = shora;
         this.sminuto = sminuto;
-        this.subido = subido;
         this.estado1 = estado1;
         this.estado2 = estado2;
-        this.local = local;
+        this.subido = subido;
     }
 
     public Registrado() {
         this._id = "";
         this.codigo = "";
-        this.nombres = "";
         this.sede = "";
+        this.id_local = "";
+        this.nom_local = "";
         this.aula = "";
+        this.nombres = "";
         this.dia = "";
         this.mes = "";
         this.anio = "";
@@ -80,10 +66,10 @@ public class Registrado {
         this.sanio = "";
         this.shora = "";
         this.sminuto = "";
-        this.subido = 0;
         this.estado1 = "";
         this.estado2 = "";
-        this.local = "";
+        this.subido = 0;
+
     }
 
     public String get_id() {
@@ -102,20 +88,36 @@ public class Registrado {
         this.codigo = codigo;
     }
 
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
     public String getSede() {
         return sede;
     }
 
     public void setSede(String sede) {
         this.sede = sede;
+    }
+
+    public String getId_local() {
+        return id_local;
+    }
+
+    public void setId_local(String id_local) {
+        this.id_local = id_local;
+    }
+
+    public String getNom_local() {
+        return nom_local;
+    }
+
+    public void setNom_local(String nom_local) {
+        this.nom_local = nom_local;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getAula() {
@@ -166,10 +168,6 @@ public class Registrado {
         this.minuto = minuto;
     }
 
-    public int getSubido() {
-        return subido;
-    }
-
     public String getSdia() {
         return sdia;
     }
@@ -210,10 +208,6 @@ public class Registrado {
         this.sminuto = sminuto;
     }
 
-    public void setSubido(int subido) {
-        this.subido = subido;
-    }
-
     public String getEstado1() {
         return estado1;
     }
@@ -230,12 +224,12 @@ public class Registrado {
         this.estado2 = estado2;
     }
 
-    public String getLocal() {
-        return local;
+    public int getSubido() {
+        return subido;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setSubido(int subido) {
+        this.subido = subido;
     }
 
     public ContentValues toValues(){
@@ -244,13 +238,14 @@ public class Registrado {
         contentValues.put(SQLConstantes.fecha_de_registro_codigo,codigo);
         contentValues.put(SQLConstantes.fecha_de_registro_nombres,nombres);
         contentValues.put(SQLConstantes.fecha_de_registro_sede,sede);
+        contentValues.put(SQLConstantes.fecha_de_registro_id_local,id_local);
+        contentValues.put(SQLConstantes.fecha_de_registro_nom_local,nom_local);
         contentValues.put(SQLConstantes.fecha_de_registro_aula,aula);
         contentValues.put(SQLConstantes.fecha_de_registro_dia,dia);
         contentValues.put(SQLConstantes.fecha_de_registro_mes,mes);
         contentValues.put(SQLConstantes.fecha_de_registro_anio,anio);
         contentValues.put(SQLConstantes.fecha_de_registro_hora,hora);
         contentValues.put(SQLConstantes.fecha_de_registro_minuto,minuto);
-        contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
         contentValues.put(SQLConstantes.fecha_de_registro_sdia,sdia);
         contentValues.put(SQLConstantes.fecha_de_registro_smes,smes);
         contentValues.put(SQLConstantes.fecha_de_registro_sanio,sanio);
@@ -259,7 +254,8 @@ public class Registrado {
         contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
         contentValues.put(SQLConstantes.fecha_de_registro_estado1,estado1);
         contentValues.put(SQLConstantes.fecha_de_registro_estado2,estado2);
-        contentValues.put(SQLConstantes.fecha_de_registro_local,local);
+        contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
+
         return contentValues;
     }
 }

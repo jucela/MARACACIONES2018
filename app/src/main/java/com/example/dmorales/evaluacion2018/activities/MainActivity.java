@@ -16,7 +16,6 @@ import android.view.MenuItem;
 
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment;
-import com.example.dmorales.evaluacion2018.fragments.ListadoSalidaFragment;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
 import com.example.dmorales.evaluacion2018.fragments.RegistroFragment;
 import com.example.dmorales.evaluacion2018.fragments.SalidaFragment;
@@ -145,11 +144,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_layout,salidaFragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.menu_listadosalida) {
-            ListadoSalidaFragment listadosalidaFragment = new ListadoSalidaFragment(sede,MainActivity.this);
-            fragmentTransaction.replace(R.id.fragment_layout, listadosalidaFragment);
-            fragmentTransaction.commit();
-        }  else if (id == R.id.menu_cerrar_sesion) {
+        } else if (id == R.id.menu_cerrar_sesion) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("¿Está seguro que desea cerrar sesión en la aplicación?")
                     .setTitle("Aviso")
