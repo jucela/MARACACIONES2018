@@ -85,7 +85,7 @@
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textColor="#3e2723"
-                        android:text="DNI CON ASISTENCIA YA REGISTRADA"/>
+                        android:text="DNI CON ENTRADA YA REGISTRADA"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView

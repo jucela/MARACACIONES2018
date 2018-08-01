@@ -40,6 +40,7 @@ public class ListadoFragment extends Fragment {
     Context context;
     ArrayList<Registrado> registrados;
     ArrayList<Registrado> agregados;
+    ArrayList<Registrado> agregados2;
     String sede;
     Data data;
     FloatingActionButton fabUpLoad;
@@ -84,51 +85,100 @@ public class ListadoFragment extends Fragment {
             public void onClick(View v) {
                 b = false;
                 agregados = new ArrayList<>();
+                agregados2 = new ArrayList<>();
                 try {
                     data = new Data(context);
                     data.open();
                     agregados = data.getAllRegistradosTemporal();
+                    agregados2 = data.getAllRegistradosTemporal2();
                     data.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 if(agregados.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    //if(registrados)
                     for (final Registrado registrado : agregados){
-                        registrado.setSubido(1);
-                        String fecha = registrado.getDia() + "-" + registrado.getMes() + "-" + registrado.getAnio();
-                        final String c = registrado.getCodigo();
-                        Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                        db.collection(fecha).document(registrado.get_id()).set(registrado)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
-                                        if(!b){
-                                            Toast.makeText(context, agregados.size() +" registros subidos", Toast.LENGTH_SHORT).show();
-                                            b =true;
+
+                        if(registrado.getSubido1()==0) {
+                            registrado.setSubido1(1);
+                            String fecha = registrado.getDia() + "-" + registrado.getMes() + "-" + registrado.getAnio();
+                            final String c = registrado.getCodigo();
+                            Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
+                            db.collection(fecha).document(registrado.get_id()).set(registrado)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
+                                            if (!b) {
+                                                Toast.makeText(context, agregados.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
+                                                b = true;
+                                            }
+                                            try {
+                                                data = new Data(context);
+                                                data.open();
+                                                ContentValues contentValues = new ContentValues();
+                                                contentValues.put(SQLConstantes.fecha_de_registro_subido1, 1);
+                                                data.actualizarFechaRegistro(c, contentValues);
+                                                cargaData();
+                                                registradoAdapter.notifyDataSetChanged();
+                                                data.close();
+                                            } catch (IOException e) {
+                                                e.printStackTrace();
+                                            }
                                         }
-                                        try {
-                                            data = new Data(context);
-                                            data.open();
-                                            ContentValues contentValues = new ContentValues();
-                                            contentValues.put(SQLConstantes.fecha_de_registro_subido,1);
-                                            data.actualizarFechaRegistro(c,contentValues);
-                                            cargaData();
-                                            registradoAdapter.notifyDataSetChanged();
-                                            data.close();
-                                        } catch (IOException e) {
-                                            e.printStackTrace();
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.w("FIRESTORE", "Error writing document", e);
                                         }
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.w("FIRESTORE", "Error writing document", e);
-                                    }
-                                });
-                    }
+                                    });
+                        }//end if
+                        else {Toast.makeText(context, " Error al cargar subidos", Toast.LENGTH_SHORT).show();}
+                    }//end for
+                }else if(agregados2.size() > 0){
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    //if(registrados)
+                    for (final Registrado registrado : agregados2){
+
+                        if(registrado.getSubido2()==0) {
+                            registrado.setSubido2(1);
+                            String fecha = registrado.getDia() + "-" + registrado.getMes() + "-" + registrado.getAnio();
+                            final String c = registrado.getCodigo();
+                            Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
+                            db.collection(fecha).document(registrado.get_id()).set(registrado)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
+                                            if (!b) {
+                                                Toast.makeText(context, agregados2.size() + "  Registros de Salida en la Nube", Toast.LENGTH_SHORT).show();
+                                                b = true;
+                                            }
+                                            try {
+                                                data = new Data(context);
+                                                data.open();
+                                                ContentValues contentValues = new ContentValues();
+                                                contentValues.put(SQLConstantes.fecha_de_registro_subido2, 1);
+                                                data.actualizarFechaRegistro(c, contentValues);
+                                                cargaData();
+                                                registradoAdapter.notifyDataSetChanged();
+                                                data.close();
+                                            } catch (IOException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.w("FIRESTORE", "Error writing document", e);
+                                        }
+                                    });
+                        }//end if
+                        else {Toast.makeText(context, " Error al cargar subidos", Toast.LENGTH_SHORT).show();}
+                    }//end for
                 }else{
                     Toast.makeText(context, "No hay registros nuevos para subir", Toast.LENGTH_SHORT).show();
                 }

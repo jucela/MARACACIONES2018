@@ -22,10 +22,11 @@ public class Registrado {
     private String sminuto;
     private String estado1;
     private String estado2;
-    private int subido;
+    private int subido1;
+    private int subido2;
 
 
-    public Registrado(String _id, String codigo, String sede, String id_local, String nom_local, String aula, String nombres, String dia, String mes, String anio, String hora, String minuto, String sdia, String smes, String sanio, String shora, String sminuto, String estado1, String estado2, int subido) {
+    public Registrado(String _id, String codigo, String sede, String id_local, String nom_local, String aula, String nombres, String dia, String mes, String anio, String hora, String minuto, String sdia, String smes, String sanio, String shora, String sminuto, String estado1, String estado2, int subido1, int subido2) {
         this._id = _id;
         this.codigo = codigo;
         this.sede = sede;
@@ -45,7 +46,8 @@ public class Registrado {
         this.sminuto = sminuto;
         this.estado1 = estado1;
         this.estado2 = estado2;
-        this.subido = subido;
+        this.subido1 = subido1;
+        this.subido2 = subido2;
     }
 
     public Registrado() {
@@ -68,7 +70,8 @@ public class Registrado {
         this.sminuto = "";
         this.estado1 = "";
         this.estado2 = "";
-        this.subido = 0;
+        this.subido1 = 0;
+        this.subido2 = 0;
 
     }
 
@@ -224,12 +227,20 @@ public class Registrado {
         this.estado2 = estado2;
     }
 
-    public int getSubido() {
-        return subido;
+    public int getSubido1() {
+        return subido1;
     }
 
-    public void setSubido(int subido) {
-        this.subido = subido;
+    public void setSubido1(int subido1) {
+        this.subido1 = subido1;
+    }
+
+    public int getSubido2() {
+        return subido2;
+    }
+
+    public void setSubido2(int subido2) {
+        this.subido2 = subido2;
     }
 
     public ContentValues toValues(){
@@ -251,10 +262,10 @@ public class Registrado {
         contentValues.put(SQLConstantes.fecha_de_registro_sanio,sanio);
         contentValues.put(SQLConstantes.fecha_de_registro_shora,shora);
         contentValues.put(SQLConstantes.fecha_de_registro_sminuto,sminuto);
-        contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
         contentValues.put(SQLConstantes.fecha_de_registro_estado1,estado1);
         contentValues.put(SQLConstantes.fecha_de_registro_estado2,estado2);
-        contentValues.put(SQLConstantes.fecha_de_registro_subido,subido);
+        contentValues.put(SQLConstantes.fecha_de_registro_subido1,subido1);
+        contentValues.put(SQLConstantes.fecha_de_registro_subido2,subido2);
 
         return contentValues;
     }

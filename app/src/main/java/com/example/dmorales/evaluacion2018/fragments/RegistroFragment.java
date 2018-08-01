@@ -177,9 +177,8 @@ public class RegistroFragment extends Fragment {
 
                         Registrado registrado1 = new Registrado(dni,dni,nacional.getSede(),nacional.getId_local(),nacional.getNom_local(),
                                 nacional.getAula(),nacional.getNombres(),checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),
-                                "","","","","",estado1,estado2,0);
+                                "","","","","",estado1,estado2,0,0);
                         data.insertarFechaRegistro(registrado1);
-                        data.insertarFechaRegistroTemporal(registrado1);
                         Toast.makeText(context, "Se Registro Entrada", Toast.LENGTH_SHORT).show();
                     }
                     data.close();
