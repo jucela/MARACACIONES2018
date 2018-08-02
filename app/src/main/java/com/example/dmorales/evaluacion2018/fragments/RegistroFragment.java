@@ -9,6 +9,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -116,7 +118,38 @@ public class RegistroFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //EDITTEXT BUSCAR
+        edtDni.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(edtDni.getText().length()==8){
+                    ocultarTeclado(edtDni);
+                    btnBuscar.requestFocus();
+                    String dni = edtDni.getText().toString();
+                    if(!dni.equals("")){
+                        if(!buscarDNI(dni)) {
+                            cvRegistro.setVisibility(View.GONE);
+                            cvYaregistrado.setVisibility(View.GONE);
+                            cvError.setVisibility(View.GONE);
+                            cvNoregistrado.setVisibility(View.VISIBLE);
+                        }
+                    }
+                }
+
+
+            }
+        });
+        //BOTON BUSCAR
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
