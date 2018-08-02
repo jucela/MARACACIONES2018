@@ -25,6 +25,7 @@ import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.Registrado;
 import com.example.dmorales.evaluacion2018.modelo.Nacional;
+import com.google.protobuf.Empty;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -122,7 +123,7 @@ public class RegistroFragment extends Fragment {
         edtDni.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+               // edtDni.setText(" ");
             }
 
             @Override
@@ -134,7 +135,6 @@ public class RegistroFragment extends Fragment {
             public void afterTextChanged(Editable editable) {
                 if(edtDni.getText().length()==8){
                     ocultarTeclado(edtDni);
-                    btnBuscar.requestFocus();
                     String dni = edtDni.getText().toString();
                     if(!dni.equals("")){
                         if(!buscarDNI(dni)) {
@@ -142,8 +142,15 @@ public class RegistroFragment extends Fragment {
                             cvYaregistrado.setVisibility(View.GONE);
                             cvError.setVisibility(View.GONE);
                             cvNoregistrado.setVisibility(View.VISIBLE);
+                            edtDni.setText("");
+                            edtDni.requestFocus();
                         }
+                        else{edtDni.setText("");
+                            edtDni.requestFocus();}
                     }
+                    else {
+                        Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();
+                        edtDni.setText("");}
                 }
 
 
@@ -164,7 +171,8 @@ public class RegistroFragment extends Fragment {
                         cvNoregistrado.setVisibility(View.VISIBLE);
                     }
                 }
-                edtDni.setText("");
+                else {
+                Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();edtDni.setText("");}
             }
         });
     }

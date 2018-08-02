@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity
                             try {
                                 Data data = new Data(MainActivity.this);
                                 data.open();
-                                data.deleteAllElementosFromTabla(SQLConstantes.tablafecharegistrotemporal);
+                                data.deleteAllElementosFromTabla(SQLConstantes.tablafecharegistro);
                                 data.close();
                                 ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity.this);
                                 FragmentManager fragmentManage = getSupportFragmentManager();
