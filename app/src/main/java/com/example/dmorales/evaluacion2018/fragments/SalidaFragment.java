@@ -118,6 +118,7 @@ public class SalidaFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        edtDni.requestFocus();
         //EDITTEXT BUSCAR
         edtDni.addTextChangedListener(new TextWatcher() {
             @Override
@@ -134,7 +135,6 @@ public class SalidaFragment extends Fragment {
             public void afterTextChanged(Editable editable) {
                 if(edtDni.getText().length()==8){
                     ocultarTeclado(edtDni);
-                    btnBuscar.requestFocus();
                     String dni = edtDni.getText().toString();
                     if(!dni.equals("")){
                         if(!buscarDNI(dni)) {
@@ -142,8 +142,16 @@ public class SalidaFragment extends Fragment {
                             cvYaregistrado.setVisibility(View.GONE);
                             cvError.setVisibility(View.GONE);
                             cvNoregistrado.setVisibility(View.VISIBLE);
+                            edtDni.setText("");
+                            edtDni.requestFocus();
                         }
+                        else{edtDni.setText("");
+                            edtDni.requestFocus();}
                     }
+                    else {
+                        Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();
+                        edtDni.setText("");
+                        edtDni.requestFocus();}
                 }
 
 
@@ -164,9 +172,13 @@ public class SalidaFragment extends Fragment {
                         cvYaregistrado.setVisibility(View.GONE);
                         cvError.setVisibility(View.GONE);
                         cvNoregistrado.setVisibility(View.VISIBLE);
+                        edtDni.setText("");
+                        edtDni.requestFocus();
                     }
                 }
-                edtDni.setText("");
+                else {
+                    Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();edtDni.setText("");
+                    edtDni.requestFocus();}
             }
         });
     }

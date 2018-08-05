@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.dmorales.evaluacion2018.R;
+import com.example.dmorales.evaluacion2018.fragments.BuscadorFragment;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
 import com.example.dmorales.evaluacion2018.fragments.RegistroFragment;

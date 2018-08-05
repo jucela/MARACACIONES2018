@@ -13,45 +13,39 @@
         android:text="REGISTRO DE ASISTENCIA"
         android:layout_marginTop="@dimen/margin5dp"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/verde"/>
-    <android.support.v7.widget.CardView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="@color/colorPrimaryDark">
-        <LinearLayout
+        android:background="@drawable/linearbuscar">
+
+        <EditText
+            android:id="@+id/registro_edtDni"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/buscar"
             android:gravity="center"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/registro_edtDni"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:inputType="numberPassword"
-                android:maxLength="8"
-                android:gravity="center"
-                android:background="@drawable/borde_edit_text"
-                />
-            <ImageView
-                android:id="@+id/registro_btnBuscar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_search"
-                android:tint="@android:color/white"
-                />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-    <ScrollView
-        android:layout_margin="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+            android:hint="pasar lector de codigo de barras"
+            android:inputType="numberPassword"
+            android:maxLength="8" />
+
+        <ImageButton
+            android:id="@+id/registro_btnBuscar"
+            android:layout_width="75dp"
+            android:layout_height="67dp"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_search"
+            android:tint="@android:color/black" />
+
+    </RelativeLayout>
+
+    <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -84,7 +78,7 @@
                         android:gravity="center"
                         android:textStyle="bold"
                         android:textColor="#3e2723"
-                        android:text="DNI CON  YA REGISTRADA"/>
+                        android:text="DNI CON ENTRADA REGISTRADA"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
@@ -382,9 +376,5 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
-    </ScrollView>
-
-
-
 
 </LinearLayout>
