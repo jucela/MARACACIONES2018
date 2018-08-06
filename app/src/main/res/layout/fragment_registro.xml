@@ -38,7 +38,7 @@
             android:id="@+id/registro_btnBuscar"
             android:layout_width="75dp"
             android:layout_height="67dp"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_search"
             android:tint="@android:color/black" />

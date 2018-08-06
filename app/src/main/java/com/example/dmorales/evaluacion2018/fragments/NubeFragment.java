@@ -67,7 +67,7 @@ public class NubeFragment extends Fragment {
         try {
             Data data = new Data(context);
             data.open();
-            registrados = data.getAllRegistradosNube();
+            registrados = data.getSedeRegistradosNube(sede);
             txtNumero.setText("Total enviados: " + registrados.size());
             data.close();
         } catch (IOException e) {

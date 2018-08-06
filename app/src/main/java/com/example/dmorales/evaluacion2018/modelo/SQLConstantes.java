@@ -102,6 +102,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_SEDE = "sede=?";
     public static final String WHERE_CLAUSE_SUBIDO1 = "subido1=?";
     public static final String WHERE_CLAUSE_SUBIDO2 = "subido2=?";
+    public static final String WHERE_CLAUSE_SEDESUBIDO1 = "sede=?  and subido1=?";
 
 
     public static final String[] COLUMNAS_NACIONAL = {

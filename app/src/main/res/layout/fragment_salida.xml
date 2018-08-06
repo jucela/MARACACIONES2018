@@ -29,7 +29,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/buscar"
             android:gravity="center"
-            android:hint="pasar lector de codigo de barras"
+            android:hint="Pasar lector de codigo de barras"
             android:inputType="numberPassword"
             android:maxLength="8" />
 
@@ -37,7 +37,7 @@
             android:id="@+id/salida_btnBuscar"
             android:layout_width="75dp"
             android:layout_height="67dp"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_search"
             android:tint="@android:color/black" />
