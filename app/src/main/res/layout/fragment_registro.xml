@@ -320,7 +320,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/icons"
                             android:gravity="center"
-                            android:text="Su local de votación es:"/>
+                            android:text="Su local asignado es:"/>
                         <android.support.v7.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

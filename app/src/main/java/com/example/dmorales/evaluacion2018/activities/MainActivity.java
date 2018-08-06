@@ -3,6 +3,8 @@ package com.example.dmorales.evaluacion2018.activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -13,6 +15,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.fragments.BuscadorFragment;
@@ -21,20 +26,24 @@ import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
 import com.example.dmorales.evaluacion2018.fragments.RegistroFragment;
 import com.example.dmorales.evaluacion2018.fragments.SalidaFragment;
 import com.example.dmorales.evaluacion2018.modelo.Data;
+import com.example.dmorales.evaluacion2018.modelo.Nacional;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    String usuario;
+    TextView user;
     String sede;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        user = (TextView) findViewById(R.id.nombre_sede);
         sede = getIntent().getExtras().getString("sede");
+        usuario = getIntent().getExtras().getString("usuario");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,6 +62,7 @@ public class MainActivity extends AppCompatActivity
         RegistroFragment registroFragment = new RegistroFragment(sede,MainActivity.this);
         fragmentTransaction.replace(R.id.fragment_layout, registroFragment);
         fragmentTransaction.commit();
+
     }
 
     @Override
@@ -64,6 +74,14 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
+    public void MostrarUsuario(){
+        if(user==null){
+            user.setText("No");
+        }
+    }
+
+
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
@@ -93,6 +111,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        user.setText("Usuario: "+usuario);
         int id = item.getItemId();
 
         if (id == R.id.menu_registro) {
