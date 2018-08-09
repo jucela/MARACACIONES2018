@@ -2,7 +2,6 @@ package com.example.dmorales.evaluacion2018.fragments;
 
 
 import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -32,7 +31,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SalidaFragment extends Fragment {
+public class IngresoLocalFragment extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -58,13 +57,13 @@ public class SalidaFragment extends Fragment {
 
 
 
-    public SalidaFragment() {
+    public IngresoLocalFragment() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public SalidaFragment(String sede, Context context) {
+    public IngresoLocalFragment(String sede, Context context) {
         this.sede = sede;
         this.context = context;
     }
@@ -73,26 +72,25 @@ public class SalidaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_salida, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_ingresolocal, container, false);
+        btnBuscar = (ImageView) rootView.findViewById(R.id.ingresolocal_btnBuscar);
+        edtDni = (EditText) rootView.findViewById(R.id.ingresolocal_edtDni);
 
-        btnBuscar = (ImageView) rootView.findViewById(R.id.salida_btnBuscar);
-        edtDni = (EditText) rootView.findViewById(R.id.salida_edtDni);
+        cvError = (CardView) rootView.findViewById(R.id.ingresolocal_cvError);
+        cvNoregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvNoRegistrado);
+        cvRegistro = (CardView) rootView.findViewById(R.id.ingresolocal_cvRegistro);
+        cvYaregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvYaRegistrado);
 
-        cvError = (CardView) rootView.findViewById(R.id.salida_cvError);
-        cvNoregistrado = (CardView) rootView.findViewById(R.id.salida_cvNoRegistrado);
-        cvRegistro = (CardView) rootView.findViewById(R.id.salida_cvsalida);
-        cvYaregistrado = (CardView) rootView.findViewById(R.id.salida_cvYaRegistrado);
+        txtErrorCargo = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtCargo);
+        txtErrorLocal = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtLocal);
+        txtErrorSede = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtSede);
 
-        txtErrorCargo = (TextView) rootView.findViewById(R.id.salida_error_txtCargo);
-        txtErrorLocal = (TextView) rootView.findViewById(R.id.salida_error_txtLocal);
-        txtErrorSede = (TextView) rootView.findViewById(R.id.salida_error_txtSede);
-
-        txtRegistroCargo = (TextView) rootView.findViewById(R.id.salida_txtCargo);
-        txtRegistroAula = (TextView) rootView.findViewById(R.id.salida_txtAula);
-        txtRegistroDni = (TextView) rootView.findViewById(R.id.salida_txtDni);
-        txtRegistroLocal = (TextView) rootView.findViewById(R.id.salida_txtLocal);
-        txtRegistroNombres = (TextView) rootView.findViewById(R.id.salida_txtNombres);
-        txtRegistroSede = (TextView) rootView.findViewById(R.id.salida_txtSede);
+        txtRegistroCargo = (TextView) rootView.findViewById(R.id.ingresolocal_txtCargo);
+        txtRegistroDni = (TextView) rootView.findViewById(R.id.ingresolocal_txtDni);
+        txtRegistroNombres = (TextView) rootView.findViewById(R.id.ingresolocal_txtNombres);
+        txtRegistroSede = (TextView) rootView.findViewById(R.id.ingresolocal_txtSede);
+        txtRegistroLocal = (TextView) rootView.findViewById(R.id.ingresolocal_txtLocal);
+        txtRegistroAula = (TextView) rootView.findViewById(R.id.ingresolocal_txtAula);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -123,7 +121,7 @@ public class SalidaFragment extends Fragment {
         edtDni.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+               // edtDni.setText(" ");
             }
 
             @Override
@@ -161,9 +159,8 @@ public class SalidaFragment extends Fragment {
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                ocultarTeclado(edtDni);
-                btnBuscar.requestFocus();
+                //ocultarTeclado(edtDni);
+                //btnBuscar.requestFocus();
                 String dni = edtDni.getText().toString();
                 if(!dni.equals("")){
                     if(!buscarDNI(dni)) {
@@ -174,9 +171,11 @@ public class SalidaFragment extends Fragment {
                         edtDni.setText("");
                         edtDni.requestFocus();
                     }
+                    else{edtDni.setText("");
+                        edtDni.requestFocus();}
                 }
                 else {
-                    Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();edtDni.setText("");
+                Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();edtDni.setText("");
                     edtDni.requestFocus();}
             }
         });
@@ -188,48 +187,46 @@ public class SalidaFragment extends Fragment {
         try {
             Data data = new Data(context);
             data.open();
-            //Nacional nacional = data.getNacional(dni);
-            Registrado registrado = data.getRegistrado(dni);
+            Nacional nacional = data.getNacional(dni);
             data.close();
-            if(registrado != null){
+            if(nacional != null){
                 encontrado = true;
-                if(sede.equals(registrado.getSede())){
+                if(sede.equals(nacional.getSede())){
                     data = new Data(context);
                     data.open();
-                    Registrado registrados = data.getFechaRegistro(registrado.getCodigo());
-                    if(registrados != null){
+                    Registrado registrado = data.getFechaRegistro(nacional.getCodigo());
+                    if(registrado != null){
                         cvError.setVisibility(View.GONE);
                         cvNoregistrado.setVisibility(View.GONE);
                         cvYaregistrado.setVisibility(View.VISIBLE);
                         cvRegistro.setVisibility(View.GONE);
-                    }
-                    if(registrados != null){
+                    }else{
                         cvError.setVisibility(View.GONE);
                         cvNoregistrado.setVisibility(View.GONE);
                         cvYaregistrado.setVisibility(View.GONE);
                         cvRegistro.setVisibility(View.VISIBLE);
-                        txtRegistroSede.setText(registrado.getSede());
-                        txtRegistroNombres.setText(registrado.getNombres());
-                        txtRegistroDni.setText(registrado.getCodigo());
-                        txtRegistroLocal.setText(registrado.getSede());
-                        txtRegistroCargo.setText(registrado.getSede());
-                        txtRegistroAula.setText("Aula " + registrado.getAula());
+                        txtRegistroSede.setText(nacional.getSede());
+                        txtRegistroNombres.setText(nacional.getNombres());
+                        txtRegistroDni.setText(nacional.getCodigo());
+                        txtRegistroLocal.setText(nacional.getNom_local());
+                        txtRegistroCargo.setText(nacional.getCargo());
+                        txtRegistroAula.setText("Aula " + nacional.getAula());
                         Calendar calendario = Calendar.getInstance();
                         int yy = calendario.get(Calendar.YEAR);
                         int mm = calendario.get(Calendar.MONTH)+1;
                         int dd = calendario.get(Calendar.DAY_OF_MONTH);
                         int hora = calendario.get(Calendar.HOUR_OF_DAY);
                         int minuto = calendario.get(Calendar.MINUTE);
+                        String estado1 = "1";
+                        String estado2 = "0";
+                        String estado3 = "0";
+                        String estado4 = "0";
 
-                        ContentValues registroactualizado = new ContentValues();
-                        registroactualizado.put("sdia",checkDigito(dd));
-                        registroactualizado.put("smes",checkDigito(mm));
-                        registroactualizado.put("sanio",checkDigito(yy));
-                        registroactualizado.put("shora",checkDigito(hora));
-                        registroactualizado.put("sminuto",checkDigito(minuto));
-                        registroactualizado.put("estado2","1");
-                        data.actualizarFechaRegistro(dni,registroactualizado);
-                        Toast.makeText(context, "Se Registro Salida", Toast.LENGTH_SHORT).show();
+                        Registrado registrado1 = new Registrado(dni,dni,nacional.getSede(),nacional.getId_local(),nacional.getNom_local(),nacional.getAula(),nacional.getNombres(),
+                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),"","","","","","","","","","","","","","","",
+                                estado1,estado2,estado3,estado4,0,0,0,0);
+                        data.insertarFechaRegistro(registrado1);
+                        Toast.makeText(context, "Se Registro Entrada al Local", Toast.LENGTH_SHORT).show();
                     }
                     data.close();
                 }else{
@@ -237,9 +234,9 @@ public class SalidaFragment extends Fragment {
                     cvNoregistrado.setVisibility(View.GONE);
                     cvRegistro.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.GONE);
-                    txtErrorSede.setText(registrado.getSede());
-                    txtErrorLocal.setText(registrado.getNom_local());
-                    txtErrorCargo.setText(registrado.getNom_local());
+                    txtErrorSede.setText(nacional.getSede());
+                    txtErrorLocal.setText(nacional.getNom_local());
+                    txtErrorCargo.setText(nacional.getCargo());
                 }
             }
         } catch (IOException e) {

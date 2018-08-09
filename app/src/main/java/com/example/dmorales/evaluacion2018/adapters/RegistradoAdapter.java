@@ -34,11 +34,14 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
         Registrado registrado = registrados.get(position);
         holder.txtDni.setText(registrado.getCodigo());
         holder.txtNombres.setText(registrado.getNombres());
-        holder.txtSede.setText(registrado.getSede());
+        //holder.txtSede.setText(registrado.getSede());
         holder.txtAula.setText(registrado.getAula());
-        holder.txtFecha.setText(registrado.getDia() + "-" + registrado.getMes() + "-" + registrado.getAnio());
-        holder.txtEntrada.setText(registrado.getHora() + ":" + registrado.getMinuto());
-        holder.txtSalida.setText(registrado.getShora() + ":" + registrado.getSminuto());
+        holder.txtFecha.setText(registrado.getDia1() + "-" + registrado.getMes1() + "-" + registrado.getAnio1());
+        holder.txtEntrada.setText(registrado.getHora1() + ":" + registrado.getMinuto1());
+        holder.txtHAula.setText(registrado.getHora2() + ":" + registrado.getMinuto2());
+        holder.txtRAula.setText(registrado.getHora3() + ":" + registrado.getMinuto3());
+        holder.txtSalida.setText(registrado.getHora4() + ":" + registrado.getMinuto4());
+
 //        if(registrado.getSubido() == 1){
 //            holder.cv.setCardBackgroundColor(Color.WHITE);
 //        }else{
@@ -62,6 +65,8 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
         TextView txtAula;
         TextView txtFecha;
         TextView txtEntrada;
+        TextView txtHAula;
+        TextView txtRAula;
         TextView txtSalida;
         CardView cv;
         public ViewHolder(View itemView) {
@@ -69,10 +74,12 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
             cv = itemView.findViewById(R.id.item_registrado_cv);
             txtDni = itemView.findViewById(R.id.item_registrado_txtDni);
             txtNombres = itemView.findViewById(R.id.item_registrado_txtNombres);
-            txtSede = itemView.findViewById(R.id.item_registrado_txtSede);
+            //txtSede = itemView.findViewById(R.id.item_registrado_txtSede);
             txtAula = itemView.findViewById(R.id.item_registrado_txtAula);
             txtFecha = itemView.findViewById(R.id.item_registrado_txtFecha);
             txtEntrada = itemView.findViewById(R.id.item_registrado_txtHentrada);
+            txtHAula = itemView.findViewById(R.id.item_registrado_txtHaula);
+            txtRAula = itemView.findViewById(R.id.item_registrado_txtHraula);
             txtSalida = itemView.findViewById(R.id.item_registrado_txtHsalida);
         }
     }

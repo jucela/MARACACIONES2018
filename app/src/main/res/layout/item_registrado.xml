@@ -13,47 +13,55 @@
             android:id="@+id/item_registrado_txtDni"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:text="43372489"
+            android:text="--------"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/item_registrado_txtNombres"
-            android:layout_weight="4"
+            android:layout_weight="3.5"
             android:layout_width="0dp"
             android:textColor="@color/colorPrimaryDark"
-            android:text="MORALES RETAMOZO, DENIS RICARDO"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/item_registrado_txtSede"
-            android:layout_weight="3"
-            android:layout_width="0dp"
-            android:text="AMAZONAS - CHACHAPOYAS"
-            android:textColor="#3e2723"
+            android:text="---------"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/item_registrado_txtAula"
-            android:text="AULA 1"
+            android:text="-"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:textColor="#3e2723"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/item_registrado_txtFecha"
-            android:text="2018-05-02"
+            android:text="----------"
             android:layout_weight="1.5"
             android:layout_width="0dp"
             android:textColor="#b71c1c"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/item_registrado_txtHentrada"
-            android:text="08:20"
-            android:layout_weight="1.5"
+            android:text="--:--"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#b71c1c"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/item_registrado_txtHaula"
+            android:text="--:--"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="#b71c1c"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/item_registrado_txtHraula"
+            android:text="--:--"
+            android:layout_weight="1"
             android:layout_width="0dp"
             android:textColor="#b71c1c"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/item_registrado_txtHsalida"
-            android:text="18:20"
+            android:text="--:--"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:textColor="#b71c1c"

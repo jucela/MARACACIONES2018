@@ -30,20 +30,34 @@ public class SQLConstantes {
     public static String fecha_de_registro_nom_local = "nom_local";
     public static String fecha_de_registro_aula = "aula";
     public static String fecha_de_registro_nombres = "nombres";
-    public static String fecha_de_registro_dia = "dia";
-    public static String fecha_de_registro_mes = "mes";
-    public static String fecha_de_registro_anio = "anio";
-    public static String fecha_de_registro_hora = "hora";
-    public static String fecha_de_registro_minuto = "minuto";
-    public static String fecha_de_registro_sdia = "sdia";
-    public static String fecha_de_registro_smes = "smes";
-    public static String fecha_de_registro_sanio = "sanio";
-    public static String fecha_de_registro_shora = "shora";
-    public static String fecha_de_registro_sminuto = "sminuto";
+    public static String fecha_de_registro_dia1 = "dia1";
+    public static String fecha_de_registro_mes1 = "mes1";
+    public static String fecha_de_registro_anio1 = "anio1";
+    public static String fecha_de_registro_hora1 = "hora1";
+    public static String fecha_de_registro_minuto1 = "minuto1";
+    public static String fecha_de_registro_dia2 = "dia2";
+    public static String fecha_de_registro_mes2 = "mes2";
+    public static String fecha_de_registro_anio2 = "anio2";
+    public static String fecha_de_registro_hora2 = "hora2";
+    public static String fecha_de_registro_minuto2 = "minuto2";
+    public static String fecha_de_registro_dia3 = "dia3";
+    public static String fecha_de_registro_mes3 = "mes3";
+    public static String fecha_de_registro_anio3 = "anio3";
+    public static String fecha_de_registro_hora3 = "hora3";
+    public static String fecha_de_registro_minuto3 = "minuto3";
+    public static String fecha_de_registro_dia4 = "dia4";
+    public static String fecha_de_registro_mes4 = "mes4";
+    public static String fecha_de_registro_anio4 = "anio4";
+    public static String fecha_de_registro_hora4 = "hora4";
+    public static String fecha_de_registro_minuto4 = "minuto4";
     public static String fecha_de_registro_estado1 = "estado1";
     public static String fecha_de_registro_estado2 = "estado2";
+    public static String fecha_de_registro_estado3 = "estado3";
+    public static String fecha_de_registro_estado4 = "estado4";
     public static String fecha_de_registro_subido1 = "subido1";
     public static String fecha_de_registro_subido2 = "subido2";
+    public static String fecha_de_registro_subido3 = "subido3";
+    public static String fecha_de_registro_subido4 = "subido4";
 
 
 
@@ -56,44 +70,73 @@ public class SQLConstantes {
                     fecha_de_registro_nom_local + " TEXT," +
                     fecha_de_registro_aula + " TEXT," +
                     fecha_de_registro_nombres + " TEXT," +
-                    fecha_de_registro_dia + " TEXT," +
-                    fecha_de_registro_mes + " TEXT," +
-                    fecha_de_registro_anio + " TEXT," +
-                    fecha_de_registro_hora + " TEXT," +
-                    fecha_de_registro_minuto + " TEXT," +
-                    fecha_de_registro_sdia + " TEXT," +
-                    fecha_de_registro_smes + " TEXT," +
-                    fecha_de_registro_sanio + " TEXT," +
-                    fecha_de_registro_shora + " TEXT," +
-                    fecha_de_registro_sminuto + " TEXT," +
+                    fecha_de_registro_dia1 + " TEXT," +
+                    fecha_de_registro_mes1 + " TEXT," +
+                    fecha_de_registro_anio1 + " TEXT," +
+                    fecha_de_registro_hora1 + " TEXT," +
+                    fecha_de_registro_minuto1 + " TEXT," +
+                    fecha_de_registro_dia2 + " TEXT," +
+                    fecha_de_registro_mes2 + " TEXT," +
+                    fecha_de_registro_anio2 + " TEXT," +
+                    fecha_de_registro_hora2 + " TEXT," +
+                    fecha_de_registro_minuto2 + " TEXT," +
+                    fecha_de_registro_dia3 + " TEXT," +
+                    fecha_de_registro_mes3 + " TEXT," +
+                    fecha_de_registro_anio3 + " TEXT," +
+                    fecha_de_registro_hora3 + " TEXT," +
+                    fecha_de_registro_minuto3 + " TEXT," +
+                    fecha_de_registro_dia4 + " TEXT," +
+                    fecha_de_registro_mes4 + " TEXT," +
+                    fecha_de_registro_anio4 + " TEXT," +
+                    fecha_de_registro_hora4 + " TEXT," +
+                    fecha_de_registro_minuto4 + " TEXT," +
                     fecha_de_registro_estado1 + " TEXT," +
                     fecha_de_registro_estado2 + " TEXT," +
+                    fecha_de_registro_estado3 + " TEXT," +
+                    fecha_de_registro_estado4 + " TEXT," +
                     fecha_de_registro_subido1 + " INTEGER," +
-                    fecha_de_registro_subido2 + " INTEGER" +");"
+                    fecha_de_registro_subido2 + " INTEGER," +
+                    fecha_de_registro_subido3 + " INTEGER," +
+                    fecha_de_registro_subido4 + " INTEGER" +");"
             ;
 
     public static final String SQL_CREATE_TABLA_FECHA_REGISTRO_TEMPORAL =
             "CREATE TABLE " + tablafecharegistrotemporal + "(" +
                     fecha_de_registro_id + " TEXT PRIMARY KEY," +
                     fecha_de_registro_codigo + " TEXT," +
-                    fecha_de_registro_id_local + " TEXT," +
                     fecha_de_registro_sede + " TEXT," +
+                    fecha_de_registro_id_local + " TEXT," +
+                    fecha_de_registro_nom_local + " TEXT," +
                     fecha_de_registro_aula + " TEXT," +
                     fecha_de_registro_nombres + " TEXT," +
-                    fecha_de_registro_dia + " TEXT," +
-                    fecha_de_registro_mes + " TEXT," +
-                    fecha_de_registro_anio + " TEXT," +
-                    fecha_de_registro_hora + " TEXT," +
-                    fecha_de_registro_minuto + " TEXT," +
-                    fecha_de_registro_sdia + " TEXT," +
-                    fecha_de_registro_smes + " TEXT," +
-                    fecha_de_registro_sanio + " TEXT," +
-                    fecha_de_registro_shora + " TEXT," +
-                    fecha_de_registro_sminuto + " TEXT,"+
+                    fecha_de_registro_dia1 + " TEXT," +
+                    fecha_de_registro_mes1 + " TEXT," +
+                    fecha_de_registro_anio1 + " TEXT," +
+                    fecha_de_registro_hora1 + " TEXT," +
+                    fecha_de_registro_minuto1 + " TEXT," +
+                    fecha_de_registro_dia2 + " TEXT," +
+                    fecha_de_registro_mes2 + " TEXT," +
+                    fecha_de_registro_anio2 + " TEXT," +
+                    fecha_de_registro_hora2 + " TEXT," +
+                    fecha_de_registro_minuto2 + " TEXT," +
+                    fecha_de_registro_dia3 + " TEXT," +
+                    fecha_de_registro_mes3 + " TEXT," +
+                    fecha_de_registro_anio3 + " TEXT," +
+                    fecha_de_registro_hora3 + " TEXT," +
+                    fecha_de_registro_minuto3 + " TEXT," +
+                    fecha_de_registro_dia4 + " TEXT," +
+                    fecha_de_registro_mes4 + " TEXT," +
+                    fecha_de_registro_anio4 + " TEXT," +
+                    fecha_de_registro_hora4 + " TEXT," +
+                    fecha_de_registro_minuto4 + " TEXT," +
                     fecha_de_registro_estado1 + " TEXT," +
                     fecha_de_registro_estado2 + " TEXT," +
+                    fecha_de_registro_estado3 + " TEXT," +
+                    fecha_de_registro_estado4 + " TEXT," +
                     fecha_de_registro_subido1 + " INTEGER," +
-                    fecha_de_registro_subido2 + " INTEGER" +");"
+                    fecha_de_registro_subido2 + " INTEGER," +
+                    fecha_de_registro_subido3 + " INTEGER," +
+                    fecha_de_registro_subido4 + " INTEGER" +");"
             ;
 
 
@@ -102,6 +145,8 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_SEDE = "sede=?";
     public static final String WHERE_CLAUSE_SUBIDO1 = "subido1=?";
     public static final String WHERE_CLAUSE_SUBIDO2 = "subido2=?";
+    public static final String WHERE_CLAUSE_SUBIDO3 = "subido3=?";
+    public static final String WHERE_CLAUSE_SUBIDO4 = "subido4=?";
     public static final String WHERE_CLAUSE_SEDESUBIDO1 = "sede=?  and subido1=?";
 
 
@@ -116,19 +161,25 @@ public class SQLConstantes {
     };
 
     public static final String[] COLUMNAS_FECHA_REGISTRO = {
-            fecha_de_registro_id, fecha_de_registro_codigo,fecha_de_registro_sede,fecha_de_registro_nombres,fecha_de_registro_id_local,fecha_de_registro_nom_local,
-            fecha_de_registro_aula,fecha_de_registro_nombres,
-            fecha_de_registro_dia,  fecha_de_registro_mes,fecha_de_registro_anio,fecha_de_registro_minuto,fecha_de_registro_hora,
-            fecha_de_registro_sdia,fecha_de_registro_smes, fecha_de_registro_anio, fecha_de_registro_minuto,fecha_de_registro_hora,
-            fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_subido1,fecha_de_registro_subido2
+            fecha_de_registro_id, fecha_de_registro_codigo,fecha_de_registro_sede,
+            fecha_de_registro_id_local,fecha_de_registro_nom_local,fecha_de_registro_aula,fecha_de_registro_nombres,
+            fecha_de_registro_dia1,fecha_de_registro_mes1,fecha_de_registro_anio1,fecha_de_registro_minuto1,fecha_de_registro_hora1,
+            fecha_de_registro_dia2,fecha_de_registro_mes2,fecha_de_registro_anio2,fecha_de_registro_minuto2,fecha_de_registro_hora2,
+            fecha_de_registro_dia3,fecha_de_registro_mes3,fecha_de_registro_anio3,fecha_de_registro_minuto3,fecha_de_registro_hora3,
+            fecha_de_registro_dia4,fecha_de_registro_mes4,fecha_de_registro_anio4,fecha_de_registro_minuto4,fecha_de_registro_hora4,
+            fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_estado3,fecha_de_registro_estado4,
+            fecha_de_registro_subido1,fecha_de_registro_subido2,fecha_de_registro_subido3,fecha_de_registro_subido4
     };
 
     public static final String[] COLUMNAS_FECHA_REGISTRO_TEMPORAL = {
-            fecha_de_registro_id, fecha_de_registro_codigo, fecha_de_registro_nombres,
-            fecha_de_registro_sede, fecha_de_registro_aula,
-            fecha_de_registro_dia,  fecha_de_registro_mes,fecha_de_registro_anio,fecha_de_registro_minuto,fecha_de_registro_hora,
-            fecha_de_registro_sdia,fecha_de_registro_smes, fecha_de_registro_anio, fecha_de_registro_minuto,fecha_de_registro_hora,
-            fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_subido1,fecha_de_registro_subido2
+            fecha_de_registro_id, fecha_de_registro_codigo,fecha_de_registro_sede,
+            fecha_de_registro_id_local,fecha_de_registro_nom_local,fecha_de_registro_aula,fecha_de_registro_nombres,
+            fecha_de_registro_dia1,fecha_de_registro_mes1,fecha_de_registro_anio1,fecha_de_registro_minuto1,fecha_de_registro_hora1,
+            fecha_de_registro_dia2,fecha_de_registro_mes2,fecha_de_registro_anio2,fecha_de_registro_minuto2,fecha_de_registro_hora2,
+            fecha_de_registro_dia3,fecha_de_registro_mes3,fecha_de_registro_anio3,fecha_de_registro_minuto3,fecha_de_registro_hora3,
+            fecha_de_registro_dia4,fecha_de_registro_mes4,fecha_de_registro_anio4,fecha_de_registro_minuto4,fecha_de_registro_hora4,
+            fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_estado3,fecha_de_registro_estado4,
+            fecha_de_registro_subido1,fecha_de_registro_subido2,fecha_de_registro_subido3,fecha_de_registro_subido4
     };
 
 }

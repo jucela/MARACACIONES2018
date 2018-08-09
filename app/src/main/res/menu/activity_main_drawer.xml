@@ -3,25 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
     <item
-        android:id="@+id/menu_registro"
+        android:id="@+id/menu_ingresolocal"
         android:icon="@drawable/ic_account_box"
-        android:title="Registro de Entrada" />
+        android:title="Ingreso Local" />
+    <item
+        android:id="@+id/menu_ingresoaula"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Aula" />
+    <item
+        android:id="@+id/menu_reingresoaula"
+        android:icon="@drawable/ic_account_box"
+        android:title="ReIngreso Aula " />
+    <item
+        android:id="@+id/menu_salidalocal"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local" />
     <item
         android:id="@+id/menu_listado"
-        android:icon="@drawable/ic_storage"
-        android:title="Elementos de Registrados" />
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros" />
     <item
         android:id="@+id/menu_nube"
-        android:icon="@drawable/ic_backup"
-        android:title="Elementos Enviados" />
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcaciòn" />
     <item
         android:id="@+id/menu_reset_bd"
         android:icon="@drawable/ic_autorenew"
         android:title="Reset BD" />
-    <item
-        android:id="@+id/menu_salida"
-        android:icon="@drawable/ic_arrow_back"
-        android:title="Registro de Salida" />
     <item
         android:id="@+id/menu_cerrar_sesion"
         android:icon="@drawable/ic_power_settings_new"

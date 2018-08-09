@@ -21,10 +21,14 @@ import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.fragments.BuscadorFragment;
+import com.example.dmorales.evaluacion2018.fragments.IngresoAulaFragment;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
 import com.example.dmorales.evaluacion2018.fragments.RegistroFragment;
+import com.example.dmorales.evaluacion2018.fragments.ReingresoAulaFragment;
 import com.example.dmorales.evaluacion2018.fragments.SalidaFragment;
+import com.example.dmorales.evaluacion2018.fragments.SalidaLocalFragment;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.Nacional;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
@@ -59,8 +63,13 @@ public class MainActivity extends AppCompatActivity
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        RegistroFragment registroFragment = new RegistroFragment(sede,MainActivity.this);
+
+        /*RegistroFragment registroFragment = new RegistroFragment(sede,MainActivity.this);
         fragmentTransaction.replace(R.id.fragment_layout, registroFragment);
+        fragmentTransaction.commit();*/
+
+        IngresoLocalFragment ingresolocalFragment = new IngresoLocalFragment(sede,MainActivity.this);
+        fragmentTransaction.replace(R.id.fragment_layout, ingresolocalFragment);
         fragmentTransaction.commit();
 
     }
@@ -114,9 +123,24 @@ public class MainActivity extends AppCompatActivity
 //        user.setText("Usuario: "+usuario);
         int id = item.getItemId();
 
-        if (id == R.id.menu_registro) {
-            RegistroFragment registroFragment = new RegistroFragment(sede,MainActivity.this);
-            fragmentTransaction.replace(R.id.fragment_layout, registroFragment);
+        if (id == R.id.menu_ingresolocal) {
+            IngresoLocalFragment ingresolocaltroFragment = new IngresoLocalFragment(sede,MainActivity.this);
+            fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment);
+            fragmentTransaction.commit();
+
+        } else  if (id == R.id.menu_ingresoaula) {
+            IngresoAulaFragment ingresoaulaFragment = new IngresoAulaFragment(sede,MainActivity.this);
+            fragmentTransaction.replace(R.id.fragment_layout, ingresoaulaFragment);
+            fragmentTransaction.commit();
+
+        } else if (id == R.id.menu_reingresoaula) {
+            ReingresoAulaFragment reingresoAulaFragment = new ReingresoAulaFragment(sede,MainActivity.this);
+            fragmentTransaction.replace(R.id.fragment_layout, reingresoAulaFragment);
+            fragmentTransaction.commit();
+
+        } else if (id == R.id.menu_salidalocal) {
+            SalidaLocalFragment salidalocalFragment = new SalidaLocalFragment(sede,MainActivity.this);
+            fragmentTransaction.replace(R.id.fragment_layout,salidalocalFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_listado) {
@@ -158,11 +182,6 @@ public class MainActivity extends AppCompatActivity
             AlertDialog alert = builder.create();
             alert.show();
 
-
-        } else  if (id == R.id.menu_salida) {
-            SalidaFragment salidaFragment = new SalidaFragment(sede,MainActivity.this);
-            fragmentTransaction.replace(R.id.fragment_layout,salidaFragment);
-            fragmentTransaction.commit();
 
         } else if (id == R.id.menu_cerrar_sesion) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
