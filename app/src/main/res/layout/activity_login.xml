@@ -41,7 +41,7 @@
                     android:id="@+id/login_titulo_encuesta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Asistencia Preseleccion"
+                    android:text="Asistencia Capacitaciòn"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:paddingTop="@dimen/margin5dp"
@@ -84,6 +84,7 @@
 
                 <TextView
                     android:id="@+id/txt_cargarmarco"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:freezesText="false"

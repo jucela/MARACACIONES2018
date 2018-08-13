@@ -227,7 +227,7 @@ public class SalidaLocalFragment extends Fragment {
                 data = new Data(context);
                 data.open();
                 Registrado registrados = data.getFechaRegistro(registrado.getCodigo());
-                if(registrados.getEstado4().equals("1")){
+                if(registrados.getEstado2().equals("1")){
                     cvError.setVisibility(View.GONE);
                     cvNoregistrado.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.VISIBLE);
@@ -254,12 +254,12 @@ public class SalidaLocalFragment extends Fragment {
                     int minuto = calendario.get(Calendar.MINUTE);
 
                     ContentValues registroactualizado = new ContentValues();
-                    registroactualizado.put("dia4", checkDigito(dd));
-                    registroactualizado.put("mes4", checkDigito(mm));
-                    registroactualizado.put("anio4", checkDigito(yy));
-                    registroactualizado.put("hora4", checkDigito(hora));
-                    registroactualizado.put("minuto4", checkDigito(minuto));
-                    registroactualizado.put("estado4", "1");
+                    registroactualizado.put("dia2", checkDigito(dd));
+                    registroactualizado.put("mes2", checkDigito(mm));
+                    registroactualizado.put("anio2", checkDigito(yy));
+                    registroactualizado.put("hora2", checkDigito(hora));
+                    registroactualizado.put("minuto2", checkDigito(minuto));
+                    registroactualizado.put("estado2", "1");
                     data.actualizarFechaRegistro(dni, registroactualizado);
                 }
                 data.close();

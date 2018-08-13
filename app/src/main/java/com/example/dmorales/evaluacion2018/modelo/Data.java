@@ -192,24 +192,11 @@ public class Data {
                 registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
                 registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
                 registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
                 registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
                 registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
                 registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
                 registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
+
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -242,24 +229,10 @@ public class Data {
                 registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
                 registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
                 registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
                 registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
                 registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
                 registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
                 registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
                 registrados.add(registrado);
             }
         }finally{
@@ -294,24 +267,10 @@ public class Data {
                 registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
                 registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
                 registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
                 registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
                 registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
                 registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
                 registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
                 registrados.add(registrado);
             }
         }finally{
@@ -346,24 +305,10 @@ public class Data {
                 registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
                 registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
                 registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
                 registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
                 registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
                 registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
                 registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
                 registrados.add(registrado);
             }
         }finally{
@@ -372,109 +317,8 @@ public class Data {
         return registrados;
     }
 
-    public ArrayList<Registrado> getAllRegistradosTemporal3(){
-        ArrayList<Registrado> registrados = new ArrayList<>();
-        String[] whereArgs = new String[]{"0"};
-        Cursor cursor = null;
-        try{
-            cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,
-                    null,SQLConstantes.WHERE_CLAUSE_SUBIDO3,whereArgs,null,null,null);
-            while(cursor.moveToNext()){
-                Registrado registrado = new Registrado();
-                registrado.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_id)));
-                registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
-                registrado.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
-                registrado.setId_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_id_local)));
-                registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
-                registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
-                registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
-                registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
-                registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
-                registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
-                registrado.setHora1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
-                registrado.setMinuto1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
-                registrado.setDia2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
-                registrado.setMes2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
-                registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
-                registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
-                registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
-                registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
-                registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
-                registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
-                registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
-                registrados.add(registrado);
-            }
-        }finally{
-            if(cursor != null) cursor.close();
-        }
-        return registrados;
-    }
 
-    public ArrayList<Registrado> getAllRegistradosTemporal4(){
-        ArrayList<Registrado> registrados = new ArrayList<>();
-        String[] whereArgs = new String[]{"0"};
-        Cursor cursor = null;
-        try{
-            cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,
-                    null,SQLConstantes.WHERE_CLAUSE_SUBIDO4,whereArgs,null,null,null);
-            while(cursor.moveToNext()){
-                Registrado registrado = new Registrado();
-                registrado.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_id)));
-                registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
-                registrado.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
-                registrado.setId_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_id_local)));
-                registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
-                registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
-                registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
-                registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
-                registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
-                registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
-                registrado.setHora1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
-                registrado.setMinuto1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
-                registrado.setDia2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
-                registrado.setMes2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
-                registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
-                registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
-                registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
-                registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
-                registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
-                registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
-                registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
-                registrados.add(registrado);
-            }
-        }finally{
-            if(cursor != null) cursor.close();
-        }
-        return registrados;
-    }
+
     //MOSTRAR TODOS
     public ArrayList<Registrado> getAllRegistradosNube(){
         ArrayList<Registrado> registrados = new ArrayList<>();
@@ -501,24 +345,10 @@ public class Data {
                 registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
                 registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
                 registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
                 registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
                 registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
                 registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
                 registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
                 registrados.add(registrado);
             }
         }finally{
@@ -554,24 +384,49 @@ public class Data {
                 registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
                 registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
                 registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
-                registrado.setDia3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia3)));
-                registrado.setMes3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes3)));
-                registrado.setAnio3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio3)));
-                registrado.setHora3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora3)));
-                registrado.setMinuto3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto3)));
-                registrado.setDia4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia4)));
-                registrado.setMes4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes4)));
-                registrado.setAnio4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio4)));
-                registrado.setHora4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora4)));
-                registrado.setMinuto4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto4)));
                 registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
                 registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
-                registrado.setEstado3(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado3)));
-                registrado.setEstado4(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado4)));
                 registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
                 registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
-                registrado.setSubido3(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido3)));
-                registrado.setSubido4(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido4)));
+                registrados.add(registrado);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return registrados;
+    }
+
+    //MOSTRAR POR DIA
+    public ArrayList<Registrado> getSedeRegistradosDia(String aula){
+        ArrayList<Registrado> registrados = new ArrayList<>();
+        String[] whereArgs = new String[]{aula};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,
+                    null,SQLConstantes.WHERE_CLAUSE_AULA,whereArgs,null,null,null);
+            while(cursor.moveToNext()){
+                Registrado registrado = new Registrado();
+                registrado.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_id)));
+                registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
+                registrado.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                registrado.setId_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_id_local)));
+                registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
+                registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                registrado.setHora1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                registrado.setMinuto1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                registrado.setDia2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                registrado.setMes2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
+                registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
+                registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
                 registrados.add(registrado);
             }
         }finally{

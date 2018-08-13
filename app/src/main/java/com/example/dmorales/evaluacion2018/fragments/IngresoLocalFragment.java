@@ -219,14 +219,11 @@ public class IngresoLocalFragment extends Fragment {
                         int minuto = calendario.get(Calendar.MINUTE);
                         String estado1 = "1";
                         String estado2 = "0";
-                        String estado3 = "0";
-                        String estado4 = "0";
 
                         Registrado registrado1 = new Registrado(dni,dni,nacional.getSede(),nacional.getId_local(),nacional.getNom_local(),nacional.getAula(),nacional.getNombres(),
-                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),"","","","","","","","","","","","","","","",
-                                estado1,estado2,estado3,estado4,0,0,0,0);
+                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),"","","","","",estado1,estado2,0,0);
                         data.insertarFechaRegistro(registrado1);
-                        Toast.makeText(context, "Se Registro Entrada al Local", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(context, "Se Registro Entrada al Local", Toast.LENGTH_SHORT).show();
                     }
                     data.close();
                 }else{

@@ -46,20 +46,6 @@
             android:textColor="#b71c1c"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/item_registrado_txtHaula"
-            android:text="--:--"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:textColor="#b71c1c"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/item_registrado_txtHraula"
-            android:text="--:--"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:textColor="#b71c1c"
-            android:layout_height="wrap_content" />
-        <TextView
             android:id="@+id/item_registrado_txtHsalida"
             android:text="--:--"
             android:layout_weight="1"

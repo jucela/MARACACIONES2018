@@ -75,23 +75,6 @@
                     android:text="INGRESO LOCAL"
                     />
                 <TextView
-                    android:layout_weight="1.5"
-                    android:layout_width="0dp"
-                    android:textColor="@color/icons"
-                    android:layout_height="wrap_content"
-                    android:textSize="9dp"
-                    android:textAlignment="center"
-                    android:text="INGRESO AULA "
-                    />
-                <TextView
-                    android:layout_weight="1.5"
-                    android:layout_width="0dp"
-                    android:textColor="@color/icons"
-                    android:layout_height="wrap_content"
-                    android:textSize="9dp"
-                    android:text="REINGRESO AULA"
-                    />
-                <TextView
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:textColor="@color/icons"

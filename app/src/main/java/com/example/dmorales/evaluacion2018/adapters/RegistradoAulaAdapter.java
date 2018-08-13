@@ -13,11 +13,11 @@ import com.example.dmorales.evaluacion2018.modelo.Registrado;
 
 import java.util.ArrayList;
 
-public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.ViewHolder>{
+public class RegistradoAulaAdapter extends RecyclerView.Adapter<RegistradoAulaAdapter.ViewHolder>{
     ArrayList<Registrado> registrados;
     Context context;
 
-    public RegistradoAdapter(ArrayList<Registrado> registrados, Context context) {
+    public RegistradoAulaAdapter(ArrayList<Registrado> registrados, Context context) {
         this.registrados = registrados;
         this.context = context;
     }
@@ -37,8 +37,7 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
         holder.txtAula.setText(registrado.getAula());
         holder.txtFecha.setText(registrado.getDia1() + "-" + registrado.getMes1() + "-" + registrado.getAnio1());
         holder.txtEntrada.setText(registrado.getHora1() + ":" + registrado.getMinuto1());
-        holder.txtSalida.setText(registrado.getHora2() + ":" + registrado.getMinuto2());
-
+        holder.txtHAula.setText(registrado.getHora2() + ":" + registrado.getMinuto2());
 //        if(registrado.getSubido() == 1){
 //            holder.cv.setCardBackgroundColor(Color.WHITE);
 //        }else{
