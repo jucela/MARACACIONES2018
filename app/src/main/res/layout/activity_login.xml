@@ -41,7 +41,7 @@
                     android:id="@+id/login_titulo_encuesta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Asistencia Capacitaciòn"
+                    android:text="Asistencia Nivel I y IIA"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:paddingTop="@dimen/margin5dp"
