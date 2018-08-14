@@ -16,4 +16,6 @@
     <color name="focus">#90caf9</color>
     <color name="verde">#04B404</color>
     <color name="rojo">#DF3A01</color>
+    <color name="registrado">#C8F1B5</color>
+    <color name="letraregistrado">#497D43</color>
 </resources>

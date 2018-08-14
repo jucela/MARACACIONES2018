@@ -35,6 +35,8 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
         holder.txtDni.setText(registrado.getCodigo());
         holder.txtNombres.setText(registrado.getNombres());
         holder.txtAula.setText(registrado.getAula());
+        holder.txtNbungalow.setText(registrado.getN_bungalow());
+        holder.txtRbungalow.setText(registrado.getResp_bungalow());
         holder.txtFecha.setText(registrado.getDia1() + "-" + registrado.getMes1() + "-" + registrado.getAnio1());
         holder.txtEntrada.setText(registrado.getHora1() + ":" + registrado.getMinuto1());
         holder.txtSalida.setText(registrado.getHora2() + ":" + registrado.getMinuto2());
@@ -58,12 +60,11 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView txtDni;
         TextView txtNombres;
-        TextView txtSede;
         TextView txtAula;
+        TextView txtNbungalow;
+        TextView txtRbungalow;
         TextView txtFecha;
         TextView txtEntrada;
-        TextView txtHAula;
-        TextView txtRAula;
         TextView txtSalida;
         CardView cv;
         public ViewHolder(View itemView) {
@@ -72,6 +73,8 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
             txtDni = itemView.findViewById(R.id.item_registrado_txtDni);
             txtNombres = itemView.findViewById(R.id.item_registrado_txtNombres);
             txtAula = itemView.findViewById(R.id.item_registrado_txtAula);
+            txtNbungalow =itemView.findViewById(R.id.item_registrado_txtNbungalow);
+            txtRbungalow =itemView.findViewById(R.id.item_registrado_txtRbungalow);
             txtFecha = itemView.findViewById(R.id.item_registrado_txtFecha);
             txtEntrada = itemView.findViewById(R.id.item_registrado_txtHentrada);
             txtSalida = itemView.findViewById(R.id.item_registrado_txtHsalida);

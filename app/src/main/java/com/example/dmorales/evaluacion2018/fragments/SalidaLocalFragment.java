@@ -53,6 +53,7 @@ public class SalidaLocalFragment extends Fragment {
     TextView txtRegistroSede;
     TextView txtRegistroLocal;
     TextView txtRegistroAula;
+    TextView txtRegistroBungalow;
 
     String sede;
     Context context;
@@ -95,6 +96,7 @@ public class SalidaLocalFragment extends Fragment {
         txtRegistroSede = (TextView) rootView.findViewById(R.id.salidalocal_txtSede);
         txtRegistroLocal = (TextView) rootView.findViewById(R.id.salidalocal_txtLocal);
         txtRegistroAula = (TextView) rootView.findViewById(R.id.salidalocal_txtAula);
+        txtRegistroBungalow = (TextView) rootView.findViewById(R.id.salidalocal_txtbungalow);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -240,12 +242,13 @@ public class SalidaLocalFragment extends Fragment {
                     cvYaregistrado.setVisibility(View.GONE);
                     cvRegistro.setVisibility(View.VISIBLE);
                     cvAviso.setVisibility(View.GONE);
-                    txtRegistroSede.setText(registrado.getSede());
+                    txtRegistroSede.setText(registrado.getSede_region());
                     txtRegistroNombres.setText(registrado.getNombres());
                     txtRegistroDni.setText(registrado.getCodigo());
                     txtRegistroLocal.setText(registrado.getNom_local());
-                    txtRegistroCargo.setText(registrado.getSede());
+                    txtRegistroCargo.setText(registrado.getCargo());
                     txtRegistroAula.setText("Aula " + registrado.getAula());
+                    txtRegistroBungalow.setText("  Nº Bungalow: " + registrado.getN_bungalow()+"     / Responsable de Bungalow :  "+registrado.getResp_bungalow());
                     Calendar calendario = Calendar.getInstance();
                     int yy = calendario.get(Calendar.YEAR);
                     int mm = calendario.get(Calendar.MONTH) + 1;
@@ -305,7 +308,7 @@ public class SalidaLocalFragment extends Fragment {
             data.open();
             Nacional nacional = data.getNacional(dni);
             data.close();
-            if(sede.equals(nacional.getSede())){
+            if(sede.equals(nacional.getSede_region())){
                 encontrado = true;
 
             }

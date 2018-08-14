@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             data.close();
             if (usuarioLocal != null){
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.putExtra("sede", usuarioLocal.getSede());
+                intent.putExtra("sede", usuarioLocal.getSede_region());
                 intent.putExtra("usuario", usuarioLocal.getUsuario());
                 startActivity(intent);
             }else{

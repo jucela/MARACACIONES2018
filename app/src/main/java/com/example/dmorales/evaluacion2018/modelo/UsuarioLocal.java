@@ -1,23 +1,28 @@
 package com.example.dmorales.evaluacion2018.modelo;
 
 public class UsuarioLocal {
+//    private String usuario;
+//    private String clave;
+//    private String nombrelocal;
+//    private String sede;
+
     private String usuario;
     private String clave;
-    private String nombrelocal;
-    private String sede;
+    private String nom_local;
+    private String sede_region;
 
-    public UsuarioLocal(String usuario, String clave, String nombrelocal, String sede) {
+    public UsuarioLocal(String usuario, String clave, String nom_local, String sede_region) {
         this.usuario = usuario;
         this.clave = clave;
-        this.nombrelocal = nombrelocal;
-        this.sede = sede;
+        this.nom_local = nom_local;
+        this.sede_region = sede_region;
     }
 
     public UsuarioLocal() {
         this.usuario = "";
         this.clave = "";
-        this.nombrelocal = "";
-        this.sede = "";
+        this.nom_local = "";
+        this.sede_region = "";
     }
 
     public String getUsuario() {
@@ -36,19 +41,19 @@ public class UsuarioLocal {
         this.clave = clave;
     }
 
-    public String getNombrelocal() {
-        return nombrelocal;
+    public String getNom_local() {
+        return nom_local;
     }
 
-    public void setNombrelocal(String nombrelocal) {
-        this.nombrelocal = nombrelocal;
+    public void setNom_local(String nom_local) {
+        this.nom_local = nom_local;
     }
 
-    public String getSede() {
-        return sede;
+    public String getSede_region() {
+        return sede_region;
     }
 
-    public void setSede(String sede) {
-        this.sede = sede;
+    public void setSede_region(String sede_region) {
+        this.sede_region = sede_region;
     }
 }
