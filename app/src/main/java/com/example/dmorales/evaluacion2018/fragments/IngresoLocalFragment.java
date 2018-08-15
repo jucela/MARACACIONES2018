@@ -51,7 +51,8 @@ public class IngresoLocalFragment extends Fragment {
     TextView txtRegistroSede;
     TextView txtRegistroLocal;
     TextView txtRegistroAula;
-    TextView txtRegistroBungalow;
+    TextView txtRegistroNbungalow;
+    TextView txtRegistroRbungalow;
 
     String sede;
     Context context;
@@ -92,7 +93,8 @@ public class IngresoLocalFragment extends Fragment {
         txtRegistroSede = (TextView) rootView.findViewById(R.id.ingresolocal_txtSede);
         txtRegistroLocal = (TextView) rootView.findViewById(R.id.ingresolocal_txtLocal);
         txtRegistroAula = (TextView) rootView.findViewById(R.id.ingresolocal_txtAula);
-        txtRegistroBungalow = (TextView) rootView.findViewById(R.id.ingresolocal_txtbungalow);
+        txtRegistroNbungalow = (TextView) rootView.findViewById(R.id.ingresolocal_txtNbungalow);
+        txtRegistroRbungalow = (TextView) rootView.findViewById(R.id.ingresolocal_txtRbungalow);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -210,10 +212,11 @@ public class IngresoLocalFragment extends Fragment {
                         txtRegistroSede.setText(nacional.getSede_region());
                         txtRegistroNombres.setText(nacional.getNombres());
                         txtRegistroDni.setText(nacional.getCodigo());
-                        txtRegistroLocal.setText(nacional.getNom_local());
+                        txtRegistroLocal.setText(nacional.getCargo());
                         txtRegistroCargo.setText(nacional.getCargo());
-                        txtRegistroAula.setText("Aula " + nacional.getAula());
-                        txtRegistroBungalow.setText("  Nº Bungalow: " + nacional.getN_bungalow()+"     / Responsable de Bungalow :  "+nacional.getResp_bungalow());
+                        txtRegistroAula.setText(nacional.getAula());
+                        txtRegistroRbungalow.setText("Responsable de Bungalow :  "+nacional.getResp_bungalow());
+                        txtRegistroNbungalow.setText(nacional.getN_bungalow());
                         Calendar calendario = Calendar.getInstance();
                         int yy = calendario.get(Calendar.YEAR);
                         int mm = calendario.get(Calendar.MONTH)+1;

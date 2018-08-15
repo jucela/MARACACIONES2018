@@ -156,6 +156,7 @@ public class Data {
                 registrado.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_region)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                registrado.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
                 registrado.setResp_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_resp_bungalow)));
             }

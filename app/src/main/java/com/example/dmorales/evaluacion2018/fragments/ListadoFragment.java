@@ -105,9 +105,10 @@ public class ListadoFragment extends Fragment {
                         if(registrado.getSubido1()==0) {
                             registrado.setSubido1(1);
                             String fecha = registrado.getDia1() + "-" + registrado.getMes1() + "-" + registrado.getAnio1();
+                            String coleccion = "ASISTENCIA_NIYII";
                             final String c = registrado.getCodigo();
                             //Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                            db.collection(fecha).document(registrado.get_id()).set(registrado)
+                            db.collection(coleccion).document(registrado.get_id()).set(registrado)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
@@ -148,9 +149,10 @@ public class ListadoFragment extends Fragment {
                         if(registrado.getSubido2()==0) {
                             registrado.setSubido2(1);
                             String fecha = registrado.getDia2() + "-" + registrado.getMes2() + "-" + registrado.getAnio2();
+                            String coleccion = "ASISTENCIA_NIYII";
                             final String c = registrado.getCodigo();
                             //Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                            db.collection(fecha).document(registrado.get_id()).set(registrado)
+                            db.collection(coleccion).document(registrado.get_id()).set(registrado)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
