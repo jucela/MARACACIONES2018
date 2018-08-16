@@ -54,6 +54,13 @@ public class IngresoLocalFragment extends Fragment {
     TextView txtRegistroNbungalow;
     TextView txtRegistroRbungalow;
 
+    TextView txtRegistroDni_yaregistrado;
+    TextView txtRegistroNombres_yaregistrado;
+    TextView txtRegistroFecha;
+    TextView txtRegistroDireccion;
+    TextView txtErrorSede_error;
+    TextView txtErrorLocal_error;
+
     String sede;
     Context context;
 
@@ -95,6 +102,15 @@ public class IngresoLocalFragment extends Fragment {
         txtRegistroAula = (TextView) rootView.findViewById(R.id.ingresolocal_txtAula);
         txtRegistroNbungalow = (TextView) rootView.findViewById(R.id.ingresolocal_txtNbungalow);
         txtRegistroRbungalow = (TextView) rootView.findViewById(R.id.ingresolocal_txtRbungalow);
+
+        txtRegistroDni_yaregistrado = (TextView) rootView.findViewById(R.id.ingresolocal_txtDni_yaregistrado);
+        txtRegistroNombres_yaregistrado = (TextView) rootView.findViewById(R.id.ingresolocal_txtNombres_yaregitstrado);
+        txtRegistroFecha = (TextView) rootView.findViewById(R.id.ingresolocal_txtfecha);
+
+
+        txtErrorLocal_error = (TextView) rootView.findViewById(R.id.ingresolocal_txtLocal_error);
+        txtErrorSede_error = (TextView) rootView.findViewById(R.id.ingresolocal_txtSede_error);
+        txtRegistroDireccion = (TextView) rootView.findViewById(R.id.ingresolocal_txtdireccion_error);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -204,6 +220,9 @@ public class IngresoLocalFragment extends Fragment {
                         cvNoregistrado.setVisibility(View.GONE);
                         cvYaregistrado.setVisibility(View.VISIBLE);
                         cvRegistro.setVisibility(View.GONE);
+                        txtRegistroDni_yaregistrado.setText(registrado.getCodigo());
+                        txtRegistroNombres_yaregistrado.setText(registrado.getNombres());
+                        txtRegistroFecha.setText(registrado.getAnio1()+"/"+registrado.getMes1()+"/"+registrado.getDia1()+"--"+registrado.getHora1()+":"+registrado.getMinuto1());
                     }else{
                         cvError.setVisibility(View.GONE);
                         cvNoregistrado.setVisibility(View.GONE);
@@ -228,7 +247,7 @@ public class IngresoLocalFragment extends Fragment {
                         Registrado registrado1 = new Registrado(dni,nacional.getNivel(),
                                 nacional.getCod_sede_reg(),nacional.getCod_sede_prov(),nacional.getCod_sede_distrital(),
                                 nacional.getSede_region(),nacional.getSede_provincia(),nacional.getSede_distrital(),
-                                nacional.getCod_local(),nacional.getNom_local(),nacional.getAula(),nacional.getCodigo(),nacional.getNombres(),
+                                nacional.getCod_local(),nacional.getNom_local(),nacional.getDireccion(),nacional.getAula(),nacional.getCodigo(),nacional.getNombres(),
                                 nacional.getId_cargo(),nacional.getCargo(),nacional.getTipo_candidato(),nacional.getN_bungalow(),nacional.getResp_bungalow(),
                                 checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),"","","","","",estado1,estado2,0,0);
 //                        Registrado registrado1 = new Registrado(dni,dni,nacional.getSede(),nacional.getId_local(),nacional.getNom_local(),nacional.getAula(),nacional.getNombres(),
@@ -242,9 +261,10 @@ public class IngresoLocalFragment extends Fragment {
                     cvNoregistrado.setVisibility(View.GONE);
                     cvRegistro.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.GONE);
-                    txtErrorSede.setText(nacional.getSede_region());
-                    txtErrorLocal.setText(nacional.getNom_local());
-                    txtErrorCargo.setText(nacional.getCargo());
+                    txtErrorSede_error.setText(nacional.getSede_region());
+                    txtErrorLocal_error.setText(nacional.getSede_region());
+                    txtRegistroDireccion.setText(nacional.getDireccion());
+
                 }
             }
         } catch (IOException e) {

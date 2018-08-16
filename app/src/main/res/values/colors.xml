@@ -23,4 +23,7 @@
     <color name="correcto">#C8F1B5</color>
     <color name="aviso">#FCF8E3</color>
     <color name="error">#FBDDDD</color>
+    <color name="letraaviso">#8A6D3B</color>
+    <color name="letraerror">#F25A57</color>
+    <color name="letracorrecto">#497D43</color>
 </resources>

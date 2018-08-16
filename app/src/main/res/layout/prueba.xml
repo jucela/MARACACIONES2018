@@ -50,13 +50,80 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
+            android:id="@+id/ingresolocal_cvYaRegistrado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/error"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/bordeerror"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_not_interested"
+                    android:tint="#3e2723"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@dimen/margin5dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#3e2723"
+                    android:text="DNI CON ENTRADA REGISTRADA"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/ingresolocal_cvNoRegistrado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/error"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_not_interested"
+                    android:tint="#C2185B"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#C2185B"
+                    android:text="DNI NO REGISTRADO EN EL PADRON"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
             android:id="@+id/ingresolocal_cvRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:orientation="vertical"
-            android:visibility="visible"
+            android:visibility="gone"
             app:cardBackgroundColor="@color/registrado">
 
             <LinearLayout
@@ -69,22 +136,18 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="10dp">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_error"
-                        android:textColor="#455a64"/>
+
                     <TextView
                         android:id="@+id/ingresolocal_txtCargo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
-                        android:text="ERROR:"
+                        android:text="INFORMATICO LOCAL"
                         android:textColor="@color/icons"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:visibility="visible" />
+                        android:visibility="gone" />
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
@@ -284,7 +347,117 @@
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
-
+        <android.support.v7.widget.CardView
+            android:id="@+id/ingresolocal_cvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/aviso"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_error"
+                            android:textColor="#455a64"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="ERROR"
+                            android:gravity="center"
+                            android:textColor="#455a64"/>
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/ingresolocal_error_txtCargo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="COORDINADOR DEL LOCAL Y ASISTENTE DEL CORRDINADOR DEL LOCAL"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#455a64"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#455a64"
+                        android:gravity="center"
+                        android:text="Su local asignado es:"/>
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:tint="#455a64"
+                                android:src="@drawable/ic_place"
+                                />
+                            <TextView
+                                android:id="@+id/ingresolocal_error_txtSede"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ANCASH - CHIMBOTE"
+                                android:textStyle="bold"
+                                android:textColor="#455a64"
+                                android:textSize="20sp"/>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:padding="5dp">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:tint="#455a64"
+                                android:src="@drawable/ic_account_balance"
+                                />
+                            <TextView
+                                android:id="@+id/ingresolocal_error_txtLocal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="INSTITUCIÓN EDUCATIVA INMACULADA DE LA MERCED"
+                                android:textStyle="bold"
+                                android:textColor="#455a64"
+                                android:textSize="20sp"/>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
     </LinearLayout>
 
 </LinearLayout>

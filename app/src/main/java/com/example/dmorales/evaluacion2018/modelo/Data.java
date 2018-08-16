@@ -126,6 +126,7 @@ public class Data {
                 nacional.setSede_distrital(cursor.getString(cursor.getColumnIndex(SQLConstantes.nacional_sede_distrital)));
                 nacional.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.nacional_cod_local)));
                 nacional.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.nacional_nom_local)));
+                nacional.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.nacional_direccion)));
                 nacional.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.nacional_aula)));
                 nacional.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.nacional_codigo)));
                 nacional.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.nacional_nombres)));
@@ -155,6 +156,7 @@ public class Data {
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
                 registrado.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_region)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
@@ -198,6 +200,7 @@ public class Data {
                 registrado.setSede_distrital(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_distrital)));
                 registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
@@ -244,6 +247,7 @@ public class Data {
                 registrado.setSede_distrital(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_distrital)));
                 registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
@@ -293,6 +297,7 @@ public class Data {
                 registrado.setSede_distrital(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_distrital)));
                 registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
@@ -342,6 +347,7 @@ public class Data {
                 registrado.setSede_distrital(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_distrital)));
                 registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
@@ -388,6 +394,7 @@ public class Data {
                 registrado.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_region)));
                 registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
                 registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
@@ -427,6 +434,7 @@ public class Data {
                 registrado.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_region)));
                 registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
@@ -468,6 +476,7 @@ public class Data {
                 registrado.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_region)));
                 registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
                 registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));

@@ -19,6 +19,7 @@ public class Nacional {
     private String sede_distrital;
     private String cod_local;
     private String nom_local;
+    private String direccion;
     private String aula;
     private String codigo;
     private String nombres;
@@ -29,7 +30,7 @@ public class Nacional {
     private String resp_bungalow;
 
 
-    public Nacional(String nivel, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_region, String sede_provincia, String sede_distrital, String cod_local, String nom_local, String aula, String codigo, String nombres, String id_cargo, String cargo, String tipo_candidato, String n_bungalow, String resp_bungalow) {
+    public Nacional(String nivel, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_region, String sede_provincia, String sede_distrital, String cod_local, String nom_local, String direccion,String aula, String codigo, String nombres, String id_cargo, String cargo, String tipo_candidato, String n_bungalow, String resp_bungalow) {
         this.nivel = nivel;
         this.cod_sede_reg = cod_sede_reg;
         this.cod_sede_prov = cod_sede_prov;
@@ -39,6 +40,7 @@ public class Nacional {
         this.sede_distrital = sede_distrital;
         this.cod_local = cod_local;
         this.nom_local = nom_local;
+        this.direccion = direccion;
         this.aula = aula;
         this.codigo = codigo;
         this.nombres = nombres;
@@ -59,6 +61,7 @@ public class Nacional {
         this.sede_distrital = "";
         this.cod_local = "";
         this.nom_local = "";
+        this.direccion = "";
         this.aula = "";
         this.codigo = "";
         this.nombres = "";
@@ -139,6 +142,14 @@ public class Nacional {
 
     public void setNom_local(String nom_local) {
         this.nom_local = nom_local;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getAula() {

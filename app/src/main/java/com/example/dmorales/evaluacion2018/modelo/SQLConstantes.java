@@ -20,6 +20,7 @@ public class SQLConstantes {
     public static String nacional_sede_distrital = "sede_distrital";
     public static String nacional_cod_local = "cod_local";
     public static String nacional_nom_local = "nom_local";
+    public static String nacional_direccion = "direccion";
     public static String nacional_aula = "aula";
     public static String nacional_codigo = "codigo";
     public static String nacional_nombres = "nombres";
@@ -45,6 +46,7 @@ public class SQLConstantes {
     public static String fecha_de_registro_sede_distrital="sede_distrital";
     public static String fecha_de_registro_cod_local="cod_local";
     public static String fecha_de_registro_nom_local = "nom_local";
+    public static String fecha_de_registro_direccion = "direccion";
     public static String fecha_de_registro_aula = "aula";
     public static String fecha_de_registro_codigo = "codigo";
     public static String fecha_de_registro_nombres = "nombres";
@@ -99,6 +101,7 @@ public class SQLConstantes {
                     fecha_de_registro_sede_distrital+ " TEXT," +
                     fecha_de_registro_cod_local + " TEXT," +
                     fecha_de_registro_nom_local + " TEXT," +
+                    fecha_de_registro_direccion + " TEXT," +
                     fecha_de_registro_aula + " TEXT," +
                     fecha_de_registro_codigo + " TEXT," +
                     fecha_de_registro_nombres + " TEXT," +
@@ -135,6 +138,7 @@ public class SQLConstantes {
                     fecha_de_registro_sede_distrital+ " TEXT," +
                     fecha_de_registro_cod_local + " TEXT," +
                     fecha_de_registro_nom_local + " TEXT," +
+                    fecha_de_registro_direccion + " TEXT," +
                     fecha_de_registro_aula + " TEXT," +
                     fecha_de_registro_codigo + " TEXT," +
                     fecha_de_registro_nombres + " TEXT," +
@@ -174,9 +178,8 @@ public class SQLConstantes {
     public static final String[] COLUMNAS_NACIONAL = {
             nacional_nivel,nacional_cod_sede_reg,nacional_cod_sede_prov,
             nacional_cod_sede_distrital,nacional_sede_region,nacional_sede_provincia,nacional_sede_distrital,
-            nacional_cod_local,nacional_nom_local,nacional_aula,nacional_codigo,nacional_nombres,
+            nacional_cod_local,nacional_nom_local,nacional_direccion,nacional_aula,nacional_codigo,nacional_nombres,
             nacional_id_cargo,nacional_cargo,nacional_tipo_candidato,nacional_n_bungalow,nacional_resp_bungalow
-
     };
 
     public static final String[] COLUMNAS_USUARIO_LOCAL = {
@@ -186,7 +189,7 @@ public class SQLConstantes {
     public static final String[] COLUMNAS_FECHA_REGISTRO = {
             fecha_de_registro_id, fecha_de_registro_nivel,fecha_de_registro_cod_sede_reg,fecha_de_registro_cod_sede_prov,
             fecha_de_registro_cod_sede_distrital,fecha_de_registro_sede_region,fecha_de_registro_sede_provincia,fecha_de_registro_sede_distrital,
-            fecha_de_registro_cod_local,fecha_de_registro_nom_local,fecha_de_registro_aula,fecha_de_registro_codigo,fecha_de_registro_nombres,
+            fecha_de_registro_cod_local,fecha_de_registro_nom_local,fecha_de_registro_direccion,fecha_de_registro_aula,fecha_de_registro_codigo,fecha_de_registro_nombres,
             fecha_de_registro_id_cargo,fecha_de_registro_cargo,fecha_de_registro_tipo_candidato,fecha_de_registro_n_bungalow,fecha_de_registro_resp_bungalow,
             fecha_de_registro_dia1,fecha_de_registro_mes1,fecha_de_registro_anio1,fecha_de_registro_minuto1,fecha_de_registro_hora1,
             fecha_de_registro_dia2,fecha_de_registro_mes2,fecha_de_registro_anio2,fecha_de_registro_minuto2,fecha_de_registro_hora2,
@@ -196,7 +199,7 @@ public class SQLConstantes {
     public static final String[] COLUMNAS_FECHA_REGISTRO_TEMPORAL = {
             fecha_de_registro_id, fecha_de_registro_nivel,fecha_de_registro_cod_sede_reg,fecha_de_registro_cod_sede_prov,
             fecha_de_registro_cod_sede_distrital,fecha_de_registro_sede_region,fecha_de_registro_sede_provincia,fecha_de_registro_sede_distrital,
-            fecha_de_registro_cod_local,fecha_de_registro_nom_local,fecha_de_registro_aula,fecha_de_registro_codigo,fecha_de_registro_nombres,
+            fecha_de_registro_cod_local,fecha_de_registro_nom_local,fecha_de_registro_direccion,fecha_de_registro_aula,fecha_de_registro_codigo,fecha_de_registro_nombres,
             fecha_de_registro_id_cargo,fecha_de_registro_cargo,fecha_de_registro_tipo_candidato,fecha_de_registro_n_bungalow,fecha_de_registro_resp_bungalow,
             fecha_de_registro_dia1,fecha_de_registro_mes1,fecha_de_registro_anio1,fecha_de_registro_minuto1,fecha_de_registro_hora1,
             fecha_de_registro_dia2,fecha_de_registro_mes2,fecha_de_registro_anio2,fecha_de_registro_minuto2,fecha_de_registro_hora2,

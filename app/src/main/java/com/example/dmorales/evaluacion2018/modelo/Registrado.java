@@ -36,6 +36,7 @@ public class Registrado {
     private String sede_distrital;
     private String cod_local;
     private String nom_local;
+    private String direccion;
     private String aula;
     private String codigo;
     private String nombres;
@@ -59,7 +60,7 @@ public class Registrado {
     private int subido1;
     private int subido2;
 
-    public Registrado(String _id, String nivel, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_region, String sede_provincia, String sede_distrital, String cod_local, String nom_local, String aula, String codigo, String nombres, String id_cargo, String cargo, String tipo_candidato, String n_bungalow, String resp_bungalow, String dia1, String mes1, String anio1, String hora1, String minuto1, String dia2, String mes2, String anio2, String hora2, String minuto2, String estado1, String estado2, int subido1, int subido2) {
+    public Registrado(String _id, String nivel, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_region, String sede_provincia, String sede_distrital, String cod_local, String nom_local,String direccion, String aula, String codigo, String nombres, String id_cargo, String cargo, String tipo_candidato, String n_bungalow, String resp_bungalow, String dia1, String mes1, String anio1, String hora1, String minuto1, String dia2, String mes2, String anio2, String hora2, String minuto2, String estado1, String estado2, int subido1, int subido2) {
         this._id = _id;
         this.nivel = nivel;
         this.cod_sede_reg = cod_sede_reg;
@@ -70,6 +71,7 @@ public class Registrado {
         this.sede_distrital = sede_distrital;
         this.cod_local = cod_local;
         this.nom_local = nom_local;
+        this.direccion = direccion;
         this.aula = aula;
         this.codigo = codigo;
         this.nombres = nombres;
@@ -207,6 +209,14 @@ public class Registrado {
 
     public void setNom_local(String nom_local) {
         this.nom_local = nom_local;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getAula() {
@@ -397,6 +407,7 @@ public class Registrado {
         contentValues.put(SQLConstantes.fecha_de_registro_sede_distrital,sede_distrital);
         contentValues.put(SQLConstantes.fecha_de_registro_cod_local,cod_local);
         contentValues.put(SQLConstantes.fecha_de_registro_nom_local,nom_local);
+        contentValues.put(SQLConstantes.fecha_de_registro_direccion,direccion);
         contentValues.put(SQLConstantes.fecha_de_registro_aula,aula);
         contentValues.put(SQLConstantes.fecha_de_registro_codigo,codigo);
         contentValues.put(SQLConstantes.fecha_de_registro_nombres,nombres);
