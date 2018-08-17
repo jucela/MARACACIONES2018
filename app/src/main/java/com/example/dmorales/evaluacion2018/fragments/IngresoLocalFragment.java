@@ -222,7 +222,7 @@ public class IngresoLocalFragment extends Fragment {
                         cvRegistro.setVisibility(View.GONE);
                         txtRegistroDni_yaregistrado.setText(registrado.getCodigo());
                         txtRegistroNombres_yaregistrado.setText(registrado.getNombres());
-                        txtRegistroFecha.setText(registrado.getAnio1()+"/"+registrado.getMes1()+"/"+registrado.getDia1()+"--"+registrado.getHora1()+":"+registrado.getMinuto1());
+                        txtRegistroFecha.setText(registrado.getAnio1()+"/"+registrado.getMes1()+"/"+registrado.getDia1()+"  -  "+registrado.getHora1()+":"+registrado.getMinuto1());
                     }else{
                         cvError.setVisibility(View.GONE);
                         cvNoregistrado.setVisibility(View.GONE);

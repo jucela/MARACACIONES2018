@@ -31,6 +31,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -100,7 +102,12 @@ public class ListadoFragment extends Fragment {
                 if(agregados.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     //if(registrados)
+
                     for (final Registrado registrado : agregados){
+
+                        Map<String,Object> valor = new HashMap<>();
+                        valor.put("_id",registrado.get_id());
+                        valor.put("nombres",registrado.getNombres());
 
                         if(registrado.getSubido1()==0) {
                             registrado.setSubido1(1);
@@ -108,7 +115,7 @@ public class ListadoFragment extends Fragment {
                             String coleccion = "ASISTENCIA_NIYII";
                             final String c = registrado.getCodigo();
                             //Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                            db.collection(coleccion).document(registrado.get_id()).set(registrado)
+                            db.collection(coleccion).document(registrado.get_id()).set(valor)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {

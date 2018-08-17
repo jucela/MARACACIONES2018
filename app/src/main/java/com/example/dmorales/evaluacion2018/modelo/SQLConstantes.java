@@ -2,7 +2,8 @@ package com.example.dmorales.evaluacion2018.modelo;
 
 public class SQLConstantes {
     public static String DB_PATH = "/data/data/com.example.dmorales.evaluacion2018/databases/";
-    public static String DB_NAME = "mydatabase.sqlite";
+    //public static String DB_NAME = "mydatabase.sqlite";
+    public static String DB_NAME = "marcoece2018.sqlite";
 
     public static String tablanacional = "nacional";
     public static String tablausuariolocal = "usuario_local";

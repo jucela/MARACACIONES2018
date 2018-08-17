@@ -56,6 +56,13 @@ public class SalidaLocalFragment extends Fragment {
     TextView txtRegistroNbungalow;
     TextView txtRegistroRbungalow;
 
+    TextView txtRegistroDni_yaregistrado;
+    TextView txtRegistroNombres_yaregistrado;
+    TextView txtRegistroFecha;
+    TextView txtRegistroDireccion;
+    TextView txtErrorSede_error;
+    TextView txtErrorLocal_error;
+
     String sede;
     Context context;
 
@@ -87,9 +94,9 @@ public class SalidaLocalFragment extends Fragment {
         cvYaregistrado = (CardView) rootView.findViewById(R.id.salidalocal_cvYaRegistrado);
         cvAviso = (CardView) rootView.findViewById(R.id.salidalocal_cvAviso);
 
-        txtErrorCargo = (TextView) rootView.findViewById(R.id.salidalocal_error_txtCargo);
-        txtErrorLocal = (TextView) rootView.findViewById(R.id.salidalocal_error_txtLocal);
-        txtErrorSede = (TextView) rootView.findViewById(R.id.salidalocal_error_txtSede);
+//        txtErrorCargo = (TextView) rootView.findViewById(R.id.salidalocal_error_txtCargo);
+//        txtErrorLocal = (TextView) rootView.findViewById(R.id.salidalocal_error_txtLocal);
+//        txtErrorSede = (TextView) rootView.findViewById(R.id.salidalocal_error_txtSede);
 
         txtRegistroCargo = (TextView) rootView.findViewById(R.id.salidalocal_txtCargo);
         txtRegistroDni = (TextView) rootView.findViewById(R.id.salidalocal_txtDni);
@@ -99,6 +106,15 @@ public class SalidaLocalFragment extends Fragment {
         txtRegistroAula = (TextView) rootView.findViewById(R.id.salidalocal_txtAula);
         txtRegistroNbungalow = (TextView) rootView.findViewById(R.id.salidalocal_txtNbungalow);
         txtRegistroRbungalow = (TextView) rootView.findViewById(R.id.salidalocal_txtRbungalow);
+
+        txtRegistroDni_yaregistrado = (TextView) rootView.findViewById(R.id.salidalocal_txtDni_yaregistrado);
+        txtRegistroNombres_yaregistrado = (TextView) rootView.findViewById(R.id.salidalocal_txtNombres_yaregitstrado);
+        txtRegistroFecha = (TextView) rootView.findViewById(R.id.salidalocal_txtfecha);
+
+
+        txtErrorLocal_error = (TextView) rootView.findViewById(R.id.salidalocal_txtLocal_error);
+        txtErrorSede_error = (TextView) rootView.findViewById(R.id.salidalocal_txtSede_error);
+        txtRegistroDireccion = (TextView) rootView.findViewById(R.id.salidalocal_txtdireccion_error);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -237,6 +253,10 @@ public class SalidaLocalFragment extends Fragment {
                     cvYaregistrado.setVisibility(View.VISIBLE);
                     cvRegistro.setVisibility(View.GONE);
                     cvAviso.setVisibility(View.GONE);
+                    txtRegistroDni_yaregistrado.setText(registrado.getCodigo());
+                    txtRegistroNombres_yaregistrado.setText(registrado.getNombres());
+                    txtRegistroFecha.setText(registrado.getAnio2()+"/"+registrado.getMes2()+"/"+registrado.getDia2()+"  -  "+registrado.getHora2()+":"+registrado.getMinuto2());
+
                 }
                 else{
                     cvError.setVisibility(View.GONE);
@@ -270,11 +290,19 @@ public class SalidaLocalFragment extends Fragment {
                 }
                 data.close();
             }
-            else { cvError.setVisibility(View.GONE);
+            else {
+                Data dato = new Data(context);
+                dato.open();
+                Nacional nacional = dato.getNacional(dni);
+                data.close();
+                cvError.setVisibility(View.GONE);
                 cvNoregistrado.setVisibility(View.GONE);
                 cvYaregistrado.setVisibility(View.GONE);
                 cvRegistro.setVisibility(View.GONE);
                 cvAviso.setVisibility(View.VISIBLE);
+                txtErrorSede_error.setText(nacional.getSede_region());
+                txtErrorLocal_error.setText(nacional.getSede_region());
+                txtRegistroDireccion.setText(nacional.getDireccion());
 
             }
         } catch (IOException e) {

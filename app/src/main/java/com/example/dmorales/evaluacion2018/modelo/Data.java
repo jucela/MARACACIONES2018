@@ -161,6 +161,20 @@ public class Data {
                 registrado.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
                 registrado.setResp_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_resp_bungalow)));
+                registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                registrado.setHora1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                registrado.setMinuto1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                registrado.setDia2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                registrado.setMes2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
+                registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
+                registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
             }
         }finally{
             if(cursor != null) cursor.close();

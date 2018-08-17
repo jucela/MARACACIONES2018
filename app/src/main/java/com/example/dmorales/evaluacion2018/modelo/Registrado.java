@@ -3,29 +3,6 @@ package com.example.dmorales.evaluacion2018.modelo;
 import android.content.ContentValues;
 
 public class Registrado {
-
-//    private String _id;
-//    private String codigo;
-//    private String sede;
-//    private String id_local;
-//    private String nom_local;
-//    private String aula;
-//    private String nombres;
-//    private String dia1;
-//    private String mes1;
-//    private String anio1;
-//    private String hora1;
-//    private String minuto1;
-//    private String dia2;
-//    private String mes2;
-//    private String anio2;
-//    private String hora2;
-//    private String minuto2;
-//    private String estado1;
-//    private String estado2;
-//    private int subido1;
-//    private int subido2;
-
     private String _id;
     private String nivel;
     private String cod_sede_reg;
