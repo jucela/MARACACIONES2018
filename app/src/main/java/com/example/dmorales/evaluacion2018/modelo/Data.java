@@ -100,6 +100,9 @@ public class Data {
                 usuario.setClave(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_clave)));
                 usuario.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_nom_local)));
                 usuario.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_sede_region)));
+                usuario.setCod_nivel(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_cod_nivel)));
+                usuario.setNom_nivel(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_nom_nivel)));
+                usuario.setFase(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_fase)));
             }
         }finally{
             if(cursor != null) cursor.close();

@@ -53,10 +53,19 @@ public class LoginActivity extends AppCompatActivity {
             data.open();
             UsuarioLocal usuarioLocal = data.getUsuarioLocal(clave);
             data.close();
+
+//            if(usuarioLocal.getCod_nivel().equals("I"))
+//              { Toast.makeText(this, "NIVEL I", Toast.LENGTH_SHORT).show();}
+//            else if(usuarioLocal.getCod_nivel().equals("II"))
+//                {Toast.makeText(this, "NIVEL II", Toast.LENGTH_SHORT).show(); }
+
+
             if (usuarioLocal != null){
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.putExtra("sede", usuarioLocal.getSede_region());
                 intent.putExtra("usuario", usuarioLocal.getUsuario());
+                intent.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
+                intent.putExtra("fase", usuarioLocal.getFase());
                 startActivity(intent);
             }else{
                 Toast.makeText(this, "CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();

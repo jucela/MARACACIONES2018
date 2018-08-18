@@ -3,7 +3,7 @@ package com.example.dmorales.evaluacion2018.modelo;
 public class SQLConstantes {
     public static String DB_PATH = "/data/data/com.example.dmorales.evaluacion2018/databases/";
     //public static String DB_NAME = "mydatabase.sqlite";
-    public static String DB_NAME = "marcoece2018.sqlite";
+    public static String DB_NAME = "marcoasistencia.sqlite";
 
     public static String tablanacional = "nacional";
     public static String tablausuariolocal = "usuario_local";
@@ -32,10 +32,16 @@ public class SQLConstantes {
     public static String nacional_resp_bungalow = "resp_bungalow";
 
     //TABLA SQLITE USUARIO_LOCAL
+    public static String usuario_local_id = "_id";
     public static String usuario_local_usuario = "usuario";
     public static String usuario_local_clave = "clave";
+    public static String usuario_local_cod_local = "cod_local";
     public static String usuario_local_nom_local = "nom_local";
+    public static String usuario_local_cod_sede_reg = "cod_sede_reg";
     public static String usuario_local_sede_region = "sede_region";
+    public static String usuario_local_cod_nivel = "cod_nivel";
+    public static String usuario_local_nom_nivel = "nom_nivel";
+    public static String usuario_local_fase = "fase";
 
     public static String fecha_de_registro_id = "_id";
     public static String fecha_de_registro_nivel="nivel";
@@ -184,7 +190,17 @@ public class SQLConstantes {
     };
 
     public static final String[] COLUMNAS_USUARIO_LOCAL = {
-            usuario_local_clave,usuario_local_nom_local,usuario_local_sede_region,usuario_local_usuario
+            usuario_local_id,
+            usuario_local_usuario,
+            usuario_local_clave,
+            usuario_local_cod_local,
+            usuario_local_nom_local,
+            usuario_local_cod_sede_reg,
+            usuario_local_sede_region,
+            usuario_local_cod_nivel,
+            usuario_local_nom_nivel,
+            usuario_local_fase
+
     };
 
     public static final String[] COLUMNAS_FECHA_REGISTRO = {

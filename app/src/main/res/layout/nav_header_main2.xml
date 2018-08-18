@@ -21,7 +21,6 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/logo_ece" />
     <TextView
-        android:id="@+id/titulo1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -30,11 +29,11 @@
         android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
     <TextView
-        android:id="@+id/titulo2"
+        android:id="@+id/nombre_sede"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textSize="20sp"
-        android:text="Nivel I y IIA"
+        android:text="Nombre Nivel"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 </LinearLayout>
