@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity
 
         //ENVIA TEXTO DE NIVEL
         View headerView = navigationView.getHeaderView(0);
-        TextView txtHeaderTitulo1 = (TextView) headerView.findViewById(R.id.titulo1);
-        TextView txtHeaderTitulo2 = (TextView) headerView.findViewById(R.id.titulo2);
+        TextView txtHeaderTitulo1 = (TextView) headerView.findViewById(R.id.titulo11);
+        TextView txtHeaderTitulo2 = (TextView) headerView.findViewById(R.id.titulo12);
         txtHeaderTitulo1.setText("Asistencia "+fase);
         txtHeaderTitulo2.setText(nombrenivel);
 

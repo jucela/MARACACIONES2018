@@ -105,9 +105,22 @@ public class ListadoFragment extends Fragment {
 
                     for (final Registrado registrado : agregados){
 
+
                         Map<String,Object> valor = new HashMap<>();
                         valor.put("_id",registrado.get_id());
                         valor.put("nombres",registrado.getNombres());
+                        valor.put("nivel",registrado.getNivel());
+                        valor.put("dia1",registrado.getDia1());
+                        valor.put("mesl",registrado.getMes1());
+                        valor.put("aniol",registrado.getAnio1());
+                        valor.put("horal",registrado.getHora1());
+                        valor.put("minutol",registrado.getMinuto1());
+                        valor.put("dia2",registrado.getDia2());
+                        valor.put("mes2",registrado.getMes2());
+                        valor.put("anio2",registrado.getAnio2());
+                        valor.put("hora2",registrado.getHora2());
+                        valor.put("minuto2",registrado.getMinuto2());
+
 
                         if(registrado.getSubido1()==0) {
                             registrado.setSubido1(1);
@@ -152,6 +165,20 @@ public class ListadoFragment extends Fragment {
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     //if(registrados)
                     for (final Registrado registrado : agregados2){
+                        Map<String,Object> valor = new HashMap<>();
+                        valor.put("_id",registrado.get_id());
+                        valor.put("nombres",registrado.getNombres());
+                        valor.put("nivel",registrado.getNivel());
+                        valor.put("dia1",registrado.getDia1());
+                        valor.put("mesl",registrado.getMes1());
+                        valor.put("aniol",registrado.getAnio1());
+                        valor.put("horal",registrado.getHora1());
+                        valor.put("minutol",registrado.getMinuto1());
+                        valor.put("dia2",registrado.getDia2());
+                        valor.put("mes2",registrado.getMes2());
+                        valor.put("anio2",registrado.getAnio2());
+                        valor.put("hora2",registrado.getHora2());
+                        valor.put("minuto2",registrado.getMinuto2());
 
                         if(registrado.getSubido2()==0) {
                             registrado.setSubido2(1);
@@ -159,7 +186,7 @@ public class ListadoFragment extends Fragment {
                             String coleccion = "ASISTENCIA_NIYII";
                             final String c = registrado.getCodigo();
                             //Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                            db.collection(coleccion).document(registrado.get_id()).set(registrado)
+                            db.collection(coleccion).document(registrado.get_id()).set(valor)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {

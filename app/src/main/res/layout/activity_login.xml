@@ -41,7 +41,7 @@
                     android:id="@+id/login_titulo_encuesta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Asistencia Nivel I y IIA"
+                    android:text="Asistencia ECE 2018"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:paddingTop="@dimen/margin5dp"

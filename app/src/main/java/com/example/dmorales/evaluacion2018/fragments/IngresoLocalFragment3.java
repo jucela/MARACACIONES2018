@@ -31,7 +31,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IngresoLocalFragment extends Fragment {
+public class IngresoLocalFragment3 extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -66,13 +66,13 @@ public class IngresoLocalFragment extends Fragment {
 
 
 
-    public IngresoLocalFragment() {
+    public IngresoLocalFragment3() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public IngresoLocalFragment(String sede, Context context) {
+    public IngresoLocalFragment3(String sede, Context context) {
         this.sede = sede;
         this.context = context;
     }

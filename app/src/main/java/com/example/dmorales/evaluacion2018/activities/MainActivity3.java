@@ -19,16 +19,16 @@ import android.widget.TextView;
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment2;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment3;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
-import com.example.dmorales.evaluacion2018.fragments.SalidaLocalFragment;
 import com.example.dmorales.evaluacion2018.fragments.SalidaLocalFragment2;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
 
 import java.io.IOException;
 
-public class MainActivity2 extends AppCompatActivity
+public class MainActivity3 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String usuario;
     String sede;
@@ -37,7 +37,7 @@ public class MainActivity2 extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
 
         //TextView user = (TextView) findViewById(R.id.nombre_sede);
         sede = getIntent().getExtras().getString("sede");
@@ -48,13 +48,13 @@ public class MainActivity2 extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout2);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout3);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view2);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view3);
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -62,8 +62,8 @@ public class MainActivity2 extends AppCompatActivity
 
         //ENVIA TEXTO DE NIVEL
         View headerView = navigationView.getHeaderView(0);
-        TextView txtHeaderTitulo1 = (TextView) headerView.findViewById(R.id.titulo21);
-        TextView txtHeaderTitulo2 = (TextView) headerView.findViewById(R.id.titulo22);
+        TextView txtHeaderTitulo1 = (TextView) headerView.findViewById(R.id.titulo31);
+        TextView txtHeaderTitulo2 = (TextView) headerView.findViewById(R.id.titulo32);
         txtHeaderTitulo1.setText("Asistencia "+fase);
         txtHeaderTitulo2.setText(nombrenivel);
 
@@ -71,8 +71,8 @@ public class MainActivity2 extends AppCompatActivity
         fragmentTransaction.replace(R.id.fragment_layout, registroFragment);
         fragmentTransaction.commit();*/
 
-        IngresoLocalFragment2 ingresolocalFragment2 = new IngresoLocalFragment2(sede,MainActivity2.this);
-        fragmentTransaction.replace(R.id.fragment_layout, ingresolocalFragment2);
+        IngresoLocalFragment3 ingresolocalFragment3 = new IngresoLocalFragment3(sede,MainActivity3.this);
+        fragmentTransaction.replace(R.id.fragment_layout, ingresolocalFragment3);
         fragmentTransaction.commit();
 
 
@@ -80,7 +80,7 @@ public class MainActivity2 extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout2);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout3);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -123,26 +123,21 @@ public class MainActivity2 extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.menu_ingresolocal2) {
-            IngresoLocalFragment2 ingresolocaltroFragment2 = new IngresoLocalFragment2(sede,MainActivity2.this);
-            fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment2);
+        if (id == R.id.menu_ingresolocal3) {
+            IngresoLocalFragment3 ingresolocaltroFragment3 = new IngresoLocalFragment3(sede,MainActivity3.this);
+            fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment3);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.menu_salidalocal2) {
-            SalidaLocalFragment2 salidalocalFragment2 = new SalidaLocalFragment2(sede,MainActivity2.this);
-            fragmentTransaction.replace(R.id.fragment_layout,salidalocalFragment2);
-            fragmentTransaction.commit();
-
-        } else if (id == R.id.menu_listado2) {
-            ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity2.this);
+        }  else if (id == R.id.menu_listado3) {
+            ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity3.this);
             fragmentTransaction.replace(R.id.fragment_layout, listadoFragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.menu_nube2) {
-            NubeFragment nubeFragment = new NubeFragment(sede,MainActivity2.this);
+        } else if (id == R.id.menu_nube3) {
+            NubeFragment nubeFragment = new NubeFragment(sede,MainActivity3.this);
             fragmentTransaction.replace(R.id.fragment_layout, nubeFragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.menu_reset_bd2) {
+        } else if (id == R.id.menu_reset_bd3) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("¿Está seguro que desea borrar los datos?")
                     .setTitle("Aviso")
@@ -155,11 +150,11 @@ public class MainActivity2 extends AppCompatActivity
                     .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             try {
-                                Data data = new Data(MainActivity2.this);
+                                Data data = new Data(MainActivity3.this);
                                 data.open();
                                 data.deleteAllElementosFromTabla(SQLConstantes.tablafecharegistro);
                                 data.close();
-                                ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity2.this);
+                                ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity3.this);
                                 FragmentManager fragmentManage = getSupportFragmentManager();
                                 FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                 fragmentTransact.replace(R.id.fragment_layout, listadoFragment);
@@ -173,7 +168,7 @@ public class MainActivity2 extends AppCompatActivity
             alert.show();
 
 
-        } else if (id == R.id.menu_cerrar_sesion2) {
+        } else if (id == R.id.menu_cerrar_sesion3) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("¿Está seguro que desea cerrar sesión en la aplicación?")
                     .setTitle("Aviso")
@@ -185,7 +180,7 @@ public class MainActivity2 extends AppCompatActivity
                             })
                     .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    Intent intent = new Intent(MainActivity2.this,LoginActivity.class);
+                                    Intent intent = new Intent(MainActivity3.this,LoginActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -193,7 +188,7 @@ public class MainActivity2 extends AppCompatActivity
             AlertDialog alert = builder.create();
             alert.show();
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout2);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout3);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
