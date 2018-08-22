@@ -3,27 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
     <item
-        android:id="@+id/menu_ingresolocal"
+        android:id="@+id/menu_ingresolocal6"
         android:icon="@drawable/ic_account_box"
         android:title="Ingreso Local" />
     <item
-        android:id="@+id/menu_salidalocal"
-        android:icon="@drawable/ic_account_box"
-        android:title="Salida Local" />
-    <item
-        android:id="@+id/menu_listado"
+        android:id="@+id/menu_listado6"
         android:icon="@drawable/ic_backup"
         android:title="Subir Registros" />
     <item
-        android:id="@+id/menu_nube"
+        android:id="@+id/menu_nube6"
         android:icon="@drawable/ic_storage"
         android:title="Reporte de  Marcación" />
     <item
-        android:id="@+id/menu_reset_bd"
+        android:id="@+id/menu_reset_bd6"
         android:icon="@drawable/ic_autorenew"
         android:title="Reset BD" />
     <item
-        android:id="@+id/menu_cerrar_sesion"
+        android:id="@+id/menu_cerrar_sesion6"
         android:icon="@drawable/ic_power_settings_new"
         android:title="Cerrar Sesión" />
 

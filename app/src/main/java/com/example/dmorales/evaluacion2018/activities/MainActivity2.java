@@ -32,6 +32,7 @@ public class MainActivity2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String usuario;
     String sede;
+    String cod_local;
     String nombrenivel;
     String fase;
     @Override
@@ -40,6 +41,7 @@ public class MainActivity2 extends AppCompatActivity
         setContentView(R.layout.activity_main2);
 
         //TextView user = (TextView) findViewById(R.id.nombre_sede);
+        cod_local = getIntent().getExtras().getString("cod_local");
         sede = getIntent().getExtras().getString("sede");
         usuario = getIntent().getExtras().getString("usuario");
         nombrenivel = getIntent().getExtras().getString("nombrenivel");
@@ -71,7 +73,7 @@ public class MainActivity2 extends AppCompatActivity
         fragmentTransaction.replace(R.id.fragment_layout, registroFragment);
         fragmentTransaction.commit();*/
 
-        IngresoLocalFragment2 ingresolocalFragment2 = new IngresoLocalFragment2(sede,MainActivity2.this);
+        IngresoLocalFragment2 ingresolocalFragment2 = new IngresoLocalFragment2(cod_local,MainActivity2.this);
         fragmentTransaction.replace(R.id.fragment_layout, ingresolocalFragment2);
         fragmentTransaction.commit();
 
@@ -124,21 +126,21 @@ public class MainActivity2 extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.menu_ingresolocal2) {
-            IngresoLocalFragment2 ingresolocaltroFragment2 = new IngresoLocalFragment2(sede,MainActivity2.this);
+            IngresoLocalFragment2 ingresolocaltroFragment2 = new IngresoLocalFragment2(cod_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment2);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_salidalocal2) {
-            SalidaLocalFragment2 salidalocalFragment2 = new SalidaLocalFragment2(sede,MainActivity2.this);
+            SalidaLocalFragment2 salidalocalFragment2 = new SalidaLocalFragment2(cod_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout,salidalocalFragment2);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_listado2) {
-            ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity2.this);
+            ListadoFragment listadoFragment = new ListadoFragment(cod_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout, listadoFragment);
             fragmentTransaction.commit();
         } else if (id == R.id.menu_nube2) {
-            NubeFragment nubeFragment = new NubeFragment(sede,MainActivity2.this);
+            NubeFragment nubeFragment = new NubeFragment(cod_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout, nubeFragment);
             fragmentTransaction.commit();
 
@@ -159,7 +161,7 @@ public class MainActivity2 extends AppCompatActivity
                                 data.open();
                                 data.deleteAllElementosFromTabla(SQLConstantes.tablafecharegistro);
                                 data.close();
-                                ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity2.this);
+                                ListadoFragment listadoFragment = new ListadoFragment(cod_local,MainActivity2.this);
                                 FragmentManager fragmentManage = getSupportFragmentManager();
                                 FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                 fragmentTransact.replace(R.id.fragment_layout, listadoFragment);

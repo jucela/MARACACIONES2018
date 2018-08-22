@@ -31,7 +31,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IngresoLocalFragment extends Fragment {
+public class IngresoLocalFragment6 extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -67,13 +67,13 @@ public class IngresoLocalFragment extends Fragment {
 
 
 
-    public IngresoLocalFragment() {
+    public IngresoLocalFragment6() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public IngresoLocalFragment(String cod_local, Context context) {
+    public IngresoLocalFragment6(String cod_local, Context context) {
         this.cod_local = cod_local;
         this.context = context;
     }
@@ -269,10 +269,11 @@ public class IngresoLocalFragment extends Fragment {
                     txtErrorSede_error.setText(nacional.getSede_region());
                     txtErrorLocal_error.setText(nacional.getSede_region());
                     txtRegistroDireccion.setText(nacional.getDireccion());
+
                 }
             }
             else
-                { Toast.makeText(context, "EL DNI NO EXISTE EN EL MARCO", Toast.LENGTH_SHORT).show(); }
+                { Toast.makeText(context, "EL MARCO NO SE CARGO", Toast.LENGTH_SHORT).show(); }
         } catch (IOException e) {
             e.printStackTrace();
         }

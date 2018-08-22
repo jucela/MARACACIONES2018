@@ -387,7 +387,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="#C4BE42"
+                            android:background="#F5A826"
                             android:orientation="horizontal"
                             android:padding="5dp">
 
@@ -395,14 +395,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:src="@drawable/ic_home"
-                                android:tint="@color/letraregistrado2" />
+                                android:tint="@color/cardview_light_background" />
 
                             <TextView
                                 android:id="@+id/ingresolocal_txtRbungalow"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="BUNGALOW"
-                                android:textColor="@color/letraregistrado2"
+                                android:textColor="@color/cardview_light_background"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
                         </LinearLayout>

@@ -98,6 +98,7 @@ public class Data {
                 usuario = new UsuarioLocal();
                 usuario.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_usuario)));
                 usuario.setClave(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_clave)));
+                usuario.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_cod_local)));
                 usuario.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_nom_local)));
                 usuario.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_sede_region)));
                 usuario.setCod_nivel(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_cod_nivel)));
@@ -248,13 +249,13 @@ public class Data {
         return registrado;
     }
 
-    public ArrayList<Registrado> getAllRegistrados(String sede){
+    public ArrayList<Registrado> getAllRegistrados(String cod_local){
         ArrayList<Registrado> registrados = new ArrayList<>();
-        String[] whereArgs = new String[]{sede};
+        String[] whereArgs = new String[]{cod_local};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,
-                    null,SQLConstantes.WHERE_CLAUSE_SEDE,whereArgs,null,null,null);
+                    null,SQLConstantes.WHERE_CLAUSE_COD_LOCAL,whereArgs,null,null,null);
             while(cursor.moveToNext()){
                 Registrado registrado = new Registrado();
                 registrado.setCod_sede_prov(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_sede_prov)));
@@ -437,9 +438,51 @@ public class Data {
     }
 
     //MOSTRAR POR SEDE
-    public ArrayList<Registrado> getSedeRegistradosNube(String sede){
+    public ArrayList<Registrado> getSedeRegistradosNube(String cod_local){
         ArrayList<Registrado> registrados = new ArrayList<>();
-        String[] whereArgs = new String[]{sede,"1"};
+        String[] whereArgs = new String[]{cod_local,"1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,
+                    null,SQLConstantes.WHERE_CLAUSE_SEDESUBIDO1,whereArgs,null,null,null);
+            while(cursor.moveToNext()){
+                Registrado registrado = new Registrado();
+                registrado.set_id(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_id)));
+                registrado.setCodigo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_codigo)));
+                registrado.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede_region)));
+                registrado.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cod_local)));
+                registrado.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nom_local)));
+                registrado.setDireccion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion)));
+                registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
+                registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
+                registrado.setResp_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_resp_bungalow)));
+                registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                registrado.setHora1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                registrado.setMinuto1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                registrado.setDia2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                registrado.setMes2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                registrado.setAnio2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                registrado.setHora2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                registrado.setMinuto2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                registrado.setEstado1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado1)));
+                registrado.setEstado2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estado2)));
+                registrado.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                registrado.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+                registrados.add(registrado);
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return registrados;
+    }
+
+    //MOSTRAR POR LOCAL
+    public ArrayList<Registrado> getLocalRegistradosNube(String local){
+        ArrayList<Registrado> registrados = new ArrayList<>();
+        String[] whereArgs = new String[]{local,"1"};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,

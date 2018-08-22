@@ -64,6 +64,7 @@ public class SalidaLocalFragment extends Fragment {
     TextView txtErrorLocal_error;
 
     String sede;
+    String cod_local;
     Context context;
 
 
@@ -74,8 +75,8 @@ public class SalidaLocalFragment extends Fragment {
 
 
     @SuppressLint("ValidFragment")
-    public SalidaLocalFragment(String sede, Context context) {
-        this.sede = sede;
+    public SalidaLocalFragment(String cod_local, Context context) {
+        this.cod_local = cod_local;
         this.context = context;
     }
 
@@ -339,7 +340,7 @@ public class SalidaLocalFragment extends Fragment {
             data.open();
             Nacional nacional = data.getNacional(dni);
             data.close();
-            if(sede.equals(nacional.getSede_region())){
+            if(cod_local.equals(nacional.getCod_local())){
                 encontrado = true;
 
             }

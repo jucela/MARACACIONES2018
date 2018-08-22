@@ -21,7 +21,9 @@ import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment2;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment3;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment;
+import com.example.dmorales.evaluacion2018.fragments.ListadoFragment3;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
+import com.example.dmorales.evaluacion2018.fragments.NubeFragment3;
 import com.example.dmorales.evaluacion2018.fragments.SalidaLocalFragment2;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
@@ -32,6 +34,7 @@ public class MainActivity3 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String usuario;
     String sede;
+    String cod_local;
     String nombrenivel;
     String fase;
     @Override
@@ -40,6 +43,8 @@ public class MainActivity3 extends AppCompatActivity
         setContentView(R.layout.activity_main3);
 
         //TextView user = (TextView) findViewById(R.id.nombre_sede);
+
+        cod_local = getIntent().getExtras().getString("cod_local");
         sede = getIntent().getExtras().getString("sede");
         usuario = getIntent().getExtras().getString("usuario");
         nombrenivel = getIntent().getExtras().getString("nombrenivel");
@@ -71,7 +76,7 @@ public class MainActivity3 extends AppCompatActivity
         fragmentTransaction.replace(R.id.fragment_layout, registroFragment);
         fragmentTransaction.commit();*/
 
-        IngresoLocalFragment3 ingresolocalFragment3 = new IngresoLocalFragment3(sede,MainActivity3.this);
+        IngresoLocalFragment3 ingresolocalFragment3 = new IngresoLocalFragment3(cod_local,MainActivity3.this);
         fragmentTransaction.replace(R.id.fragment_layout, ingresolocalFragment3);
         fragmentTransaction.commit();
 
@@ -124,17 +129,17 @@ public class MainActivity3 extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.menu_ingresolocal3) {
-            IngresoLocalFragment3 ingresolocaltroFragment3 = new IngresoLocalFragment3(sede,MainActivity3.this);
+            IngresoLocalFragment3 ingresolocaltroFragment3 = new IngresoLocalFragment3(cod_local,MainActivity3.this);
             fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment3);
             fragmentTransaction.commit();
 
         }  else if (id == R.id.menu_listado3) {
-            ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity3.this);
-            fragmentTransaction.replace(R.id.fragment_layout, listadoFragment);
+            ListadoFragment3 listadoFragment3 = new ListadoFragment3(cod_local,MainActivity3.this);
+            fragmentTransaction.replace(R.id.fragment_layout, listadoFragment3);
             fragmentTransaction.commit();
         } else if (id == R.id.menu_nube3) {
-            NubeFragment nubeFragment = new NubeFragment(sede,MainActivity3.this);
-            fragmentTransaction.replace(R.id.fragment_layout, nubeFragment);
+            NubeFragment3 nubeFragment3 = new NubeFragment3(cod_local,MainActivity3.this);
+            fragmentTransaction.replace(R.id.fragment_layout, nubeFragment3);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_reset_bd3) {
@@ -154,7 +159,7 @@ public class MainActivity3 extends AppCompatActivity
                                 data.open();
                                 data.deleteAllElementosFromTabla(SQLConstantes.tablafecharegistro);
                                 data.close();
-                                ListadoFragment listadoFragment = new ListadoFragment(sede,MainActivity3.this);
+                                ListadoFragment listadoFragment = new ListadoFragment(cod_local,MainActivity3.this);
                                 FragmentManager fragmentManage = getSupportFragmentManager();
                                 FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                 fragmentTransact.replace(R.id.fragment_layout, listadoFragment);

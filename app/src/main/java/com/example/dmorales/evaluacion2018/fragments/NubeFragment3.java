@@ -12,13 +12,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.dmorales.evaluacion2018.adapters.RegistradoAdapter;
 import com.example.dmorales.evaluacion2018.R;
+import com.example.dmorales.evaluacion2018.adapters.RegistradoAdapter;
+import com.example.dmorales.evaluacion2018.adapters.RegistradoAdapter3;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.Registrado;
 
@@ -28,23 +28,23 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NubeFragment extends Fragment {
+public class NubeFragment3 extends Fragment {
     RecyclerView recyclerView;
     Context context;
     ArrayList<Registrado> registrados;
     Spinner spdia;
-    String sede;
     String cod_local;
+    String sede;
     String aula;
     Button btn_buscar;
     TextView txtNumero;
 
-    public NubeFragment() {
+    public NubeFragment3() {
         // Required empty public constructor
     }
 
     @SuppressLint("ValidFragment")
-    public NubeFragment(String cod_local, Context context) {
+    public NubeFragment3(String cod_local, Context context) {
         this.context = context;
         this.cod_local = cod_local;
     }
@@ -52,9 +52,9 @@ public class NubeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_nube, container, false);
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.nube_recycler);
-        txtNumero = (TextView) rootView.findViewById(R.id.nube_txtNumero);
+        View rootView = inflater.inflate(R.layout.fragment_nube3, container, false);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.nube_recycler3);
+        txtNumero = (TextView) rootView.findViewById(R.id.nube_txtNumero3);
         spdia = (Spinner) rootView.findViewById(R.id.sp_dia);
         btn_buscar = (Button) rootView.findViewById(R.id.btn_buscar);
         return rootView;
@@ -70,9 +70,9 @@ public class NubeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         cargaData();
-        final RegistradoAdapter registradoAdapter = new RegistradoAdapter(registrados,context);
+        final RegistradoAdapter3 registradoAdapter3 = new RegistradoAdapter3(registrados,context);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(registradoAdapter);
+        recyclerView.setAdapter(registradoAdapter3);
 
 
         btn_buscar. setOnClickListener(new View.OnClickListener() {
@@ -81,12 +81,6 @@ public class NubeFragment extends Fragment {
                 cargaDataAula(spdia.getSelectedItem().toString());
             }
         });
-
-
-
-
-
-
 
     }
 

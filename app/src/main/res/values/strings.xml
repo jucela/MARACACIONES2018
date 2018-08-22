@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">ASISTENCIA ECE 2018</string>
-    <string name="app_name2">ASISTENCIA ECE 2018-N2</string>
-    <string name="app_name3">ASISTENCIA ECE 2018-N3</string>
+    <string name="app_name">ASISTENCIA CAPACITACION DE NIVEL I y IIA (Grupo 1)</string>
+    <string name="app_name2">ASISTENCIA CAPACITACION DE NIVEL I y IIA (Grupo 2)</string>
+    <string name="app_name3">ASISTENCIA CAPACITACION COORDINADOR DE  SEGURIDAD REGIONAL</string>
+    <string name="app_name6">ASISTENCIA PRESELECCION NIVEL IV</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

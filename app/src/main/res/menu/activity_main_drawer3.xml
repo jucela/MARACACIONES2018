@@ -13,7 +13,7 @@
     <item
         android:id="@+id/menu_nube3"
         android:icon="@drawable/ic_storage"
-        android:title="Reporte de  Marcaciòn3" />
+        android:title="Reporte de Marcación" />
     <item
         android:id="@+id/menu_reset_bd3"
         android:icon="@drawable/ic_autorenew"

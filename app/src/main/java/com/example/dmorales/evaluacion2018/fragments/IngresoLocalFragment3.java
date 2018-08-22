@@ -62,6 +62,7 @@ public class IngresoLocalFragment3 extends Fragment {
     TextView txtErrorLocal_error;
 
     String sede;
+    String cod_local;
     Context context;
 
 
@@ -72,8 +73,8 @@ public class IngresoLocalFragment3 extends Fragment {
 
 
     @SuppressLint("ValidFragment")
-    public IngresoLocalFragment3(String sede, Context context) {
-        this.sede = sede;
+    public IngresoLocalFragment3(String cod_local, Context context) {
+        this.cod_local = cod_local;
         this.context = context;
     }
 
@@ -212,7 +213,7 @@ public class IngresoLocalFragment3 extends Fragment {
             data.close();
             if(nacional != null){
                 encontrado = true;
-                if(sede.equals(nacional.getSede_region())){
+                if(cod_local.equals(nacional.getCod_local())){
                     data = new Data(context);
                     data.open();
                     Registrado registrado = data.getFechaRegistro(nacional.getCodigo());

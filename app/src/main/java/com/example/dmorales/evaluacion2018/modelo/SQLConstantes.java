@@ -174,11 +174,12 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_CLAVE = "clave=?";
     public static final String WHERE_CLAUSE_CODIGO = "codigo=?";
     public static final String WHERE_CLAUSE_SEDE = "sede_region=?";
+    public static final String WHERE_CLAUSE_COD_LOCAL = "cod_local=?";
     public static final String WHERE_CLAUSE_SUBIDO1 = "subido1=?";
     public static final String WHERE_CLAUSE_SUBIDO2 = "subido2=?";
     public static final String WHERE_CLAUSE_SUBIDO3 = "subido3=?";
     public static final String WHERE_CLAUSE_SUBIDO4 = "subido4=?";
-    public static final String WHERE_CLAUSE_SEDESUBIDO1 = "sede_region=?  and subido1=?";
+    public static final String WHERE_CLAUSE_SEDESUBIDO1 = "cod_local=?  and subido1=?";
     public static final String WHERE_CLAUSE_AULA = "aula=?";
 
 

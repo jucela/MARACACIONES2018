@@ -27,7 +27,10 @@ import com.example.dmorales.evaluacion2018.modelo.Registrado;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.WriteBatch;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,6 +48,7 @@ public class ListadoFragment extends Fragment {
     ArrayList<Registrado> agregados2;
     ArrayList<Registrado> agregados3;
     ArrayList<Registrado> agregados4;
+    String cod_local;
     String sede;
     Data data;
     FloatingActionButton fabUpLoad;
@@ -57,9 +61,9 @@ public class ListadoFragment extends Fragment {
 
 
     @SuppressLint("ValidFragment")
-    public ListadoFragment(String sede, Context context) {
+    public ListadoFragment(String cod_local, Context context) {
         this.context = context;
-        this.sede = sede;
+        this.cod_local = cod_local;
     }
 
     @Override
@@ -101,120 +105,96 @@ public class ListadoFragment extends Fragment {
                 }
                 if(agregados.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    //if(registrados)
-
                     for (final Registrado registrado : agregados){
-
-
-                        Map<String,Object> valor = new HashMap<>();
-                        valor.put("_id",registrado.get_id());
-                        valor.put("nombres",registrado.getNombres());
-                        valor.put("nivel",registrado.getNivel());
-                        valor.put("dia1",registrado.getDia1());
-                        valor.put("mesl",registrado.getMes1());
-                        valor.put("aniol",registrado.getAnio1());
-                        valor.put("horal",registrado.getHora1());
-                        valor.put("minutol",registrado.getMinuto1());
-                        valor.put("dia2",registrado.getDia2());
-                        valor.put("mes2",registrado.getMes2());
-                        valor.put("anio2",registrado.getAnio2());
-                        valor.put("hora2",registrado.getHora2());
-                        valor.put("minuto2",registrado.getMinuto2());
-
-
                         if(registrado.getSubido1()==0) {
                             registrado.setSubido1(1);
-                            String fecha = registrado.getDia1() + "-" + registrado.getMes1() + "-" + registrado.getAnio1();
                             String coleccion = "ASISTENCIA_NIYII";
+                            WriteBatch batch = db.batch();
+                            DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
+                            batch.update(documentReference,"dia1", registrado.getDia1());
+                            batch.update(documentReference,"mesl",registrado.getMes1());
+                            batch.update(documentReference,"aniol",registrado.getAnio1());
+                            batch.update(documentReference,"horal",registrado.getHora1());
+                            batch.update(documentReference,"minutol",registrado.getMinuto1());
+                            batch.update(documentReference,"hora_transferencia_entrada", FieldValue.serverTimestamp());
                             final String c = registrado.getCodigo();
-                            //Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                            db.collection(coleccion).document(registrado.get_id()).set(valor)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
-                                            if (!b) {
-                                                //
-                                                Toast.makeText(context, agregados.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
-                                                b = true;
-                                            }
-                                            try {
-                                                data = new Data(context);
-                                                data.open();
-                                                ContentValues contentValues = new ContentValues();
-                                                contentValues.put(SQLConstantes.fecha_de_registro_subido1, 1);
-                                                data.actualizarFechaRegistro(c, contentValues);
-                                                cargaData();
-                                                registradoAdapter.notifyDataSetChanged();
-                                                data.close();
-                                            } catch (IOException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.w("FIRESTORE", "Error writing document", e);
-                                        }
-                                    });
+                            batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
+                                    if (!b) {
+                                        //
+                                        Toast.makeText(context, agregados.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
+                                        b = true;
+                                    }
+                                    try {
+                                        data = new Data(context);
+                                        data.open();
+                                        ContentValues contentValues = new ContentValues();
+                                        contentValues.put(SQLConstantes.fecha_de_registro_subido1, 1);
+                                        data.actualizarFechaRegistro(c, contentValues);
+                                        cargaData();
+                                        registradoAdapter.notifyDataSetChanged();
+                                        data.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("FIRESTORE", "Error writing document", e);
+                                }
+                            });
+
                         }//end if
                         else {Toast.makeText(context, " Error al cargar subidos", Toast.LENGTH_SHORT).show();}
                     }//end for
                 }else if(agregados2.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    //if(registrados)
                     for (final Registrado registrado : agregados2){
-                        Map<String,Object> valor = new HashMap<>();
-                        valor.put("_id",registrado.get_id());
-                        valor.put("nombres",registrado.getNombres());
-                        valor.put("nivel",registrado.getNivel());
-                        valor.put("dia1",registrado.getDia1());
-                        valor.put("mesl",registrado.getMes1());
-                        valor.put("aniol",registrado.getAnio1());
-                        valor.put("horal",registrado.getHora1());
-                        valor.put("minutol",registrado.getMinuto1());
-                        valor.put("dia2",registrado.getDia2());
-                        valor.put("mes2",registrado.getMes2());
-                        valor.put("anio2",registrado.getAnio2());
-                        valor.put("hora2",registrado.getHora2());
-                        valor.put("minuto2",registrado.getMinuto2());
-
                         if(registrado.getSubido2()==0) {
                             registrado.setSubido2(1);
-                            String fecha = registrado.getDia2() + "-" + registrado.getMes2() + "-" + registrado.getAnio2();
                             String coleccion = "ASISTENCIA_NIYII";
+                            WriteBatch batch = db.batch();
+                            DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
+                            batch.update(documentReference,"dia2", registrado.getDia2());
+                            batch.update(documentReference,"mes2",registrado.getMes2());
+                            batch.update(documentReference,"anio2",registrado.getAnio2());
+                            batch.update(documentReference,"hora2",registrado.getHora2());
+                            batch.update(documentReference,"minuto2",registrado.getMinuto2());
+                            batch.update(documentReference,"hora_transferencia_salida", FieldValue.serverTimestamp());
                             final String c = registrado.getCodigo();
-                            //Toast.makeText(context, "Subiendo...", Toast.LENGTH_SHORT).show();
-                            db.collection(coleccion).document(registrado.get_id()).set(valor)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
-                                            if (!b) {
-                                                Toast.makeText(context, agregados2.size() + "  Registros de Salida en la Nube", Toast.LENGTH_SHORT).show();
-                                                b = true;
-                                            }
-                                            try {
-                                                data = new Data(context);
-                                                data.open();
-                                                ContentValues contentValues = new ContentValues();
-                                                contentValues.put(SQLConstantes.fecha_de_registro_subido2, 1);
-                                                data.actualizarFechaRegistro(c, contentValues);
-                                                cargaData();
-                                                registradoAdapter.notifyDataSetChanged();
-                                                data.close();
-                                            } catch (IOException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.w("FIRESTORE", "Error writing document", e);
-                                        }
-                                    });
+
+                            batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
+                                    if (!b) {
+                                        //
+                                        Toast.makeText(context, agregados.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
+                                        b = true;
+                                    }
+                                    try {
+                                        data = new Data(context);
+                                        data.open();
+                                        ContentValues contentValues = new ContentValues();
+                                        contentValues.put(SQLConstantes.fecha_de_registro_subido2, 1);
+                                        data.actualizarFechaRegistro(c, contentValues);
+                                        cargaData();
+                                        registradoAdapter.notifyDataSetChanged();
+                                        data.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("FIRESTORE", "Error writing document", e);
+                                }
+                            });
+
                         }//end if
                         else {Toast.makeText(context, " Error al cargar subidos", Toast.LENGTH_SHORT).show();}
                     }//end for
@@ -231,7 +211,7 @@ public class ListadoFragment extends Fragment {
         try {
             Data data = new Data(context);
             data.open();
-            registrados = data.getAllRegistrados(sede);
+            registrados = data.getAllRegistrados(cod_local);
             txtNumero.setText("Total registros: " + registrados.size());
             data.close();
         } catch (IOException e) {

@@ -17,7 +17,7 @@
     <item
         android:id="@+id/menu_nube2"
         android:icon="@drawable/ic_storage"
-        android:title="Reporte de  Marcaciòn" />
+        android:title="Reporte de  Marcación" />
     <item
         android:id="@+id/menu_reset_bd2"
         android:icon="@drawable/ic_autorenew"
