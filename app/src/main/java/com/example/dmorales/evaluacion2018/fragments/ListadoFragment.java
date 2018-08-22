@@ -106,16 +106,14 @@ public class ListadoFragment extends Fragment {
                 if(agregados.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     for (final Registrado registrado : agregados){
-                        if(registrado.getSubido1()==0) {
+                        if(registrado.getSubido1()==0 && registrado.getSubido2()==0) {
                             registrado.setSubido1(1);
                             String coleccion = "ASISTENCIA_NIYII";
                             WriteBatch batch = db.batch();
                             DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
-                            batch.update(documentReference,"dia1", registrado.getDia1());
-                            batch.update(documentReference,"mesl",registrado.getMes1());
-                            batch.update(documentReference,"aniol",registrado.getAnio1());
-                            batch.update(documentReference,"horal",registrado.getHora1());
-                            batch.update(documentReference,"minutol",registrado.getMinuto1());
+                            batch.update(documentReference,"fecha_registro1", registrado.getFecha_registro1());
+                            batch.update(documentReference,"statusl",registrado.getEstado1());
+                            batch.update(documentReference,"status2",registrado.getEstado2());
                             batch.update(documentReference,"hora_transferencia_entrada", FieldValue.serverTimestamp());
                             final String c = registrado.getCodigo();
                             batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -153,16 +151,14 @@ public class ListadoFragment extends Fragment {
                 }else if(agregados2.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     for (final Registrado registrado : agregados2){
-                        if(registrado.getSubido2()==0) {
+                        if(registrado.getSubido1()==1 && registrado.getSubido2()==0) {
                             registrado.setSubido2(1);
                             String coleccion = "ASISTENCIA_NIYII";
                             WriteBatch batch = db.batch();
                             DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
-                            batch.update(documentReference,"dia2", registrado.getDia2());
-                            batch.update(documentReference,"mes2",registrado.getMes2());
-                            batch.update(documentReference,"anio2",registrado.getAnio2());
-                            batch.update(documentReference,"hora2",registrado.getHora2());
-                            batch.update(documentReference,"minuto2",registrado.getMinuto2());
+                            batch.update(documentReference,"fecha_registro2", registrado.getFecha_registro2());
+                            batch.update(documentReference,"estadol",registrado.getEstado1());
+                            batch.update(documentReference,"estado2",registrado.getEstado2());
                             batch.update(documentReference,"hora_transferencia_salida", FieldValue.serverTimestamp());
                             final String c = registrado.getCodigo();
 

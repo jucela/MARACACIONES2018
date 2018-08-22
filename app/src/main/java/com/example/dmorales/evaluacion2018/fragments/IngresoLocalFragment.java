@@ -246,16 +246,18 @@ public class IngresoLocalFragment extends Fragment {
                         int dd = calendario.get(Calendar.DAY_OF_MONTH);
                         int hora = calendario.get(Calendar.HOUR_OF_DAY);
                         int minuto = calendario.get(Calendar.MINUTE);
+                        int segundo = calendario.get(Calendar.SECOND);
                         String estado1 = "1";
                         String estado2 = "0";
+                        //2018-08-17 15:23:41.000
                         Registrado registrado1 = new Registrado(dni,nacional.getNivel(),
                                 nacional.getCod_sede_reg(),nacional.getCod_sede_prov(),nacional.getCod_sede_distrital(),
                                 nacional.getSede_region(),nacional.getSede_provincia(),nacional.getSede_distrital(),
                                 nacional.getCod_local(),nacional.getNom_local(),nacional.getDireccion(),nacional.getAula(),nacional.getCodigo(),nacional.getNombres(),
                                 nacional.getId_cargo(),nacional.getCargo(),nacional.getTipo_candidato(),nacional.getN_bungalow(),nacional.getResp_bungalow(),
-                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),"","","","","",estado1,estado2,0,0);
-//                        Registrado registrado1 = new Registrado(dni,dni,nacional.getSede(),nacional.getId_local(),nacional.getNom_local(),nacional.getAula(),nacional.getNombres(),
-//                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),"","","","","",estado1,estado2,0,0);
+                                checkDigito(yy)+"-"+checkDigito(mm)+"-"+checkDigito(dd)+" "+checkDigito(hora)+":"+checkDigito(minuto)+":"+checkDigito(segundo),
+                                "",
+                                checkDigito(dd),checkDigito(mm),checkDigito(yy),checkDigito(hora),checkDigito(minuto),"","","","","",estado1,estado2,0,0);//
                         data.insertarFechaRegistro(registrado1);
 
                     }

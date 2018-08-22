@@ -62,6 +62,8 @@ public class SQLConstantes {
     public static String fecha_de_registro_tipo_candidato="tipo_candidato";
     public static String fecha_de_registro_n_bungalow="n_bungalow";
     public static String fecha_de_registro_resp_bungalow="resp_bungalow";
+    public static String fecha_de_registro_fecha_registro1="fecha_registro1";
+    public static String fecha_de_registro_fecha_registro2="fecha_registro2";
     public static String fecha_de_registro_dia1 = "dia1";
     public static String fecha_de_registro_mes1 = "mes1";
     public static String fecha_de_registro_anio1 = "anio1";
@@ -117,6 +119,8 @@ public class SQLConstantes {
                     fecha_de_registro_tipo_candidato+ " TEXT," +
                     fecha_de_registro_n_bungalow+ " TEXT," +
                     fecha_de_registro_resp_bungalow+ " TEXT," +
+                    fecha_de_registro_fecha_registro1+ " TEXT," +
+                    fecha_de_registro_fecha_registro2+ " TEXT," +
                     fecha_de_registro_dia1 + " TEXT," +
                     fecha_de_registro_mes1 + " TEXT," +
                     fecha_de_registro_anio1 + " TEXT," +
@@ -154,6 +158,8 @@ public class SQLConstantes {
                     fecha_de_registro_tipo_candidato+ " TEXT," +
                     fecha_de_registro_n_bungalow+ " TEXT," +
                     fecha_de_registro_resp_bungalow+ " TEXT," +
+                    fecha_de_registro_fecha_registro1+ " TEXT," +
+                    fecha_de_registro_fecha_registro2+ " TEXT," +
                     fecha_de_registro_dia1 + " TEXT," +
                     fecha_de_registro_mes1 + " TEXT," +
                     fecha_de_registro_anio1 + " TEXT," +
@@ -175,8 +181,8 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_CODIGO = "codigo=?";
     public static final String WHERE_CLAUSE_SEDE = "sede_region=?";
     public static final String WHERE_CLAUSE_COD_LOCAL = "cod_local=?";
-    public static final String WHERE_CLAUSE_SUBIDO1 = "subido1=?";
-    public static final String WHERE_CLAUSE_SUBIDO2 = "subido2=?";
+    public static final String WHERE_CLAUSE_SUBIDO1 = "subido1=? and estado1=?";
+    public static final String WHERE_CLAUSE_SUBIDO2 = "subido2=? and estado2=?";
     public static final String WHERE_CLAUSE_SUBIDO3 = "subido3=?";
     public static final String WHERE_CLAUSE_SUBIDO4 = "subido4=?";
     public static final String WHERE_CLAUSE_SEDESUBIDO1 = "cod_local=?  and subido1=?";
@@ -209,6 +215,7 @@ public class SQLConstantes {
             fecha_de_registro_cod_sede_distrital,fecha_de_registro_sede_region,fecha_de_registro_sede_provincia,fecha_de_registro_sede_distrital,
             fecha_de_registro_cod_local,fecha_de_registro_nom_local,fecha_de_registro_direccion,fecha_de_registro_aula,fecha_de_registro_codigo,fecha_de_registro_nombres,
             fecha_de_registro_id_cargo,fecha_de_registro_cargo,fecha_de_registro_tipo_candidato,fecha_de_registro_n_bungalow,fecha_de_registro_resp_bungalow,
+            fecha_de_registro_fecha_registro1,fecha_de_registro_fecha_registro2,
             fecha_de_registro_dia1,fecha_de_registro_mes1,fecha_de_registro_anio1,fecha_de_registro_minuto1,fecha_de_registro_hora1,
             fecha_de_registro_dia2,fecha_de_registro_mes2,fecha_de_registro_anio2,fecha_de_registro_minuto2,fecha_de_registro_hora2,
             fecha_de_registro_estado1,fecha_de_registro_estado2,fecha_de_registro_subido1,fecha_de_registro_subido2
@@ -218,6 +225,7 @@ public class SQLConstantes {
             fecha_de_registro_id, fecha_de_registro_nivel,fecha_de_registro_cod_sede_reg,fecha_de_registro_cod_sede_prov,
             fecha_de_registro_cod_sede_distrital,fecha_de_registro_sede_region,fecha_de_registro_sede_provincia,fecha_de_registro_sede_distrital,
             fecha_de_registro_cod_local,fecha_de_registro_nom_local,fecha_de_registro_direccion,fecha_de_registro_aula,fecha_de_registro_codigo,fecha_de_registro_nombres,
+            fecha_de_registro_fecha_registro1,fecha_de_registro_fecha_registro2,
             fecha_de_registro_id_cargo,fecha_de_registro_cargo,fecha_de_registro_tipo_candidato,fecha_de_registro_n_bungalow,fecha_de_registro_resp_bungalow,
             fecha_de_registro_dia1,fecha_de_registro_mes1,fecha_de_registro_anio1,fecha_de_registro_minuto1,fecha_de_registro_hora1,
             fecha_de_registro_dia2,fecha_de_registro_mes2,fecha_de_registro_anio2,fecha_de_registro_minuto2,fecha_de_registro_hora2,

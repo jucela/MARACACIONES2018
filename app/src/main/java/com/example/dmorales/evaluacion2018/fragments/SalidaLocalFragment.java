@@ -279,8 +279,10 @@ public class SalidaLocalFragment extends Fragment {
                     int dd = calendario.get(Calendar.DAY_OF_MONTH);
                     int hora = calendario.get(Calendar.HOUR_OF_DAY);
                     int minuto = calendario.get(Calendar.MINUTE);
+                    int segundo = calendario.get(Calendar.SECOND);
 
                     ContentValues registroactualizado = new ContentValues();
+                    registroactualizado.put("fecha_registro2",checkDigito(yy)+"-"+checkDigito(mm)+"-"+checkDigito(dd)+" "+checkDigito(hora)+":"+checkDigito(minuto)+":"+checkDigito(segundo));
                     registroactualizado.put("dia2", checkDigito(dd));
                     registroactualizado.put("mes2", checkDigito(mm));
                     registroactualizado.put("anio2", checkDigito(yy));

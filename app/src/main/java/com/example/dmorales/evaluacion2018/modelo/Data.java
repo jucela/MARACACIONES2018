@@ -298,7 +298,7 @@ public class Data {
 
     public ArrayList<Registrado> getAllRegistradosTemporal(){
         ArrayList<Registrado> registrados = new ArrayList<>();
-        String[] whereArgs = new String[]{"0"};
+        String[] whereArgs = new String[]{"0","1"};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,
@@ -324,6 +324,8 @@ public class Data {
                 registrado.setTipo_candidato(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_tipo_candidato)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
                 registrado.setResp_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_resp_bungalow)));
+                registrado.setFecha_registro1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro1)));
+                registrado.setFecha_registro2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro2)));
                 registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
                 registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
                 registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
@@ -348,7 +350,7 @@ public class Data {
 
     public ArrayList<Registrado> getAllRegistradosTemporal2(){
         ArrayList<Registrado> registrados = new ArrayList<>();
-        String[] whereArgs = new String[]{"0"};
+        String[] whereArgs = new String[]{"0","1"};
         Cursor cursor = null;
         try{
             cursor = sqLiteDatabase.query(SQLConstantes.tablafecharegistro,
@@ -374,6 +376,8 @@ public class Data {
                 registrado.setTipo_candidato(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_tipo_candidato)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
                 registrado.setResp_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_resp_bungalow)));
+                registrado.setFecha_registro1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro1)));
+                registrado.setFecha_registro2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro2)));
                 registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
                 registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
                 registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
@@ -457,6 +461,8 @@ public class Data {
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
                 registrado.setResp_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_resp_bungalow)));
+                registrado.setFecha_registro1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro1)));
+                registrado.setFecha_registro2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro2)));
                 registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
                 registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
                 registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
@@ -541,6 +547,8 @@ public class Data {
                 registrado.setNombres(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nombres)));
                 registrado.setN_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_n_bungalow)));
                 registrado.setResp_bungalow(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_resp_bungalow)));
+                registrado.setFecha_registro1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro1)));
+                registrado.setFecha_registro2(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_fecha_registro2)));
                 registrado.setDia1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
                 registrado.setMes1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
                 registrado.setAnio1(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));

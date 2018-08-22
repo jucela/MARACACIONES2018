@@ -22,6 +22,8 @@ public class Registrado {
     private String tipo_candidato;
     private String n_bungalow;
     private String resp_bungalow;
+    private String fecha_registro1;
+    private String fecha_registro2;
     private String dia1;
     private String mes1;
     private String anio1;
@@ -37,7 +39,7 @@ public class Registrado {
     private int subido1;
     private int subido2;
 
-    public Registrado(String _id, String nivel, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_region, String sede_provincia, String sede_distrital, String cod_local, String nom_local,String direccion, String aula, String codigo, String nombres, String id_cargo, String cargo, String tipo_candidato, String n_bungalow, String resp_bungalow, String dia1, String mes1, String anio1, String hora1, String minuto1, String dia2, String mes2, String anio2, String hora2, String minuto2, String estado1, String estado2, int subido1, int subido2) {
+    public Registrado(String _id, String nivel, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_region, String sede_provincia, String sede_distrital, String cod_local, String nom_local, String direccion, String aula, String codigo, String nombres, String id_cargo, String cargo, String tipo_candidato, String n_bungalow, String resp_bungalow, String fecha_registro1, String fecha_registro2, String dia1, String mes1, String anio1, String hora1, String minuto1, String dia2, String mes2, String anio2, String hora2, String minuto2, String estado1, String estado2, int subido1, int subido2) {
         this._id = _id;
         this.nivel = nivel;
         this.cod_sede_reg = cod_sede_reg;
@@ -57,6 +59,8 @@ public class Registrado {
         this.tipo_candidato = tipo_candidato;
         this.n_bungalow = n_bungalow;
         this.resp_bungalow = resp_bungalow;
+        this.fecha_registro1 = fecha_registro1;
+        this.fecha_registro2 = fecha_registro2;
         this.dia1 = dia1;
         this.mes1 = mes1;
         this.anio1 = anio1;
@@ -92,6 +96,8 @@ public class Registrado {
         this.tipo_candidato = "";
         this.n_bungalow = "";
         this.resp_bungalow = "";
+        this.fecha_registro1 ="";
+        this.fecha_registro2 ="";
         this.dia1="";
         this.mes1="";
         this.anio1="";
@@ -372,6 +378,22 @@ public class Registrado {
         this.resp_bungalow = resp_bungalow;
     }
 
+    public String getFecha_registro1() {
+        return fecha_registro1;
+    }
+
+    public void setFecha_registro1(String fecha_registro1) {
+        this.fecha_registro1 = fecha_registro1;
+    }
+
+    public String getFecha_registro2() {
+        return fecha_registro2;
+    }
+
+    public void setFecha_registro2(String fecha_registro2) {
+        this.fecha_registro2 = fecha_registro2;
+    }
+
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.fecha_de_registro_id,_id);
@@ -393,6 +415,8 @@ public class Registrado {
         contentValues.put(SQLConstantes.fecha_de_registro_tipo_candidato,tipo_candidato);
         contentValues.put(SQLConstantes.fecha_de_registro_n_bungalow,n_bungalow);
         contentValues.put(SQLConstantes.fecha_de_registro_resp_bungalow,resp_bungalow);
+        contentValues.put(SQLConstantes.fecha_de_registro_fecha_registro1,fecha_registro1);
+        contentValues.put(SQLConstantes.fecha_de_registro_fecha_registro2,fecha_registro2);
         contentValues.put(SQLConstantes.fecha_de_registro_dia1,dia1);
         contentValues.put(SQLConstantes.fecha_de_registro_mes1,mes1);
         contentValues.put(SQLConstantes.fecha_de_registro_anio1,anio1);
