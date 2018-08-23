@@ -241,8 +241,8 @@ public class IngresoLocalFragment extends Fragment {
                         txtRegistroRbungalow.setText("Responsable de Bungalow :  "+nacional.getResp_bungalow());
                         txtRegistroNbungalow.setText(nacional.getN_bungalow());
                         Calendar calendario = Calendar.getInstance();
-                        int yy = calendario.get(Calendar.YEAR);
-                        int mm = calendario.get(Calendar.MONTH)+1;
+                        int yy = calendario.get(Calendar.YEAR)-1900;
+                        int mm = calendario.get(Calendar.MONTH);
                         int dd = calendario.get(Calendar.DAY_OF_MONTH);
                         int hora = calendario.get(Calendar.HOUR_OF_DAY);
                         int minuto = calendario.get(Calendar.MINUTE);

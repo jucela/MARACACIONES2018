@@ -27,6 +27,7 @@ import com.example.dmorales.evaluacion2018.modelo.Registrado;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,6 +35,7 @@ import com.google.firebase.firestore.WriteBatch;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -108,12 +110,17 @@ public class ListadoFragment extends Fragment {
                     for (final Registrado registrado : agregados){
                         if(registrado.getSubido1()==0 && registrado.getSubido2()==0) {
                             registrado.setSubido1(1);
+                            int anio = Integer.parseInt(registrado.getAnio1());
+                            int mes = Integer.parseInt(registrado.getMes1());
+                            int dia = Integer.parseInt(registrado.getDia1());
+                            int hora = Integer.parseInt(registrado.getHora1());
+                            int minuto = Integer.parseInt(registrado.getMinuto1());
+
                             String coleccion = "ASISTENCIA_NIYII";
                             WriteBatch batch = db.batch();
                             DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
-                            batch.update(documentReference,"fecha_registro1", registrado.getFecha_registro1());
+                            batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(anio, mes, dia, hora, minuto)));
                             batch.update(documentReference,"statusl",registrado.getEstado1());
-                            batch.update(documentReference,"status2",registrado.getEstado2());
                             batch.update(documentReference,"hora_transferencia_entrada", FieldValue.serverTimestamp());
                             final String c = registrado.getCodigo();
                             batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -153,12 +160,16 @@ public class ListadoFragment extends Fragment {
                     for (final Registrado registrado : agregados2){
                         if(registrado.getSubido1()==1 && registrado.getSubido2()==0) {
                             registrado.setSubido2(1);
+                            int anio = Integer.parseInt(registrado.getAnio2());
+                            int mes = Integer.parseInt(registrado.getMes2());
+                            int dia = Integer.parseInt(registrado.getDia2());
+                            int hora = Integer.parseInt(registrado.getHora2());
+                            int minuto = Integer.parseInt(registrado.getMinuto2());
                             String coleccion = "ASISTENCIA_NIYII";
                             WriteBatch batch = db.batch();
                             DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
-                            batch.update(documentReference,"fecha_registro2", registrado.getFecha_registro2());
-                            batch.update(documentReference,"estadol",registrado.getEstado1());
-                            batch.update(documentReference,"estado2",registrado.getEstado2());
+                            batch.update(documentReference,"fecha_registro2", new Timestamp(new Date(anio, mes, dia, hora, minuto)));
+                            batch.update(documentReference,"status2",registrado.getEstado2());
                             batch.update(documentReference,"hora_transferencia_salida", FieldValue.serverTimestamp());
                             final String c = registrado.getCodigo();
 
