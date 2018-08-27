@@ -37,8 +37,8 @@ public class SQLConstantes {
     public static String usuario_local_id = "_id";
     public static String usuario_local_usuario = "usuario";
     public static String usuario_local_clave = "clave";
-    public static String usuario_local_cod_local = "cod_local";
-    public static String usuario_local_nom_local = "nom_local";
+    public static String usuario_local_nro_local = "nro_local";
+    public static String usuario_local_local_aplicacion = "local_aplicacion";
     public static String usuario_local_cod_sede_reg = "cod_sede_reg";
     public static String usuario_local_sede_region = "sede_region";
     public static String usuario_local_cod_nivel = "cod_nivel";
@@ -121,18 +121,18 @@ public class SQLConstantes {
                     fecha_de_registro_cargo+ " TEXT," +
                     fecha_de_registro_nivel+ " INTEGER," +
                     fecha_de_registro_responsable_bungalow+ " INTEGER," +
-                    fecha_de_registro_estatus1 + "INTEGER," +
-                    fecha_de_registro_dia1 + "INTEGER," +
-                    fecha_de_registro_mes1 + "INTEGER," +
-                    fecha_de_registro_anio1 + "INTEGER," +
-                    fecha_de_registro_hora1 + "INTEGER," +
-                    fecha_de_registro_minuto1 + "INTEGER," +
-                    fecha_de_registro_estatus2 + "INTEGER," +
-                    fecha_de_registro_dia2 + "INTEGER," +
-                    fecha_de_registro_mes2 + "INTEGER," +
-                    fecha_de_registro_anio2 + "INTEGER," +
-                    fecha_de_registro_hora2 + "INTEGER," +
-                    fecha_de_registro_minuto2 + "INTEGER," +
+                    fecha_de_registro_estatus1 + " INTEGER," +
+                    fecha_de_registro_dia1 + " INTEGER," +
+                    fecha_de_registro_mes1 + " INTEGER," +
+                    fecha_de_registro_anio1 + " INTEGER," +
+                    fecha_de_registro_hora1 + " INTEGER," +
+                    fecha_de_registro_minuto1 + " INTEGER," +
+                    fecha_de_registro_estatus2 + " INTEGER," +
+                    fecha_de_registro_dia2 + " INTEGER," +
+                    fecha_de_registro_mes2 + " INTEGER," +
+                    fecha_de_registro_anio2 + " INTEGER," +
+                    fecha_de_registro_hora2 + " INTEGER," +
+                    fecha_de_registro_minuto2 + " INTEGER," +
                     fecha_de_registro_subido1 + " INTEGER," +
                     fecha_de_registro_subido2 + " INTEGER"+");"
             ;
@@ -159,18 +159,18 @@ public class SQLConstantes {
                     fecha_de_registro_cargo+ " TEXT," +
                     fecha_de_registro_nivel+ " INTEGER," +
                     fecha_de_registro_responsable_bungalow+ " INTEGER," +
-                    fecha_de_registro_estatus1 + "INTEGER," +
-                    fecha_de_registro_dia1 + "INTEGER," +
-                    fecha_de_registro_mes1 + "INTEGER," +
-                    fecha_de_registro_anio1 + "INTEGER," +
-                    fecha_de_registro_hora1 + "INTEGER," +
-                    fecha_de_registro_minuto1 + "INTEGER," +
-                    fecha_de_registro_estatus2 + "INTEGER," +
-                    fecha_de_registro_dia2 + "INTEGER," +
-                    fecha_de_registro_mes2 + "INTEGER," +
-                    fecha_de_registro_anio2 + "INTEGER," +
-                    fecha_de_registro_hora2 + "INTEGER," +
-                    fecha_de_registro_minuto2 + "INTEGER," +
+                    fecha_de_registro_estatus1 + " INTEGER," +
+                    fecha_de_registro_dia1 + " INTEGER," +
+                    fecha_de_registro_mes1 + " INTEGER," +
+                    fecha_de_registro_anio1 + " INTEGER," +
+                    fecha_de_registro_hora1 + " INTEGER," +
+                    fecha_de_registro_minuto1 + " INTEGER," +
+                    fecha_de_registro_estatus2 + " INTEGER," +
+                    fecha_de_registro_dia2 + " INTEGER," +
+                    fecha_de_registro_mes2 + " INTEGER," +
+                    fecha_de_registro_anio2 + " INTEGER," +
+                    fecha_de_registro_hora2 + " INTEGER," +
+                    fecha_de_registro_minuto2 + " INTEGER," +
                     fecha_de_registro_subido1 + " INTEGER," +
                     fecha_de_registro_subido2 + " INTEGER"+");"
             ;
@@ -179,7 +179,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_CLAVE = "clave=?";
     public static final String WHERE_CLAUSE_CODIGO = "numdoc=?";
     public static final String WHERE_CLAUSE_SEDE = "sede_region=?";
-    public static final String WHERE_CLAUSE_COD_LOCAL = "cod_local=?";
+    public static final String WHERE_CLAUSE_COD_LOCAL = "nro_local=?";
     public static final String WHERE_CLAUSE_SUBIDO1 = "subido1=? and estatus1=?";
     public static final String WHERE_CLAUSE_SUBIDO2 = "subido2=? and estatus2=?";
     public static final String WHERE_CLAUSE_SUBIDO3 = "subido3=?";
@@ -191,7 +191,7 @@ public class SQLConstantes {
     public static final String[] COLUMNAS_NACIONAL = {
             nacional_id ,
             nacional_sede ,
-            nacional_nro_local ,
+            nacional_nro_local,
             nacional_local_aplicacion ,
             nacional_direccion_local ,
             nacional_cod_sede_reg ,
@@ -215,8 +215,8 @@ public class SQLConstantes {
             usuario_local_id,
             usuario_local_usuario,
             usuario_local_clave,
-            usuario_local_cod_local,
-            usuario_local_nom_local,
+            usuario_local_nro_local,
+            usuario_local_local_aplicacion,
             usuario_local_cod_sede_reg,
             usuario_local_sede_region,
             usuario_local_cod_nivel,
@@ -226,45 +226,8 @@ public class SQLConstantes {
     };
 
     public static final String[] COLUMNAS_FECHA_REGISTRO = {
-                    fecha_de_registro_id ,
-                    fecha_de_registro_sede ,
-                    fecha_de_registro_nro_local ,
-                    fecha_de_registro_local_aplicacion ,
-                    fecha_de_registro_direccion_local ,
-                    fecha_de_registro_cod_sede_reg ,
-                    fecha_de_registro_cod_sede_prov,
-                    fecha_de_registro_cod_sede_distrital,
-                    fecha_de_registro_sede_reg,
-                    fecha_de_registro_sede_prov,
-                    fecha_de_registro_sede_distrital,
-                    fecha_de_registro_aula ,
-                    fecha_de_registro_bungalow,
-                    fecha_de_registro_apepat ,
-                    fecha_de_registro_numdoc ,
-                    fecha_de_registro_tipo,
-                    fecha_de_registro_tipocargo,
-                    fecha_de_registro_cargo,
-                    fecha_de_registro_nivel,
-                    fecha_de_registro_responsable_bungalow,
-                    fecha_de_registro_estatus1 ,
-                    fecha_de_registro_dia1 ,
-                    fecha_de_registro_mes1 ,
-                    fecha_de_registro_anio1 ,
-                    fecha_de_registro_hora1 ,
-                    fecha_de_registro_minuto1 ,
-                    fecha_de_registro_estatus2 ,
-                    fecha_de_registro_dia2 ,
-                    fecha_de_registro_mes2 ,
-                    fecha_de_registro_anio2 ,
-                    fecha_de_registro_hora2 ,
-                    fecha_de_registro_minuto2 ,
-                    fecha_de_registro_subido1 ,
-                    fecha_de_registro_subido2
-
-    };
-
-    public static final String[] COLUMNAS_FECHA_REGISTRO_TEMPORAL = {
             fecha_de_registro_id ,
+            fecha_de_registro_sede ,
             fecha_de_registro_nro_local ,
             fecha_de_registro_local_aplicacion ,
             fecha_de_registro_direccion_local ,
@@ -283,7 +246,44 @@ public class SQLConstantes {
             fecha_de_registro_cargo,
             fecha_de_registro_nivel,
             fecha_de_registro_responsable_bungalow,
-            fecha_de_registro_estatus1 ,
+            fecha_de_registro_estatus1,
+            fecha_de_registro_dia1 ,
+            fecha_de_registro_mes1 ,
+            fecha_de_registro_anio1 ,
+            fecha_de_registro_hora1 ,
+            fecha_de_registro_minuto1 ,
+            fecha_de_registro_estatus2 ,
+            fecha_de_registro_dia2 ,
+            fecha_de_registro_mes2 ,
+            fecha_de_registro_anio2 ,
+            fecha_de_registro_hora2 ,
+            fecha_de_registro_minuto2 ,
+            fecha_de_registro_subido1 ,
+            fecha_de_registro_subido2
+    };
+
+    public static final String[] COLUMNAS_FECHA_REGISTRO_TEMPORAL = {
+            fecha_de_registro_id ,
+            fecha_de_registro_sede ,
+            fecha_de_registro_nro_local ,
+            fecha_de_registro_local_aplicacion ,
+            fecha_de_registro_direccion_local ,
+            fecha_de_registro_cod_sede_reg ,
+            fecha_de_registro_cod_sede_prov,
+            fecha_de_registro_cod_sede_distrital,
+            fecha_de_registro_sede_reg,
+            fecha_de_registro_sede_prov,
+            fecha_de_registro_sede_distrital,
+            fecha_de_registro_aula ,
+            fecha_de_registro_bungalow,
+            fecha_de_registro_apepat ,
+            fecha_de_registro_numdoc ,
+            fecha_de_registro_tipo,
+            fecha_de_registro_tipocargo,
+            fecha_de_registro_cargo,
+            fecha_de_registro_nivel,
+            fecha_de_registro_responsable_bungalow,
+            fecha_de_registro_estatus1,
             fecha_de_registro_dia1 ,
             fecha_de_registro_mes1 ,
             fecha_de_registro_anio1 ,

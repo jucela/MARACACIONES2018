@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                   if (usuarioLocal != null){
                       if(usuarioLocal.getCod_nivel().equals("I"))
                       {  Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                          intent.putExtra("cod_local", usuarioLocal.getCod_local());
+                          intent.putExtra("nro_local", usuarioLocal.getNro_local());
                           intent.putExtra("sede", usuarioLocal.getSede_region());
                           intent.putExtra("usuario", usuarioLocal.getUsuario());
                           intent.putExtra("nombrenivel", usuarioLocal.getNom_nivel());

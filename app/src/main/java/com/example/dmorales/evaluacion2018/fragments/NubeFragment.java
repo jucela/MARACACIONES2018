@@ -82,12 +82,6 @@ public class NubeFragment extends Fragment {
             }
         });
 
-
-
-
-
-
-
     }
 
     public void cargaData(){

@@ -1,6 +1,7 @@
 package com.example.dmorales.evaluacion2018.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -35,14 +36,16 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
         holder.txtDni.setText(registrado.getNumdoc());
         holder.txtNombres.setText(registrado.getApepat());
         holder.txtAula.setText(registrado.getAula());
-        holder.txtNbungalow.setText(registrado.getBungalow());
-        holder.txtRbungalow.setText(registrado.getResponsable_bungalow());
-        holder.txtFecha.setText(registrado.getDia1() + "-" + registrado.getMes1() + "-" + registrado.getAnio1());
-        holder.txtEntrada.setText(registrado.getHora1() + ":" + registrado.getMinuto1());
-        holder.txtSalida.setText(registrado.getHora2() + ":" + registrado.getMinuto2());
+        holder.txtNbungalow.setText(""+registrado.getBungalow());
+        if (registrado.getResponsable_bungalow()==1)
+           {holder.txtRbungalow.setText("SI");}
+           else {holder.txtRbungalow.setText("NO");}
+       // holder.txtFecha.setText(checkDigito(registrado.getDia1()) + "-" + checkDigito(registrado.getMes1()) + "-" + (registrado.getAnio1()+1900));
+        holder.txtEntrada.setText(checkDigito(registrado.getDia1()) + "-" + checkDigito(registrado.getMes1()) + "-" + (registrado.getAnio1()+1900)+"  "+checkDigito(registrado.getHora1()) + ":" + checkDigito(registrado.getMinuto1()));
+        holder.txtSalida.setText(checkDigito(registrado.getDia2()) + "-" + checkDigito(registrado.getMes2()) + "-" + (registrado.getAnio2()+1900)+"  "+checkDigito(registrado.getHora2()) + ":" + checkDigito(registrado.getMinuto2()));
 
-//        if(registrado.getSubido() == 1){
-//            holder.cv.setCardBackgroundColor(Color.WHITE);
+//        if(registrado.getSubido1() == 1){
+//            holder.cv.setCardBackgroundColor(Color.GREEN);
 //        }else{
 //            holder.cv.setCardBackgroundColor(Color.rgb(227,242,253));
 //        }
@@ -75,7 +78,7 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
             txtAula = itemView.findViewById(R.id.item_registrado_txtAula);
             txtNbungalow =itemView.findViewById(R.id.item_registrado_txtNbungalow);
             txtRbungalow =itemView.findViewById(R.id.item_registrado_txtRbungalow);
-            txtFecha = itemView.findViewById(R.id.item_registrado_txtFecha);
+            //txtFecha = itemView.findViewById(R.id.item_registrado_txtFecha);
             txtEntrada = itemView.findViewById(R.id.item_registrado_txtHentrada);
             txtSalida = itemView.findViewById(R.id.item_registrado_txtHsalida);
         }

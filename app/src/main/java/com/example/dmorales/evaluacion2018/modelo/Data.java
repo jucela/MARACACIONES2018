@@ -98,8 +98,8 @@ public class Data {
                 usuario = new UsuarioLocal();
                 usuario.setUsuario(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_usuario)));
                 usuario.setClave(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_clave)));
-                usuario.setCod_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_cod_local)));
-                usuario.setNom_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_nom_local)));
+                usuario.setNro_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_nro_local)));
+                usuario.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_local_aplicacion)));
                 usuario.setSede_region(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_sede_region)));
                 usuario.setCod_nivel(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_cod_nivel)));
                 usuario.setNom_nivel(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_nom_nivel)));
@@ -157,6 +157,7 @@ public class Data {
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 registrado = new Registrado();
+                registrado.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
                 registrado.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
                 registrado.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
                 registrado.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
@@ -170,7 +171,6 @@ public class Data {
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setBungalow(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_bungalow)));
                 registrado.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
-                registrado.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
                 registrado.setTipo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_tipo)));
                 registrado.setTipocargo(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_tipocargo)));
                 registrado.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
@@ -220,6 +220,7 @@ public class Data {
             if(cursor.getCount() == 1){
                 cursor.moveToFirst();
                 registrado = new Registrado();
+                registrado.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
                 registrado.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
                 registrado.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
                 registrado.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
@@ -233,7 +234,6 @@ public class Data {
                 registrado.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
                 registrado.setBungalow(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_bungalow)));
                 registrado.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
-                registrado.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
                 registrado.setTipo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_tipo)));
                 registrado.setTipocargo(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_tipocargo)));
                 registrado.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));

@@ -64,7 +64,7 @@ public class SalidaLocalFragment extends Fragment {
     TextView txtErrorLocal_error;
 
     String sede;
-    String cod_local;
+    String nro_local;
     Context context;
 
 
@@ -75,8 +75,8 @@ public class SalidaLocalFragment extends Fragment {
 
 
     @SuppressLint("ValidFragment")
-    public SalidaLocalFragment(String cod_local, Context context) {
-        this.cod_local = cod_local;
+    public SalidaLocalFragment(String nro_local, Context context) {
+        this.nro_local = nro_local;
         this.context = context;
     }
 
@@ -248,7 +248,8 @@ public class SalidaLocalFragment extends Fragment {
                 data = new Data(context);
                 data.open();
                 Registrado registrados = data.getFechaRegistro(registrado.getNumdoc());
-                if(registrados.getEstatus1()==1){
+                if(registrados.getEstatus2()==1){
+                    //YA REGISTRADO
                     cvError.setVisibility(View.GONE);
                     cvNoregistrado.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.VISIBLE);
@@ -256,10 +257,11 @@ public class SalidaLocalFragment extends Fragment {
                     cvAviso.setVisibility(View.GONE);
                     txtRegistroDni_yaregistrado.setText(registrado.getNumdoc());
                     txtRegistroNombres_yaregistrado.setText(registrado.getApepat());
-                    txtRegistroFecha.setText(registrado.getAnio2()+"/"+registrado.getMes2()+"/"+registrado.getDia2()+"  -  "+registrado.getHora2()+":"+registrado.getMinuto2());
+                    txtRegistroFecha.setText(checkDigito(registrado.getDia2())+"/"+checkDigito(registrado.getMes2()+1)+"/"+(registrado.getAnio2()+1900)+"  -  "+checkDigito(registrado.getHora2())+":"+checkDigito(registrado.getMinuto2()));
 
                 }
                 else{
+                    //NUEVO REGISTRADO
                     cvError.setVisibility(View.GONE);
                     cvNoregistrado.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.GONE);
@@ -271,8 +273,10 @@ public class SalidaLocalFragment extends Fragment {
                     txtRegistroLocal.setText(registrado.getCargo());
                     txtRegistroCargo.setText(registrado.getCargo());
                     txtRegistroAula.setText(registrado.getAula());
-                    txtRegistroRbungalow.setText("Responsable de Bungalow :  "+registrado.getResponsable_bungalow());
-                    txtRegistroNbungalow.setText(registrado.getBungalow());
+                    txtRegistroNbungalow.setText(""+registrado.getBungalow());
+                    if(registrado.getResponsable_bungalow()==1)
+                    {txtRegistroRbungalow.setText("Responsable de Bungalow : SI ");}
+                    else {txtRegistroRbungalow.setText("Responsable de Bungalow : NO  ");}
                     Calendar calendario = Calendar.getInstance();
                     int yy = calendario.get(Calendar.YEAR)-1900;
                     int mm = calendario.get(Calendar.MONTH);
@@ -287,12 +291,13 @@ public class SalidaLocalFragment extends Fragment {
                     registroactualizado.put("anio2", yy);
                     registroactualizado.put("hora2", hora);
                     registroactualizado.put("minuto2", minuto);
-                    registroactualizado.put("estado2",1);
+                    registroactualizado.put("estatus2",1);
                     data.actualizarFechaRegistro(dni, registroactualizado);
                 }
                 data.close();
             }
             else {
+                //NO SE REGISTRO ENTRADA
                 Data dato = new Data(context);
                 dato.open();
                 Nacional nacional = dato.getNacional(dni);
@@ -341,7 +346,7 @@ public class SalidaLocalFragment extends Fragment {
             data.open();
             Nacional nacional = data.getNacional(dni);
             data.close();
-            if(cod_local.equals(nacional.getNro_local())){
+            if(nro_local.equals(String.valueOf(nacional.getNro_local()))){
                 encontrado = true;
 
             }

@@ -76,15 +76,7 @@
                     android:text="RESPONS. BUNGALOW"
                     />
                 <TextView
-                    android:layout_weight="1.5"
-                    android:layout_width="0dp"
-                    android:textColor="@color/icons"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="FECHA"
-                    />
-                <TextView
-                    android:layout_weight="1.5"
+                    android:layout_weight="2"
                     android:layout_width="0dp"
                     android:textColor="@color/icons"
                     android:layout_height="wrap_content"
@@ -93,7 +85,7 @@
                     android:text="INGRESO LOCAL"
                     />
                 <TextView
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:layout_width="0dp"
                     android:textColor="@color/icons"
                     android:layout_height="wrap_content"
