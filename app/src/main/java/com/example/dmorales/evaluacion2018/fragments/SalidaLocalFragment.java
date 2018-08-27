@@ -247,15 +247,15 @@ public class SalidaLocalFragment extends Fragment {
                 encontrado = true;
                 data = new Data(context);
                 data.open();
-                Registrado registrados = data.getFechaRegistro(registrado.getCodigo());
-                if(registrados.getEstado2().equals("1")){
+                Registrado registrados = data.getFechaRegistro(registrado.getNumdoc());
+                if(registrados.getEstatus1()==1){
                     cvError.setVisibility(View.GONE);
                     cvNoregistrado.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.VISIBLE);
                     cvRegistro.setVisibility(View.GONE);
                     cvAviso.setVisibility(View.GONE);
-                    txtRegistroDni_yaregistrado.setText(registrado.getCodigo());
-                    txtRegistroNombres_yaregistrado.setText(registrado.getNombres());
+                    txtRegistroDni_yaregistrado.setText(registrado.getNumdoc());
+                    txtRegistroNombres_yaregistrado.setText(registrado.getApepat());
                     txtRegistroFecha.setText(registrado.getAnio2()+"/"+registrado.getMes2()+"/"+registrado.getDia2()+"  -  "+registrado.getHora2()+":"+registrado.getMinuto2());
 
                 }
@@ -265,14 +265,14 @@ public class SalidaLocalFragment extends Fragment {
                     cvYaregistrado.setVisibility(View.GONE);
                     cvRegistro.setVisibility(View.VISIBLE);
                     cvAviso.setVisibility(View.GONE);
-                    txtRegistroSede.setText(registrado.getSede_region());
-                    txtRegistroNombres.setText(registrado.getNombres());
-                    txtRegistroDni.setText(registrado.getCodigo());
+                    txtRegistroSede.setText(registrado.getSede());
+                    txtRegistroNombres.setText(registrado.getApepat());
+                    txtRegistroDni.setText(registrado.getNumdoc());
                     txtRegistroLocal.setText(registrado.getCargo());
                     txtRegistroCargo.setText(registrado.getCargo());
                     txtRegistroAula.setText(registrado.getAula());
-                    txtRegistroRbungalow.setText("Responsable de Bungalow :  "+registrado.getResp_bungalow());
-                    txtRegistroNbungalow.setText(registrado.getN_bungalow());
+                    txtRegistroRbungalow.setText("Responsable de Bungalow :  "+registrado.getResponsable_bungalow());
+                    txtRegistroNbungalow.setText(registrado.getBungalow());
                     Calendar calendario = Calendar.getInstance();
                     int yy = calendario.get(Calendar.YEAR)-1900;
                     int mm = calendario.get(Calendar.MONTH);
@@ -282,13 +282,12 @@ public class SalidaLocalFragment extends Fragment {
                     int segundo = calendario.get(Calendar.SECOND);
 
                     ContentValues registroactualizado = new ContentValues();
-                    registroactualizado.put("fecha_registro2",checkDigito(yy)+"-"+checkDigito(mm)+"-"+checkDigito(dd)+" "+checkDigito(hora)+":"+checkDigito(minuto)+":"+checkDigito(segundo));
-                    registroactualizado.put("dia2", checkDigito(dd));
-                    registroactualizado.put("mes2", checkDigito(mm));
-                    registroactualizado.put("anio2", checkDigito(yy));
-                    registroactualizado.put("hora2", checkDigito(hora));
-                    registroactualizado.put("minuto2", checkDigito(minuto));
-                    registroactualizado.put("estado2", "1");
+                    registroactualizado.put("dia2", dd);
+                    registroactualizado.put("mes2", mm);
+                    registroactualizado.put("anio2", yy);
+                    registroactualizado.put("hora2", hora);
+                    registroactualizado.put("minuto2", minuto);
+                    registroactualizado.put("estado2",1);
                     data.actualizarFechaRegistro(dni, registroactualizado);
                 }
                 data.close();
@@ -303,9 +302,9 @@ public class SalidaLocalFragment extends Fragment {
                 cvYaregistrado.setVisibility(View.GONE);
                 cvRegistro.setVisibility(View.GONE);
                 cvAviso.setVisibility(View.VISIBLE);
-                txtErrorSede_error.setText(nacional.getSede_region());
-                txtErrorLocal_error.setText(nacional.getSede_region());
-                txtRegistroDireccion.setText(nacional.getDireccion());
+                txtErrorSede_error.setText(nacional.getSede());
+                txtErrorLocal_error.setText(nacional.getSede());
+                txtRegistroDireccion.setText(nacional.getDireccion_local());
 
             }
         } catch (IOException e) {
@@ -342,7 +341,7 @@ public class SalidaLocalFragment extends Fragment {
             data.open();
             Nacional nacional = data.getNacional(dni);
             data.close();
-            if(cod_local.equals(nacional.getCod_local())){
+            if(cod_local.equals(nacional.getNro_local())){
                 encontrado = true;
 
             }

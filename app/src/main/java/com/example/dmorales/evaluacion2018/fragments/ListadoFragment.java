@@ -110,19 +110,13 @@ public class ListadoFragment extends Fragment {
                     for (final Registrado registrado : agregados){
                         if(registrado.getSubido1()==0 && registrado.getSubido2()==0) {
                             registrado.setSubido1(1);
-                            int anio = Integer.parseInt(registrado.getAnio1());
-                            int mes = Integer.parseInt(registrado.getMes1());
-                            int dia = Integer.parseInt(registrado.getDia1());
-                            int hora = Integer.parseInt(registrado.getHora1());
-                            int minuto = Integer.parseInt(registrado.getMinuto1());
-
                             String coleccion = "ASISTENCIA_NIYII";
                             WriteBatch batch = db.batch();
                             DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
-                            batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(anio, mes, dia, hora, minuto)));
-                            batch.update(documentReference,"statusl",registrado.getEstado1());
+                            batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(registrado.getAnio1(),registrado.getMes1(),registrado.getDia1(),registrado.getHora1(),registrado.getMinuto1())));
+                            batch.update(documentReference,"statusl",registrado.getEstatus1());
                             batch.update(documentReference,"hora_transferencia_entrada", FieldValue.serverTimestamp());
-                            final String c = registrado.getCodigo();
+                            final String c = registrado.getNumdoc();
                             batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -160,18 +154,13 @@ public class ListadoFragment extends Fragment {
                     for (final Registrado registrado : agregados2){
                         if(registrado.getSubido1()==1 && registrado.getSubido2()==0) {
                             registrado.setSubido2(1);
-                            int anio = Integer.parseInt(registrado.getAnio2());
-                            int mes = Integer.parseInt(registrado.getMes2());
-                            int dia = Integer.parseInt(registrado.getDia2());
-                            int hora = Integer.parseInt(registrado.getHora2());
-                            int minuto = Integer.parseInt(registrado.getMinuto2());
                             String coleccion = "ASISTENCIA_NIYII";
                             WriteBatch batch = db.batch();
                             DocumentReference documentReference = db.collection(coleccion).document(registrado.get_id());
-                            batch.update(documentReference,"fecha_registro2", new Timestamp(new Date(anio, mes, dia, hora, minuto)));
-                            batch.update(documentReference,"status2",registrado.getEstado2());
+                            batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(registrado.getAnio2(),registrado.getMes2(),registrado.getDia2(),registrado.getHora2(),registrado.getMinuto2())));
+                            batch.update(documentReference,"status2",registrado.getEstatus2());
                             batch.update(documentReference,"hora_transferencia_salida", FieldValue.serverTimestamp());
-                            final String c = registrado.getCodigo();
+                            final String c = registrado.getNumdoc();
 
                             batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

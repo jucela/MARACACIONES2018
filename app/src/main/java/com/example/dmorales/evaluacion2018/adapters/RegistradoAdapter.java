@@ -32,11 +32,11 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         Registrado registrado = registrados.get(position);
-        holder.txtDni.setText(registrado.getCodigo());
-        holder.txtNombres.setText(registrado.getNombres());
+        holder.txtDni.setText(registrado.getNumdoc());
+        holder.txtNombres.setText(registrado.getApepat());
         holder.txtAula.setText(registrado.getAula());
-        holder.txtNbungalow.setText(registrado.getN_bungalow());
-        holder.txtRbungalow.setText(registrado.getResp_bungalow());
+        holder.txtNbungalow.setText(registrado.getBungalow());
+        holder.txtRbungalow.setText(registrado.getResponsable_bungalow());
         holder.txtFecha.setText(registrado.getDia1() + "-" + registrado.getMes1() + "-" + registrado.getAnio1());
         holder.txtEntrada.setText(registrado.getHora1() + ":" + registrado.getMinuto1());
         holder.txtSalida.setText(registrado.getHora2() + ":" + registrado.getMinuto2());

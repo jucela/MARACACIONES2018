@@ -4,112 +4,110 @@ import android.content.ContentValues;
 
 public class Registrado {
     private String _id;
-    private String nivel;
+    private String sede;
+    private int nro_local;
+    private String local_aplicacion;
+    private String direccion_local;
     private String cod_sede_reg;
     private String cod_sede_prov;
     private String cod_sede_distrital;
-    private String sede_region;
-    private String sede_provincia;
+    private String sede_reg;
+    private String sede_prov;
     private String sede_distrital;
-    private String cod_local;
-    private String nom_local;
-    private String direccion;
     private String aula;
-    private String codigo;
-    private String nombres;
-    private String id_cargo;
+    private int bungalow;
+    private String apepat;
+    private String numdoc;
+    private String tipo;
+    private int tipocargo;
     private String cargo;
-    private String tipo_candidato;
-    private String n_bungalow;
-    private String resp_bungalow;
-    private String fecha_registro1;
-    private String fecha_registro2;
-    private String dia1;
-    private String mes1;
-    private String anio1;
-    private String hora1;
-    private String minuto1;
-    private String dia2;
-    private String mes2;
-    private String anio2;
-    private String hora2;
-    private String minuto2;
-    private String estado1;
-    private String estado2;
+    private int nivel;
+    private int responsable_bungalow;
+    private int estatus1;
+    private int dia1;
+    private int mes1;
+    private int anio1;
+    private int hora1;
+    private int minuto1;
+    private int estatus2;
+    private int dia2;
+    private int mes2;
+    private int anio2;
+    private int hora2;
+    private int minuto2;
     private int subido1;
     private int subido2;
 
-    public Registrado(String _id, String nivel, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_region, String sede_provincia, String sede_distrital, String cod_local, String nom_local, String direccion, String aula, String codigo, String nombres, String id_cargo, String cargo, String tipo_candidato, String n_bungalow, String resp_bungalow, String fecha_registro1, String fecha_registro2, String dia1, String mes1, String anio1, String hora1, String minuto1, String dia2, String mes2, String anio2, String hora2, String minuto2, String estado1, String estado2, int subido1, int subido2) {
+    public Registrado(String _id, String sede, int nro_local, String local_aplicacion, String direccion_local, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_reg, String sede_prov, String sede_distrital, String aula, int bungalow, String apepat, String numdoc, String tipo, int tipocargo, String cargo, int nivel, int responsable_bungalow, int estatus1, int dia1, int mes1, int anio1, int hora1, int minuto1, int estatus2, int dia2, int mes2, int anio2, int hora2, int minuto2, int subido1, int subido2) {
         this._id = _id;
-        this.nivel = nivel;
+        this.sede = sede;
+        this.nro_local = nro_local;
+        this.local_aplicacion = local_aplicacion;
+        this.direccion_local = direccion_local;
         this.cod_sede_reg = cod_sede_reg;
         this.cod_sede_prov = cod_sede_prov;
         this.cod_sede_distrital = cod_sede_distrital;
-        this.sede_region = sede_region;
-        this.sede_provincia = sede_provincia;
+        this.sede_reg = sede_reg;
+        this.sede_prov = sede_prov;
         this.sede_distrital = sede_distrital;
-        this.cod_local = cod_local;
-        this.nom_local = nom_local;
-        this.direccion = direccion;
         this.aula = aula;
-        this.codigo = codigo;
-        this.nombres = nombres;
-        this.id_cargo = id_cargo;
+        this.bungalow = bungalow;
+        this.apepat = apepat;
+        this.numdoc = numdoc;
+        this.tipo = tipo;
+        this.tipocargo = tipocargo;
         this.cargo = cargo;
-        this.tipo_candidato = tipo_candidato;
-        this.n_bungalow = n_bungalow;
-        this.resp_bungalow = resp_bungalow;
-        this.fecha_registro1 = fecha_registro1;
-        this.fecha_registro2 = fecha_registro2;
+        this.nivel = nivel;
+        this.responsable_bungalow = responsable_bungalow;
+        this.estatus1 = estatus1;
         this.dia1 = dia1;
         this.mes1 = mes1;
         this.anio1 = anio1;
         this.hora1 = hora1;
         this.minuto1 = minuto1;
+        this.estatus2 = estatus2;
         this.dia2 = dia2;
         this.mes2 = mes2;
         this.anio2 = anio2;
         this.hora2 = hora2;
         this.minuto2 = minuto2;
-        this.estado1 = estado1;
-        this.estado2 = estado2;
         this.subido1 = subido1;
         this.subido2 = subido2;
     }
 
     public Registrado(){
         this._id="";
-        this.nivel="";
+        this.sede="";
+        this.nro_local=0;
+        this.local_aplicacion="";
+        this.direccion_local ="";
         this.cod_sede_reg="";
         this.cod_sede_prov="";
         this.cod_sede_distrital="";
-        this.sede_region="";
-        this.sede_provincia="";
+        this.sede_reg="";
+        this.sede_prov="";
         this.sede_distrital="";
-        this.cod_local="";
-        this.nom_local="";
         this.aula="";
-        this.codigo="";
-        this.nombres="";
-        this.id_cargo="";
+        this.bungalow = 0;
+        this.apepat="";
+        this.numdoc="";
+        this.tipo = "";
+        this.tipocargo=0;
         this.cargo="";
-        this.tipo_candidato = "";
-        this.n_bungalow = "";
-        this.resp_bungalow = "";
-        this.fecha_registro1 ="";
-        this.fecha_registro2 ="";
-        this.dia1="";
-        this.mes1="";
-        this.anio1="";
-        this.hora1="";
-        this.minuto1="";
-        this.dia2="";
-        this.mes2="";
-        this.anio2="";
-        this.hora2="";
-        this.minuto2="";
-        this.estado1="";
-        this.estado2="";
+        this.nivel=0;
+        this.responsable_bungalow = 0;
+        this.estatus1=0;
+        this.dia1=0;
+        this.mes1=0;
+        this.anio1=0;
+        this.hora1=0;
+        this.minuto1=0;
+        this.estatus2=0;
+        this.dia2=0;
+        this.mes2=0;
+        this.anio2=0;
+        this.hora2=0;
+        this.minuto2=0;
         this.subido1 = 0;
         this.subido2 = 0;
     }
@@ -122,12 +120,36 @@ public class Registrado {
         this._id = _id;
     }
 
-    public String getNivel() {
-        return nivel;
+    public String getSede() {
+        return sede;
     }
 
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
+    public void setSede(String sede) {
+        this.sede = sede;
+    }
+
+    public int getNro_local() {
+        return nro_local;
+    }
+
+    public void setNro_local(int nro_local) {
+        this.nro_local = nro_local;
+    }
+
+    public String getLocal_aplicacion() {
+        return local_aplicacion;
+    }
+
+    public void setLocal_aplicacion(String local_aplicacion) {
+        this.local_aplicacion = local_aplicacion;
+    }
+
+    public String getDireccion_local() {
+        return direccion_local;
+    }
+
+    public void setDireccion_local(String direccion_local) {
+        this.direccion_local = direccion_local;
     }
 
     public String getCod_sede_reg() {
@@ -154,20 +176,20 @@ public class Registrado {
         this.cod_sede_distrital = cod_sede_distrital;
     }
 
-    public String getSede_region() {
-        return sede_region;
+    public String getSede_reg() {
+        return sede_reg;
     }
 
-    public void setSede_region(String sede_region) {
-        this.sede_region = sede_region;
+    public void setSede_reg(String sede_reg) {
+        this.sede_reg = sede_reg;
     }
 
-    public String getSede_provincia() {
-        return sede_provincia;
+    public String getSede_prov() {
+        return sede_prov;
     }
 
-    public void setSede_provincia(String sede_provincia) {
-        this.sede_provincia = sede_provincia;
+    public void setSede_prov(String sede_prov) {
+        this.sede_prov = sede_prov;
     }
 
     public String getSede_distrital() {
@@ -178,30 +200,6 @@ public class Registrado {
         this.sede_distrital = sede_distrital;
     }
 
-    public String getCod_local() {
-        return cod_local;
-    }
-
-    public void setCod_local(String cod_local) {
-        this.cod_local = cod_local;
-    }
-
-    public String getNom_local() {
-        return nom_local;
-    }
-
-    public void setNom_local(String nom_local) {
-        this.nom_local = nom_local;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
     public String getAula() {
         return aula;
     }
@@ -210,28 +208,44 @@ public class Registrado {
         this.aula = aula;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public int getBungalow() {
+        return bungalow;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setBungalow(int bungalow) {
+        this.bungalow = bungalow;
     }
 
-    public String getNombres() {
-        return nombres;
+    public String getApepat() {
+        return apepat;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setApepat(String apepat) {
+        this.apepat = apepat;
     }
 
-    public String getId_cargo() {
-        return id_cargo;
+    public String getNumdoc() {
+        return numdoc;
     }
 
-    public void setId_cargo(String id_cargo) {
-        this.id_cargo = id_cargo;
+    public void setNumdoc(String numdoc) {
+        this.numdoc = numdoc;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getTipocargo() {
+        return tipocargo;
+    }
+
+    public void setTipocargo(int tipocargo) {
+        this.tipocargo = tipocargo;
     }
 
     public String getCargo() {
@@ -242,100 +256,118 @@ public class Registrado {
         this.cargo = cargo;
     }
 
-    public String getDia1() {
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public int getResponsable_bungalow() {
+        return responsable_bungalow;
+    }
+
+    public void setResponsable_bungalow(int responsable_bungalow) {
+        this.responsable_bungalow = responsable_bungalow;
+    }
+
+
+
+    public int getDia1() {
         return dia1;
     }
 
-    public void setDia1(String dia1) {
+    public void setDia1(int dia1) {
         this.dia1 = dia1;
     }
 
-    public String getMes1() {
+    public int getMes1() {
         return mes1;
     }
 
-    public void setMes1(String mes1) {
+    public void setMes1(int mes1) {
         this.mes1 = mes1;
     }
 
-    public String getAnio1() {
+    public int getAnio1() {
         return anio1;
     }
 
-    public void setAnio1(String anio1) {
+    public void setAnio1(int anio1) {
         this.anio1 = anio1;
     }
 
-    public String getHora1() {
+    public int getHora1() {
         return hora1;
     }
 
-    public void setHora1(String hora1) {
+    public void setHora1(int hora1) {
         this.hora1 = hora1;
     }
 
-    public String getMinuto1() {
+    public int getMinuto1() {
         return minuto1;
     }
 
-    public void setMinuto1(String minuto1) {
+    public void setMinuto1(int minuto1) {
         this.minuto1 = minuto1;
     }
 
-    public String getDia2() {
+    public int getEstatus1() {
+        return estatus1;
+    }
+
+    public void setEstatus1(int estatus1) {
+        this.estatus1 = estatus1;
+    }
+
+    public int getEstatus2() {
+        return estatus2;
+    }
+
+    public void setEstatus2(int estatus2) {
+        this.estatus2 = estatus2;
+    }
+
+    public int getDia2() {
         return dia2;
     }
 
-    public void setDia2(String dia2) {
+    public void setDia2(int dia2) {
         this.dia2 = dia2;
     }
 
-    public String getMes2() {
+    public int getMes2() {
         return mes2;
     }
 
-    public void setMes2(String mes2) {
+    public void setMes2(int mes2) {
         this.mes2 = mes2;
     }
 
-    public String getAnio2() {
+    public int getAnio2() {
         return anio2;
     }
 
-    public void setAnio2(String anio2) {
+    public void setAnio2(int anio2) {
         this.anio2 = anio2;
     }
 
-    public String getHora2() {
+    public int getHora2() {
         return hora2;
     }
 
-    public void setHora2(String hora2) {
+    public void setHora2(int hora2) {
         this.hora2 = hora2;
     }
 
-    public String getMinuto2() {
+    public int getMinuto2() {
         return minuto2;
     }
 
-    public void setMinuto2(String minuto2) {
+    public void setMinuto2(int minuto2) {
         this.minuto2 = minuto2;
-    }
-
-    public String getEstado1() {
-        return estado1;
-    }
-
-    public void setEstado1(String estado1) {
-        this.estado1 = estado1;
-    }
-
-    public String getEstado2() {
-        return estado2;
-    }
-
-    public void setEstado2(String estado2) {
-        this.estado2 = estado2;
     }
 
     public int getSubido1() {
@@ -354,81 +386,40 @@ public class Registrado {
         this.subido2 = subido2;
     }
 
-    public String getTipo_candidato() {
-        return tipo_candidato;
-    }
-
-    public void setTipo_candidato(String tipo_candidato) {
-        this.tipo_candidato = tipo_candidato;
-    }
-
-    public String getN_bungalow() {
-        return n_bungalow;
-    }
-
-    public void setN_bungalow(String n_bungalow) {
-        this.n_bungalow = n_bungalow;
-    }
-
-    public String getResp_bungalow() {
-        return resp_bungalow;
-    }
-
-    public void setResp_bungalow(String resp_bungalow) {
-        this.resp_bungalow = resp_bungalow;
-    }
-
-    public String getFecha_registro1() {
-        return fecha_registro1;
-    }
-
-    public void setFecha_registro1(String fecha_registro1) {
-        this.fecha_registro1 = fecha_registro1;
-    }
-
-    public String getFecha_registro2() {
-        return fecha_registro2;
-    }
-
-    public void setFecha_registro2(String fecha_registro2) {
-        this.fecha_registro2 = fecha_registro2;
-    }
-
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues();
         contentValues.put(SQLConstantes.fecha_de_registro_id,_id);
-        contentValues.put(SQLConstantes.fecha_de_registro_nivel,nivel);
+        contentValues.put(SQLConstantes.fecha_de_registro_sede,sede);
+        contentValues.put(SQLConstantes.fecha_de_registro_nro_local,nro_local);
+        contentValues.put(SQLConstantes.fecha_de_registro_local_aplicacion,local_aplicacion);
+        contentValues.put(SQLConstantes.fecha_de_registro_direccion_local,direccion_local);
         contentValues.put(SQLConstantes.fecha_de_registro_cod_sede_reg,cod_sede_reg);
         contentValues.put(SQLConstantes.fecha_de_registro_cod_sede_prov,cod_sede_prov);
         contentValues.put(SQLConstantes.fecha_de_registro_cod_sede_distrital,cod_sede_distrital);
-        contentValues.put(SQLConstantes.fecha_de_registro_sede_region,sede_region);
-        contentValues.put(SQLConstantes.fecha_de_registro_sede_provincia,sede_provincia);
+        contentValues.put(SQLConstantes.fecha_de_registro_sede_reg,sede_reg);
+        contentValues.put(SQLConstantes.fecha_de_registro_sede_prov,sede_prov);
         contentValues.put(SQLConstantes.fecha_de_registro_sede_distrital,sede_distrital);
-        contentValues.put(SQLConstantes.fecha_de_registro_cod_local,cod_local);
-        contentValues.put(SQLConstantes.fecha_de_registro_nom_local,nom_local);
-        contentValues.put(SQLConstantes.fecha_de_registro_direccion,direccion);
         contentValues.put(SQLConstantes.fecha_de_registro_aula,aula);
-        contentValues.put(SQLConstantes.fecha_de_registro_codigo,codigo);
-        contentValues.put(SQLConstantes.fecha_de_registro_nombres,nombres);
-        contentValues.put(SQLConstantes.fecha_de_registro_id_cargo,id_cargo);
+        contentValues.put(SQLConstantes.fecha_de_registro_bungalow,bungalow);
+        contentValues.put(SQLConstantes.fecha_de_registro_apepat,apepat);
+        contentValues.put(SQLConstantes.fecha_de_registro_numdoc,numdoc);
+        contentValues.put(SQLConstantes.fecha_de_registro_tipo,tipo);
+        contentValues.put(SQLConstantes.fecha_de_registro_tipocargo,tipocargo);
         contentValues.put(SQLConstantes.fecha_de_registro_cargo,cargo);
-        contentValues.put(SQLConstantes.fecha_de_registro_tipo_candidato,tipo_candidato);
-        contentValues.put(SQLConstantes.fecha_de_registro_n_bungalow,n_bungalow);
-        contentValues.put(SQLConstantes.fecha_de_registro_resp_bungalow,resp_bungalow);
-        contentValues.put(SQLConstantes.fecha_de_registro_fecha_registro1,fecha_registro1);
-        contentValues.put(SQLConstantes.fecha_de_registro_fecha_registro2,fecha_registro2);
+        contentValues.put(SQLConstantes.fecha_de_registro_nivel,nivel);
+        contentValues.put(SQLConstantes.fecha_de_registro_responsable_bungalow,responsable_bungalow);
+        contentValues.put(SQLConstantes.fecha_de_registro_estatus1,estatus1);
         contentValues.put(SQLConstantes.fecha_de_registro_dia1,dia1);
         contentValues.put(SQLConstantes.fecha_de_registro_mes1,mes1);
         contentValues.put(SQLConstantes.fecha_de_registro_anio1,anio1);
         contentValues.put(SQLConstantes.fecha_de_registro_hora1,hora1);
         contentValues.put(SQLConstantes.fecha_de_registro_minuto1,minuto1);
+        contentValues.put(SQLConstantes.fecha_de_registro_estatus2,estatus2);
         contentValues.put(SQLConstantes.fecha_de_registro_dia2,dia2);
         contentValues.put(SQLConstantes.fecha_de_registro_mes2,mes2);
         contentValues.put(SQLConstantes.fecha_de_registro_anio2,anio2);
         contentValues.put(SQLConstantes.fecha_de_registro_hora2,hora2);
         contentValues.put(SQLConstantes.fecha_de_registro_minuto2,minuto2);
-        contentValues.put(SQLConstantes.fecha_de_registro_estado1,estado1);
-        contentValues.put(SQLConstantes.fecha_de_registro_estado2,estado2);
         contentValues.put(SQLConstantes.fecha_de_registro_subido1,subido1);
         contentValues.put(SQLConstantes.fecha_de_registro_subido2,subido2);
         return contentValues;
