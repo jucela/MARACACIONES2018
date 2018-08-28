@@ -42,13 +42,16 @@ public class RegistradoAdapter extends RecyclerView.Adapter<RegistradoAdapter.Vi
            else {holder.txtRbungalow.setText("NO");}
        // holder.txtFecha.setText(checkDigito(registrado.getDia1()) + "-" + checkDigito(registrado.getMes1()) + "-" + (registrado.getAnio1()+1900));
         holder.txtEntrada.setText(checkDigito(registrado.getDia1()) + "-" + checkDigito(registrado.getMes1()) + "-" + (registrado.getAnio1()+1900)+"  "+checkDigito(registrado.getHora1()) + ":" + checkDigito(registrado.getMinuto1()));
-        holder.txtSalida.setText(checkDigito(registrado.getDia2()) + "-" + checkDigito(registrado.getMes2()) + "-" + (registrado.getAnio2()+1900)+"  "+checkDigito(registrado.getHora2()) + ":" + checkDigito(registrado.getMinuto2()));
+        if(registrado.getDia2()==0)
+        {holder.txtSalida.setText("00-00-0000  00:00");}
+        else
+        {holder.txtSalida.setText(checkDigito(registrado.getDia2()) + "-" + checkDigito(registrado.getMes2()) + "-" + (registrado.getAnio2()+1900)+"  "+checkDigito(registrado.getHora2()) + ":" + checkDigito(registrado.getMinuto2()));}
 
-//        if(registrado.getSubido1() == 1){
-//            holder.cv.setCardBackgroundColor(Color.GREEN);
-//        }else{
-//            holder.cv.setCardBackgroundColor(Color.rgb(227,242,253));
-//        }
+        if(registrado.getSubido1() == 1 && registrado.getSubido2()==0){
+            holder.cv.setCardBackgroundColor(Color.rgb(255,223,186));
+        }else if (registrado.getSubido1() == 1 && registrado.getSubido2()==1){
+            holder.cv.setCardBackgroundColor(Color.rgb(201,242,193));
+            } else {holder.cv.setCardBackgroundColor(Color.rgb(251,221,221));}
     }
 
     public String checkDigito (int number) {

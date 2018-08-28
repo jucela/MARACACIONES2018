@@ -44,7 +44,7 @@ public class SQLConstantes {
     public static String usuario_local_cod_nivel = "cod_nivel";
     public static String usuario_local_nom_nivel = "nom_nivel";
     public static String usuario_local_fase = "fase";
-
+    //TABLA SQLITE FECHA_REGISTRO
     public static String fecha_de_registro_id = "_id";
     public static String fecha_de_registro_sede="sede";
     public static String fecha_de_registro_nro_local="nro_local";
@@ -79,6 +79,43 @@ public class SQLConstantes {
     public static String fecha_de_registro_minuto2 = "minuto2";
     public static String fecha_de_registro_subido1 = "subido1";
     public static String fecha_de_registro_subido2 = "subido2";
+
+    //TABLA SQLITE N_REGISTRO
+    public static String registroasistencia_id = "_id";
+    public static String registroasistencia_dni = "dni";
+    public static String registroasistencia_sede="sede";
+    public static String registroasistencia_nro_local="nro_local";
+    public static String registroasistencia_local_aplicacion = "local_aplicacion";
+    public static String registroasistencia_direccion_local = "direccion_local";
+    public static String registroasistencia_cod_sede_reg="cod_sede_reg";
+    public static String registroasistencia_cod_sede_prov="cod_sede_prov";
+    public static String registroasistencia_cod_sede_distrital="cod_sede_distrital";
+    public static String registroasistencia_sede_reg="sede_reg";
+    public static String registroasistencia_sede_prov="sede_prov";
+    public static String registroasistencia_sede_distrital="sede_distrital";
+    public static String registroasistencia_aula = "aula";
+    public static String registroasistencia_bungalow="bungalow";
+    public static String registroasistencia_apepat = "apepat";
+    public static String registroasistencia_numdoc = "numdoc";
+    public static String registroasistencia_tipo="tipo";
+    public static String registroasistencia_tipocargo="tipocargo";
+    public static String registroasistencia_cargo="cargo";
+    public static String registroasistencia_nivel="nivel";
+    public static String registroasistencia_responsable_bungalow="responsable_bungalow";
+    public static String registroasistencia_estatus1 = "estatus1";
+    public static String registroasistencia_dia1 = "dia1";
+    public static String registroasistencia_mes1 = "mes1";
+    public static String registroasistencia_anio1 = "anio1";
+    public static String registroasistencia_hora1 = "hora1";
+    public static String registroasistencia_minuto1 = "minuto1";
+    public static String registroasistencia_estatus2 = "estatus2";
+    public static String registroasistencia_dia2 = "dia2";
+    public static String registroasistencia_mes2 = "mes2";
+    public static String registroasistencia_anio2 = "anio2";
+    public static String registroasistencia_hora2 = "hora2";
+    public static String registroasistencia_minuto2 = "minuto2";
+    public static String registroasistencia_subido1 = "subido1";
+    public static String registroasistencia_subido2 = "subido2";
 
 
 
@@ -139,6 +176,44 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_FECHA_REGISTRO_TEMPORAL =
             "CREATE TABLE " + tablafecharegistrotemporal + "(" +
+                    fecha_de_registro_id + " TEXT PRIMARY KEY," +
+                    fecha_de_registro_sede + " TEXT," +
+                    fecha_de_registro_nro_local + " INTEGER," +
+                    fecha_de_registro_local_aplicacion + " TEXT," +
+                    fecha_de_registro_direccion_local + " TEXT," +
+                    fecha_de_registro_cod_sede_reg + " TEXT," +
+                    fecha_de_registro_cod_sede_prov+ " TEXT," +
+                    fecha_de_registro_cod_sede_distrital+ " TEXT," +
+                    fecha_de_registro_sede_reg+ " TEXT," +
+                    fecha_de_registro_sede_prov+ " TEXT," +
+                    fecha_de_registro_sede_distrital+ " TEXT," +
+                    fecha_de_registro_aula + " TEXT," +
+                    fecha_de_registro_bungalow+ " TEXT," +
+                    fecha_de_registro_apepat + " TEXT," +
+                    fecha_de_registro_numdoc + " TEXT," +
+                    fecha_de_registro_tipo+ " TEXT," +
+                    fecha_de_registro_tipocargo+ " INTEGER," +
+                    fecha_de_registro_cargo+ " TEXT," +
+                    fecha_de_registro_nivel+ " INTEGER," +
+                    fecha_de_registro_responsable_bungalow+ " INTEGER," +
+                    fecha_de_registro_estatus1 + " INTEGER," +
+                    fecha_de_registro_dia1 + " INTEGER," +
+                    fecha_de_registro_mes1 + " INTEGER," +
+                    fecha_de_registro_anio1 + " INTEGER," +
+                    fecha_de_registro_hora1 + " INTEGER," +
+                    fecha_de_registro_minuto1 + " INTEGER," +
+                    fecha_de_registro_estatus2 + " INTEGER," +
+                    fecha_de_registro_dia2 + " INTEGER," +
+                    fecha_de_registro_mes2 + " INTEGER," +
+                    fecha_de_registro_anio2 + " INTEGER," +
+                    fecha_de_registro_hora2 + " INTEGER," +
+                    fecha_de_registro_minuto2 + " INTEGER," +
+                    fecha_de_registro_subido1 + " INTEGER," +
+                    fecha_de_registro_subido2 + " INTEGER"+");"
+            ;
+
+    public static final String SQL_CREATE_TABLA_REGISTROASISTENCIA =
+            "CREATE TABLE " + tablafecharegistro + "(" +
                     fecha_de_registro_id + " TEXT PRIMARY KEY," +
                     fecha_de_registro_sede + " TEXT," +
                     fecha_de_registro_nro_local + " INTEGER," +

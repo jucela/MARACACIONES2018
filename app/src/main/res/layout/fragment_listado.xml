@@ -90,6 +90,7 @@
                     android:textColor="@color/icons"
                     android:layout_height="wrap_content"
                     android:textSize="9dp"
+                    android:textAlignment="center"
                     android:text="SALIDA LOCAL"
                     />
             </LinearLayout>
