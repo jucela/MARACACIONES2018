@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.NumericKeyBoardTransformationMethod;
 import com.example.dmorales.evaluacion2018.R;
+import com.example.dmorales.evaluacion2018.modelo.AsistenteModelo1;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.Nacional;
 import com.example.dmorales.evaluacion2018.modelo.Registrado;
@@ -31,7 +32,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IngresoLocalFragment extends Fragment {
+public class IngresoLocalFragment1 extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -67,13 +68,13 @@ public class IngresoLocalFragment extends Fragment {
 
 
 
-    public IngresoLocalFragment() {
+    public IngresoLocalFragment1() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public IngresoLocalFragment(String nro_local, Context context) {
+    public IngresoLocalFragment1(String nro_local, Context context) {
         this.nro_local = nro_local;
         this.context = context;
     }
@@ -206,16 +207,16 @@ public class IngresoLocalFragment extends Fragment {
                 if(nro_local.equals(String.valueOf(nacional.getNro_local()))){
                     data = new Data(context);
                     data.open();
-                    Registrado registrado = data.getFechaRegistro(nacional.getNumdoc());
-                    if(registrado != null){
+                    AsistenteModelo1 asistenteModelo1 = data.getAsistencia1(nacional.getNumdoc());
+                    if(asistenteModelo1 != null){
                         //YA REGISTRADO
                         cvError.setVisibility(View.GONE);
                         cvNoregistrado.setVisibility(View.GONE);
                         cvYaregistrado.setVisibility(View.VISIBLE);
                         cvRegistro.setVisibility(View.GONE);
-                        txtRegistroDni_yaregistrado.setText(registrado.getNumdoc());
-                        txtRegistroNombres_yaregistrado.setText(registrado.getApepat());
-                        txtRegistroFecha.setText(checkDigito(registrado.getDia1())+"/"+checkDigito(registrado.getMes1()+1)+"/"+(registrado.getAnio1()+1900)+"  -  "+checkDigito(registrado.getHora1())+":"+checkDigito(registrado.getMinuto1()));
+                        txtRegistroDni_yaregistrado.setText(asistenteModelo1.getNumdoc());
+                        txtRegistroNombres_yaregistrado.setText(asistenteModelo1.getApepat());
+                        txtRegistroFecha.setText(checkDigito(asistenteModelo1.getDia1())+"/"+checkDigito(asistenteModelo1.getMes1()+1)+"/"+(asistenteModelo1.getAnio1()+1900)+"  -  "+checkDigito(asistenteModelo1.getHora1())+":"+checkDigito(asistenteModelo1.getMinuto1()));
                     }else{
                         //NUEVO REGISTRADO
                         cvError.setVisibility(View.GONE);
@@ -242,15 +243,34 @@ public class IngresoLocalFragment extends Fragment {
                         int estatus1 = 1;
                         int estatus2 = 0;
                         //2018-08-17 15:23:41.000
-                        Registrado registrado1 = new Registrado(dni,nacional.getSede(),
-                                nacional.getNro_local(),nacional.getLocal_aplicacion(),nacional.getDireccion_local(),
-                                nacional.getCod_sede_reg(),nacional.getCod_sede_prov(),nacional.getCod_sede_distrital(),
-                                nacional.getSede_reg(),nacional.getSede_prov(),nacional.getSede_distrital(),
-                                nacional.getAula(),nacional.getBungalow(),nacional.getApepat(),nacional.getNumdoc(),
-                                nacional.getTipo(),nacional.getTipocargo(),nacional.getCargo(),nacional.getNivel(),nacional.getResponsable_bungalow(),
-                                estatus1,dd,mm,yy,hora,minuto,
-                                estatus2,0,0,0,0,0,0,0);//
-                        data.insertarFechaRegistro(registrado1);
+                        AsistenteModelo1 asistente = new AsistenteModelo1(
+                                "44195077",
+                                nacional.getSede(),
+                                nacional.getNro_local(),
+                                nacional.getLocal_aplicacion(),
+                                nacional.getDireccion_local(),
+                                nacional.getAula(),
+                                nacional.getBungalow(),
+                                nacional.getApepat(),
+                                nacional.getNumdoc(),
+                                nacional.getCargo(),
+                                nacional.getNivel(),
+                                nacional.getResponsable_bungalow(),
+                                estatus1,
+                                dd,
+                                mm,
+                                yy,
+                                hora,
+                                minuto,
+                                estatus2,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0);
+                        data.insertarAsistencia1(asistente);
 
                     }
                     data.close();

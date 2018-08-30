@@ -10,9 +10,45 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MainActivity"
+        android:name=".activities.MainActivity1"
+        android:configChanges="screenSize|orientation|keyboardHidden"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity2"
             android:configChanges="screenSize|orientation|keyboardHidden"
-            android:label="@string/app_name"
+            android:label="@string/app_name2"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity3"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name3"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity4"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name4"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity5"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name5"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity6"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name6"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity7"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name7"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
         <activity

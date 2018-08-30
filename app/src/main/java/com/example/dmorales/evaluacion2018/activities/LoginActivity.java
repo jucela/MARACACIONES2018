@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
                   if (usuarioLocal != null){
                       if(usuarioLocal.getCod_nivel().equals("I"))
-                      {  Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                      {  Intent intent = new Intent(LoginActivity.this, MainActivity1.class);
                           intent.putExtra("nro_local", usuarioLocal.getNro_local());
                           intent.putExtra("sede", usuarioLocal.getSede_region());
                           intent.putExtra("usuario", usuarioLocal.getUsuario());
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                           startActivity(intent);  }
 //                      else if(usuarioLocal.getCod_nivel().equals("II"))
 //                           { Intent intent2 = new Intent(LoginActivity.this, MainActivity2.class);
-//                               intent2.putExtra("cod_local", usuarioLocal.getCod_local());
+//                               intent2.putExtra("cod_local", usuarioLocal.getNro_local());
 //                               intent2.putExtra("sede", usuarioLocal.getSede_region());
 //                               intent2.putExtra("usuario", usuarioLocal.getUsuario());
 //                               intent2.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
@@ -74,20 +74,45 @@ public class LoginActivity extends AppCompatActivity {
 //                               startActivity(intent2);   }
 //                           else if(usuarioLocal.getCod_nivel().equals("III"))
 //                                {Intent intent3 = new Intent(LoginActivity.this, MainActivity3.class);
-//                                    intent3.putExtra("cod_local", usuarioLocal.getCod_local());
+//                                    intent3.putExtra("cod_local", usuarioLocal.getNro_local());
 //                                    intent3.putExtra("sede", usuarioLocal.getSede_region());
 //                                    intent3.putExtra("usuario", usuarioLocal.getUsuario());
 //                                    intent3.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
 //                                    intent3.putExtra("fase", usuarioLocal.getFase());
 //                                    startActivity(intent3);    }
-//                                else if(usuarioLocal.getCod_nivel().equals("VI"))
-//                                     {Intent intent6 = new Intent(LoginActivity.this, MainActivity6.class);
-//                                         intent6.putExtra("cod_local", usuarioLocal.getCod_local());
+//                                else if(usuarioLocal.getCod_nivel().equals("IV"))
+//                                     {Intent intent6 = new Intent(LoginActivity.this, MainActivity4.class);
+//                                      intent6.putExtra("cod_local", usuarioLocal.getNro_local());
 //                                      intent6.putExtra("sede", usuarioLocal.getSede_region());
 //                                      intent6.putExtra("usuario", usuarioLocal.getUsuario());
 //                                      intent6.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
 //                                      intent6.putExtra("fase", usuarioLocal.getFase());
 //                                      startActivity(intent6);    }
+//                               else if(usuarioLocal.getCod_nivel().equals("V"))
+//                                    {Intent intent6 = new Intent(LoginActivity.this, MainActivity5.class);
+//                                     intent6.putExtra("cod_local", usuarioLocal.getNro_local());
+//                                     intent6.putExtra("sede", usuarioLocal.getSede_region());
+//                                     intent6.putExtra("usuario", usuarioLocal.getUsuario());
+//                                     intent6.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
+//                                     intent6.putExtra("fase", usuarioLocal.getFase());
+//                                     startActivity(intent6);    }
+//                               else if(usuarioLocal.getCod_nivel().equals("VI"))
+//                                    {Intent intent6 = new Intent(LoginActivity.this, MainActivity6.class);
+//                                     intent6.putExtra("cod_local", usuarioLocal.getNro_local());
+//                                     intent6.putExtra("sede", usuarioLocal.getSede_region());
+//                                     intent6.putExtra("usuario", usuarioLocal.getUsuario());
+//                                     intent6.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
+//                                     intent6.putExtra("fase", usuarioLocal.getFase());
+//                                     startActivity(intent6);    }
+//                              else if(usuarioLocal.getCod_nivel().equals("VII"))
+//                                   {Intent intent6 = new Intent(LoginActivity.this, MainActivity7.class);
+//                                    intent6.putExtra("cod_local", usuarioLocal.getNro_local());
+//                                    intent6.putExtra("sede", usuarioLocal.getSede_region());
+//                                    intent6.putExtra("usuario", usuarioLocal.getUsuario());
+//                                    intent6.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
+//                                    intent6.putExtra("fase", usuarioLocal.getFase());
+//                                    startActivity(intent6);    }
+
                   }else{
                       Toast.makeText(this, "CLAVE NO REGISTRADA", Toast.LENGTH_SHORT).show();
                   }

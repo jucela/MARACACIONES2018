@@ -13,7 +13,7 @@ public class Nacional {
     private String sede_prov;
     private String sede_distrital;
     private String aula;
-    private int bungalow;
+    private String bungalow;
     private String apepat;
     private String numdoc;
     private String tipo;
@@ -23,7 +23,7 @@ public class Nacional {
     private int responsable_bungalow;
 
 
-    public Nacional(String _id, String sede, int nro_local, String local_aplicacion, String direccion_local, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_reg, String sede_prov, String sede_distrital, String aula, int bungalow, String apepat, String numdoc, String tipo, int tipocargo, String cargo, int nivel, int responsable_bungalow) {
+    public Nacional(String _id, String sede, int nro_local, String local_aplicacion, String direccion_local, String cod_sede_reg, String cod_sede_prov, String cod_sede_distrital, String sede_reg, String sede_prov, String sede_distrital, String aula, String bungalow, String apepat, String numdoc, String tipo, int tipocargo, String cargo, int nivel, int responsable_bungalow) {
         this._id = _id;
         this.sede = sede;
         this.nro_local = nro_local;
@@ -59,7 +59,7 @@ public class Nacional {
         this.sede_prov="";
         this.sede_distrital="";
         this.aula="";
-        this.bungalow = 0;
+        this.bungalow = "";
         this.apepat="";
         this.numdoc="";
         this.tipo = "";
@@ -165,11 +165,11 @@ public class Nacional {
         this.aula = aula;
     }
 
-    public int getBungalow() {
+    public String getBungalow() {
         return bungalow;
     }
 
-    public void setBungalow(int bungalow) {
+    public void setBungalow(String bungalow) {
         this.bungalow = bungalow;
     }
 

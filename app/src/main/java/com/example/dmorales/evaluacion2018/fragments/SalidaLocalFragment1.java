@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.NumericKeyBoardTransformationMethod;
 import com.example.dmorales.evaluacion2018.R;
+import com.example.dmorales.evaluacion2018.modelo.AsistenteModelo1;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.Nacional;
 import com.example.dmorales.evaluacion2018.modelo.Registrado;
@@ -32,7 +33,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SalidaLocalFragment extends Fragment {
+public class SalidaLocalFragment1 extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -69,13 +70,13 @@ public class SalidaLocalFragment extends Fragment {
 
 
 
-    public SalidaLocalFragment() {
+    public SalidaLocalFragment1() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public SalidaLocalFragment(String nro_local, Context context) {
+    public SalidaLocalFragment1(String nro_local, Context context) {
         this.nro_local = nro_local;
         this.context = context;
     }
@@ -95,9 +96,6 @@ public class SalidaLocalFragment extends Fragment {
         cvYaregistrado = (CardView) rootView.findViewById(R.id.salidalocal_cvYaRegistrado);
         cvAviso = (CardView) rootView.findViewById(R.id.salidalocal_cvAviso);
 
-//        txtErrorCargo = (TextView) rootView.findViewById(R.id.salidalocal_error_txtCargo);
-//        txtErrorLocal = (TextView) rootView.findViewById(R.id.salidalocal_error_txtLocal);
-//        txtErrorSede = (TextView) rootView.findViewById(R.id.salidalocal_error_txtSede);
 
         txtRegistroCargo = (TextView) rootView.findViewById(R.id.salidalocal_txtCargo);
         txtRegistroDni = (TextView) rootView.findViewById(R.id.salidalocal_txtDni);
@@ -190,7 +188,6 @@ public class SalidaLocalFragment extends Fragment {
             public void onClick(View v) {
                 String dni = edtDni.getText().toString();
                 if(!dni.equals("")){
-
                     if(!validarDNI(dni)) {
                         cvRegistro.setVisibility(View.GONE);
                         cvYaregistrado.setVisibility(View.GONE);
@@ -231,23 +228,23 @@ public class SalidaLocalFragment extends Fragment {
         try {
             Data data = new Data(context);
             data.open();
-            Registrado registrado = data.getRegistrado(dni);
+            AsistenteModelo1 asistenteModelo1 = data.getAsistencia1(dni);
             data.close();
-            if(registrado != null){
+            if(asistenteModelo1 != null){
                 encontrado = true;
                 data = new Data(context);
                 data.open();
-                Registrado registrados = data.getFechaRegistro(registrado.getNumdoc());
-                if(registrados.getEstatus2()==1){
+                AsistenteModelo1 asistentes = data.getAsistencia1(asistenteModelo1.getNumdoc());
+                if(asistentes.getEstatus2()==1){
                     //YA REGISTRADO
                     cvError.setVisibility(View.GONE);
                     cvNoregistrado.setVisibility(View.GONE);
                     cvYaregistrado.setVisibility(View.VISIBLE);
                     cvRegistro.setVisibility(View.GONE);
                     cvAviso.setVisibility(View.GONE);
-                    txtRegistroDni_yaregistrado.setText(registrado.getNumdoc());
-                    txtRegistroNombres_yaregistrado.setText(registrado.getApepat());
-                    txtRegistroFecha.setText(checkDigito(registrado.getDia2())+"/"+checkDigito(registrado.getMes2()+1)+"/"+(registrado.getAnio2()+1900)+"  -  "+checkDigito(registrado.getHora2())+":"+checkDigito(registrado.getMinuto2()));
+                    txtRegistroDni_yaregistrado.setText(asistenteModelo1.getNumdoc());
+                    txtRegistroNombres_yaregistrado.setText(asistenteModelo1.getApepat());
+                    txtRegistroFecha.setText(checkDigito(asistenteModelo1.getDia2())+"/"+checkDigito(asistenteModelo1.getMes2()+1)+"/"+(asistenteModelo1.getAnio2()+1900)+"  -  "+checkDigito(asistenteModelo1.getHora2())+":"+checkDigito(asistenteModelo1.getMinuto2()));
 
                 }
                 else{
@@ -257,14 +254,14 @@ public class SalidaLocalFragment extends Fragment {
                     cvYaregistrado.setVisibility(View.GONE);
                     cvRegistro.setVisibility(View.VISIBLE);
                     cvAviso.setVisibility(View.GONE);
-                    txtRegistroSede.setText(registrado.getSede());
-                    txtRegistroNombres.setText(registrado.getApepat());
-                    txtRegistroDni.setText(registrado.getNumdoc());
-                    txtRegistroLocal.setText(registrado.getCargo());
-                    txtRegistroCargo.setText(registrado.getCargo());
-                    txtRegistroAula.setText(registrado.getAula());
-                    txtRegistroNbungalow.setText(""+registrado.getBungalow());
-                    if(registrado.getResponsable_bungalow()==1)
+                    txtRegistroSede.setText(asistenteModelo1.getSede());
+                    txtRegistroNombres.setText(asistenteModelo1.getApepat());
+                    txtRegistroDni.setText(asistenteModelo1.getNumdoc());
+                    txtRegistroLocal.setText(asistenteModelo1.getCargo());
+                    txtRegistroCargo.setText(asistenteModelo1.getCargo());
+                    txtRegistroAula.setText(asistenteModelo1.getAula());
+                    txtRegistroNbungalow.setText(""+asistenteModelo1.getBungalow());
+                    if(asistenteModelo1.getResponsable_bungalow()==1)
                     {txtRegistroRbungalow.setText("Responsable de Bungalow : SI ");}
                     else {txtRegistroRbungalow.setText("Responsable de Bungalow : NO  ");}
                     Calendar calendario = Calendar.getInstance();
@@ -282,7 +279,7 @@ public class SalidaLocalFragment extends Fragment {
                     registroactualizado.put("hora2", hora);
                     registroactualizado.put("minuto2", minuto);
                     registroactualizado.put("estatus2",1);
-                    data.actualizarFechaRegistro(dni, registroactualizado);
+                    data.actualizarAsistencia1(dni, registroactualizado);
                 }
                 data.close();
             }

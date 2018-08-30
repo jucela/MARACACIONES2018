@@ -3,13 +3,13 @@ package com.example.dmorales.evaluacion2018.activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -26,7 +26,7 @@ import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String usuario;
     String sede;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity
         txtHeaderTitulo1.setText("Asistencia "+fase);
         txtHeaderTitulo2.setText(nombrenivel);
 
-        IngresoLocalFragment ingresolocalFragment = new IngresoLocalFragment(nro_local,MainActivity.this);
+        IngresoLocalFragment ingresolocalFragment = new IngresoLocalFragment(nro_local,MainActivity2.this);
         fragmentTransaction.replace(R.id.fragment_layout, ingresolocalFragment);
         fragmentTransaction.commit();
 
@@ -93,21 +93,21 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.menu_ingresolocal) {
-            IngresoLocalFragment ingresolocaltroFragment = new IngresoLocalFragment(nro_local,MainActivity.this);
+            IngresoLocalFragment ingresolocaltroFragment = new IngresoLocalFragment(nro_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_salidalocal) {
-            SalidaLocalFragment salidalocalFragment = new SalidaLocalFragment(nro_local,MainActivity.this);
+            SalidaLocalFragment salidalocalFragment = new SalidaLocalFragment(nro_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout,salidalocalFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_listado) {
-            ListadoFragment listadoFragment = new ListadoFragment(nro_local,MainActivity.this);
+            ListadoFragment listadoFragment = new ListadoFragment(nro_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout, listadoFragment);
             fragmentTransaction.commit();
         } else if (id == R.id.menu_nube) {
-            NubeFragment nubeFragment = new NubeFragment(nro_local,MainActivity.this);
+            NubeFragment nubeFragment = new NubeFragment(nro_local,MainActivity2.this);
             fragmentTransaction.replace(R.id.fragment_layout, nubeFragment);
             fragmentTransaction.commit();
 
@@ -124,11 +124,11 @@ public class MainActivity extends AppCompatActivity
                     .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             try {
-                                Data data = new Data(MainActivity.this);
+                                Data data = new Data(MainActivity2.this);
                                 data.open();
                                 data.deleteAllElementosFromTabla(SQLConstantes.tablafecharegistro);
                                 data.close();
-                                ListadoFragment listadoFragment = new ListadoFragment(nro_local,MainActivity.this);
+                                ListadoFragment listadoFragment = new ListadoFragment(nro_local,MainActivity2.this);
                                 FragmentManager fragmentManage = getSupportFragmentManager();
                                 FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                 fragmentTransact.replace(R.id.fragment_layout, listadoFragment);
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity
                             })
                     .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                                    Intent intent = new Intent(MainActivity2.this,LoginActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }

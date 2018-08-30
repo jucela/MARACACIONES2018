@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.adapters.RegistradoAdapter;
+import com.example.dmorales.evaluacion2018.adapters.RegistradoAdapter1;
+import com.example.dmorales.evaluacion2018.modelo.AsistenteModelo1;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.Registrado;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
@@ -40,14 +42,19 @@ import java.util.Date;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListadoFragment extends Fragment {
+public class ListadoFragment1 extends Fragment {
     RecyclerView recyclerView;
+    RegistradoAdapter1 registradoAdapter1;
     Context context;
     ArrayList<Registrado> registrados;
     ArrayList<Registrado> agregados;
     ArrayList<Registrado> agregados2;
     ArrayList<Registrado> agregados3;
     ArrayList<Registrado> agregados4;
+
+    ArrayList<AsistenteModelo1> asistentes;
+    ArrayList<AsistenteModelo1> asistentes1;
+    ArrayList<AsistenteModelo1> asistentes2;
     String cod_local;
     String sede;
     Data data;
@@ -55,13 +62,13 @@ public class ListadoFragment extends Fragment {
     TextView txtNumero;
     boolean b = false;
 
-    public ListadoFragment() {
+    public ListadoFragment1() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public ListadoFragment(String cod_local, Context context) {
+    public ListadoFragment1(String cod_local, Context context) {
         this.context = context;
         this.cod_local = cod_local;
     }
@@ -84,9 +91,9 @@ public class ListadoFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         cargaData();
-        final RegistradoAdapter registradoAdapter = new RegistradoAdapter(registrados,context);
+        registradoAdapter1 = new RegistradoAdapter1(asistentes,context);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(registradoAdapter);
+        recyclerView.setAdapter(registradoAdapter1);
 
         fabUpLoad.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,31 +104,31 @@ public class ListadoFragment extends Fragment {
                 try {
                     data = new Data(context);
                     data.open();
-                    agregados = data.getAllRegistradosTemporal();
-                    agregados2 = data.getAllRegistradosTemporal2();
+                    asistentes1 = data.getAllEstado1Asistentes1();
+                    asistentes2 = data.getAllEstado2Asistentes1();
                     data.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                if(agregados.size() > 0){
+                if(asistentes.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    for (final Registrado registrado : agregados){
-                        if(registrado.getSubido1()==0 && registrado.getSubido2()==0) {
-                            registrado.setSubido1(1);
+                    for (final AsistenteModelo1 asistenteModelo1 : asistentes){
+                        if(asistenteModelo1.getSubido1()==0 && asistenteModelo1.getSubido2()==0) {
+                            asistenteModelo1.setSubido1(1);
                             String coleccion = "ASISTENCIA_CAPACITACION_ECE2018";
                             WriteBatch batch = db.batch();
-                            DocumentReference documentReference = db.collection(coleccion).document("NIVEL_I_IIA").collection("ASISTENTES").document(registrado.get_id());
-                            batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(registrado.getAnio1(),registrado.getMes1(),registrado.getDia1(),registrado.getHora1(),registrado.getMinuto1())));
-                            batch.update(documentReference,"estatus1",registrado.getEstatus1());
+                            DocumentReference documentReference = db.collection(coleccion).document(asistenteModelo1.getNumdoc());
+                            batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(asistenteModelo1.getAnio1(),asistenteModelo1.getMes1(),asistenteModelo1.getDia1(),asistenteModelo1.getHora1(),asistenteModelo1.getMinuto1())));
+                            batch.update(documentReference,"estatus1",asistenteModelo1.getEstatus1());
                             batch.update(documentReference,"hora_transferencia_entrada", FieldValue.serverTimestamp());
-                            final String c = registrado.getNumdoc();
+                            final String c = asistenteModelo1.getNumdoc();
                             batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
                                     if (!b) {
                                         //
-                                        Toast.makeText(context, agregados.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, asistentes.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
                                         b = true;
                                     }
                                     try {
@@ -129,9 +136,9 @@ public class ListadoFragment extends Fragment {
                                         data.open();
                                         ContentValues contentValues = new ContentValues();
                                         contentValues.put(SQLConstantes.fecha_de_registro_subido1, 1);
-                                        data.actualizarFechaRegistro(c, contentValues);
+                                        data.actualizarAsistencia1(c, contentValues);
                                         cargaData();
-                                        registradoAdapter.notifyDataSetChanged();
+                                        registradoAdapter1.notifyDataSetChanged();
                                         data.close();
                                     } catch (IOException e) {
                                         e.printStackTrace();
@@ -147,18 +154,18 @@ public class ListadoFragment extends Fragment {
                         }//end if
                         else {Toast.makeText(context, " Error al cargar subidos", Toast.LENGTH_SHORT).show();}
                     }//end for
-                }else if(agregados2.size() > 0){
+                }else if(asistentes2.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    for (final Registrado registrado : agregados2){
-                        if(registrado.getSubido1()==1 && registrado.getSubido2()==0) {
-                            registrado.setSubido2(1);
+                    for (final AsistenteModelo1 asistente : asistentes2){
+                        if(asistente.getSubido1()==1 && asistente.getSubido2()==0) {
+                            asistente.setSubido2(1);
                             String coleccion = "ASISTENCIA_CAPACITACION_ECE2018";
                             WriteBatch batch = db.batch();
-                            DocumentReference documentReference = db.collection(coleccion).document("NIVEL_I_IIA").collection("ASISTENTES").document(registrado.get_id());
-                            batch.update(documentReference,"fecha_registro2", new Timestamp(new Date(registrado.getAnio2(),registrado.getMes2(),registrado.getDia2(),registrado.getHora2(),registrado.getMinuto2())));
-                            batch.update(documentReference,"estatus2",registrado.getEstatus2());
+                            DocumentReference documentReference = db.collection(coleccion).document(asistente.getNumdoc());
+                            batch.update(documentReference,"fecha_registro2", new Timestamp(new Date(asistente.getAnio2(),asistente.getMes2(),asistente.getDia2(),asistente.getHora2(),asistente.getMinuto2())));
+                            batch.update(documentReference,"estatus2",asistente.getEstatus2());
                             batch.update(documentReference,"hora_transferencia_salida", FieldValue.serverTimestamp());
-                            final String c = registrado.getNumdoc();
+                            final String c = asistente.getNumdoc();
 
                             batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -176,7 +183,7 @@ public class ListadoFragment extends Fragment {
                                         contentValues.put(SQLConstantes.fecha_de_registro_subido2, 1);
                                         data.actualizarFechaRegistro(c, contentValues);
                                         cargaData();
-                                        registradoAdapter.notifyDataSetChanged();
+                                        registradoAdapter1.notifyDataSetChanged();
                                         data.close();
                                     } catch (IOException e) {
                                         e.printStackTrace();
@@ -195,18 +202,20 @@ public class ListadoFragment extends Fragment {
                 }else {
                     Toast.makeText(context, "No hay registros nuevos para subir", Toast.LENGTH_SHORT).show();
                 }
-
+                cargaData();
+                registradoAdapter1 = new RegistradoAdapter1(asistentes,context);
+                recyclerView.setAdapter(registradoAdapter1);
             }
         });
     }
 
     public void cargaData(){
-        registrados = new ArrayList<>();
+        asistentes = new ArrayList<>();
         try {
             Data data = new Data(context);
             data.open();
-            registrados = data.getAllRegistrados(cod_local);
-            txtNumero.setText("Total registros: " + registrados.size());
+            asistentes = data.getAllAsistentes1(cod_local);
+            txtNumero.setText("Total registros: " + asistentes.size());
             data.close();
         } catch (IOException e) {
             e.printStackTrace();
