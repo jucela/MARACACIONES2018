@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/menu_ingresolocal71"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Local(Día 1)" />
+    <item
+        android:id="@+id/menu_salidalocal71"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local(Día 1)" />
+    <item
+        android:id="@+id/menu_ingresolocal72"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Local(Día 2)" />
+    <item
+        android:id="@+id/menu_salidalocal72"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local(Día 2)" />
+    <item
+        android:id="@+id/menu_listado71"
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros(Día 1)" />
+    <item
+        android:id="@+id/menu_listado72"
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros(Día 2)" />
+    <item
+        android:id="@+id/menu_nube71"
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcación(Día 1)" />
+    <item
+        android:id="@+id/menu_nube72"
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcación(Día 2)" />
+    <item
+        android:id="@+id/menu_reset_bd71"
+        android:icon="@drawable/ic_autorenew"
+        android:title="Reset BD (Día 1)" />
+    <item
+        android:id="@+id/menu_reset_bd72"
+        android:icon="@drawable/ic_autorenew"
+        android:title="Reset BD (Día 2)" />
+    <item
+        android:id="@+id/menu_cerrar_sesion52"
+        android:icon="@drawable/ic_power_settings_new"
+        android:title="Cerrar Sesión" />
+
+</menu>

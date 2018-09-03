@@ -29,7 +29,8 @@ public class AsistenteModelo3 {
     private int subido2;
 
 
-    public AsistenteModelo3(String sede, int nro_local, String local_aplicacion, String direccion_local, String aula, int bungalow, String apepat, String numdoc, String cargo, int nivel, int responsable_bungalow, int estatus1, int dia1, int mes1, int anio1, int hora1, int minuto1, int estatus2, int dia2, int mes2, int anio2, int hora2, int minuto2, int subido1, int subido2) {
+    public AsistenteModelo3(String _id, String sede, int nro_local, String local_aplicacion, String direccion_local, String aula, String apepat, String numdoc, String cargo, int nivel, int estatus1, int dia1, int mes1, int anio1, int hora1, int minuto1, int estatus2, int dia2, int mes2, int anio2, int hora2, int minuto2, int subido1, int subido2) {
+        this._id = _id;
         this.sede = sede;
         this.nro_local = nro_local;
         this.local_aplicacion = local_aplicacion;

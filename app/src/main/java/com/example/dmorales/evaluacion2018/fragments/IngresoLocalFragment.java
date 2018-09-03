@@ -91,10 +91,6 @@ public class IngresoLocalFragment extends Fragment {
         cvRegistro = (CardView) rootView.findViewById(R.id.ingresolocal_cvRegistro);
         cvYaregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvYaRegistrado);
 
-        txtErrorCargo = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtCargo);
-        txtErrorLocal = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtLocal);
-        txtErrorSede = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtSede);
-
         txtRegistroCargo = (TextView) rootView.findViewById(R.id.ingresolocal_txtCargo);
         txtRegistroDni = (TextView) rootView.findViewById(R.id.ingresolocal_txtDni);
         txtRegistroNombres = (TextView) rootView.findViewById(R.id.ingresolocal_txtNombres);

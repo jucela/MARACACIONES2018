@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.modelo.AsistenteModelo1;
-import com.example.dmorales.evaluacion2018.modelo.Registrado;
 
 import java.util.ArrayList;
 
@@ -34,7 +33,7 @@ public class RegistradoAdapter1 extends RecyclerView.Adapter<RegistradoAdapter1.
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         AsistenteModelo1 asistente = asistentes.get(position);
-        holder.txtDni.setText(asistente.get_id());
+        holder.txtDni.setText(asistente.getNumdoc());
         holder.txtNombres.setText(asistente.getApepat());
         holder.txtAula.setText(asistente.getAula());
         holder.txtNbungalow.setText(""+asistente.getBungalow());
@@ -48,10 +47,10 @@ public class RegistradoAdapter1 extends RecyclerView.Adapter<RegistradoAdapter1.
         {holder.txtSalida.setText(checkDigito(asistente.getDia2()) + "-" + checkDigito(asistente.getMes2()) + "-" + (asistente.getAnio2()+1900)+"  "+checkDigito(asistente.getHora2()) + ":" + checkDigito(asistente.getMinuto2()));}
 
         if(asistente.getSubido1() == 1 && asistente.getSubido2()==0){
-            holder.cv.setCardBackgroundColor(Color.rgb(255,223,186));
+            holder.cv.setCardBackgroundColor(Color.rgb(255,223,186));//naranja
         }else if (asistente.getSubido1() == 1 && asistente.getSubido2()==1){
-            holder.cv.setCardBackgroundColor(Color.rgb(201,242,193));
-            } else {holder.cv.setCardBackgroundColor(Color.rgb(251,221,221));}
+            holder.cv.setCardBackgroundColor(Color.rgb(201,242,193));//verde
+            } else {holder.cv.setCardBackgroundColor(Color.rgb(251,221,221));}//rojo
     }
 
     public String checkDigito (int number) {

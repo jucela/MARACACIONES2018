@@ -46,11 +46,6 @@ public class ListadoFragment1 extends Fragment {
     RecyclerView recyclerView;
     RegistradoAdapter1 registradoAdapter1;
     Context context;
-    ArrayList<Registrado> registrados;
-    ArrayList<Registrado> agregados;
-    ArrayList<Registrado> agregados2;
-    ArrayList<Registrado> agregados3;
-    ArrayList<Registrado> agregados4;
 
     ArrayList<AsistenteModelo1> asistentes;
     ArrayList<AsistenteModelo1> asistentes1;
@@ -99,8 +94,8 @@ public class ListadoFragment1 extends Fragment {
             @Override
             public void onClick(View v) {
                 b = false;
-                agregados = new ArrayList<>();
-                agregados2 = new ArrayList<>();
+                asistentes1 = new ArrayList<>();
+                asistentes2 = new ArrayList<>();
                 try {
                     data = new Data(context);
                     data.open();
@@ -110,14 +105,14 @@ public class ListadoFragment1 extends Fragment {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                if(asistentes.size() > 0){
+                if(asistentes1.size() > 0){
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    for (final AsistenteModelo1 asistenteModelo1 : asistentes){
+                    for (final AsistenteModelo1 asistenteModelo1 : asistentes1){
                         if(asistenteModelo1.getSubido1()==0 && asistenteModelo1.getSubido2()==0) {
                             asistenteModelo1.setSubido1(1);
                             String coleccion = "ASISTENCIA_CAPACITACION_ECE2018";
                             WriteBatch batch = db.batch();
-                            DocumentReference documentReference = db.collection(coleccion).document(asistenteModelo1.getNumdoc());
+                            DocumentReference documentReference = db.collection(coleccion).document(asistenteModelo1.get_id());
                             batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(asistenteModelo1.getAnio1(),asistenteModelo1.getMes1(),asistenteModelo1.getDia1(),asistenteModelo1.getHora1(),asistenteModelo1.getMinuto1())));
                             batch.update(documentReference,"estatus1",asistenteModelo1.getEstatus1());
                             batch.update(documentReference,"hora_transferencia_entrada", FieldValue.serverTimestamp());
@@ -128,7 +123,7 @@ public class ListadoFragment1 extends Fragment {
                                     Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
                                     if (!b) {
                                         //
-                                        Toast.makeText(context, asistentes.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, asistentes1.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
                                         b = true;
                                     }
                                     try {
@@ -140,6 +135,10 @@ public class ListadoFragment1 extends Fragment {
                                         cargaData();
                                         registradoAdapter1.notifyDataSetChanged();
                                         data.close();
+                                        //actualizar colores
+                                        cargaData();
+                                        registradoAdapter1 = new RegistradoAdapter1(asistentes,context);
+                                        recyclerView.setAdapter(registradoAdapter1);
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -161,7 +160,7 @@ public class ListadoFragment1 extends Fragment {
                             asistente.setSubido2(1);
                             String coleccion = "ASISTENCIA_CAPACITACION_ECE2018";
                             WriteBatch batch = db.batch();
-                            DocumentReference documentReference = db.collection(coleccion).document(asistente.getNumdoc());
+                            DocumentReference documentReference = db.collection(coleccion).document(asistente.get_id());
                             batch.update(documentReference,"fecha_registro2", new Timestamp(new Date(asistente.getAnio2(),asistente.getMes2(),asistente.getDia2(),asistente.getHora2(),asistente.getMinuto2())));
                             batch.update(documentReference,"estatus2",asistente.getEstatus2());
                             batch.update(documentReference,"hora_transferencia_salida", FieldValue.serverTimestamp());
@@ -173,7 +172,7 @@ public class ListadoFragment1 extends Fragment {
                                     Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
                                     if (!b) {
                                         //
-                                        Toast.makeText(context, agregados.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, asistentes2.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
                                         b = true;
                                     }
                                     try {
@@ -181,10 +180,15 @@ public class ListadoFragment1 extends Fragment {
                                         data.open();
                                         ContentValues contentValues = new ContentValues();
                                         contentValues.put(SQLConstantes.fecha_de_registro_subido2, 1);
-                                        data.actualizarFechaRegistro(c, contentValues);
+                                        data.actualizarAsistencia1(c, contentValues);
                                         cargaData();
                                         registradoAdapter1.notifyDataSetChanged();
                                         data.close();
+                                        //actualizar colores
+                                        cargaData();
+                                        registradoAdapter1 = new RegistradoAdapter1(asistentes,context);
+                                        recyclerView.setAdapter(registradoAdapter1);
+
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -202,9 +206,9 @@ public class ListadoFragment1 extends Fragment {
                 }else {
                     Toast.makeText(context, "No hay registros nuevos para subir", Toast.LENGTH_SHORT).show();
                 }
-                cargaData();
-                registradoAdapter1 = new RegistradoAdapter1(asistentes,context);
-                recyclerView.setAdapter(registradoAdapter1);
+//                cargaData();
+//                registradoAdapter1 = new RegistradoAdapter1(asistentes,context);
+//                recyclerView.setAdapter(registradoAdapter1);
             }
         });
     }

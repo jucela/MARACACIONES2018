@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/menu_ingresolocal51"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Local(Día 1)" />
+    <item
+        android:id="@+id/menu_salidalocal51"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local(Día 1)" />
+    <item
+        android:id="@+id/menu_ingresolocal52"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Local(Día 2)" />
+    <item
+        android:id="@+id/menu_salidalocal52"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local(Día 2)" />
+    <item
+        android:id="@+id/menu_ingresolocal53"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Local(Día 3)" />
+    <item
+        android:id="@+id/menu_salidalocal53"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local(Día 3)" />
+    <item
+        android:id="@+id/menu_ingresolocal54"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Local(Día 4)" />
+    <item
+        android:id="@+id/menu_salidalocal54"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local(Día 4)" />
+    <item
+        android:id="@+id/menu_ingresolocal55"
+        android:icon="@drawable/ic_account_box"
+        android:title="Ingreso Local(Día 5)" />
+    <item
+        android:id="@+id/menu_salidalocal55"
+        android:icon="@drawable/ic_account_box"
+        android:title="Salida Local(Día 5)" />
+    <item
+        android:id="@+id/menu_listado51"
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros(Día 1)" />
+    <item
+        android:id="@+id/menu_listado52"
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros(Día 2)" />
+    <item
+        android:id="@+id/menu_listado53"
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros(Día 3)" />
+    <item
+        android:id="@+id/menu_listado54"
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros(Día 4)" />
+    <item
+        android:id="@+id/menu_listado55"
+        android:icon="@drawable/ic_backup"
+        android:title="Subir Registros(Día 5)" />
+    <item
+        android:id="@+id/menu_nube51"
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcación(Día 1)" />
+    <item
+        android:id="@+id/menu_nube52"
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcación(Día 2)" />
+    <item
+        android:id="@+id/menu_nube53"
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcación(Día 3)" />
+    <item
+        android:id="@+id/menu_nube54"
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcación(Día 4)" />
+    <item
+        android:id="@+id/menu_nube55"
+        android:icon="@drawable/ic_storage"
+        android:title="Reporte de  Marcación(Día 5)" />
+    <item
+        android:id="@+id/menu_reset_bd51"
+        android:icon="@drawable/ic_autorenew"
+        android:title="Reset BD (Día 1)" />
+    <item
+        android:id="@+id/menu_reset_bd52"
+        android:icon="@drawable/ic_autorenew"
+        android:title="Reset BD (Día 2)" />
+    <item
+        android:id="@+id/menu_reset_bd53"
+        android:icon="@drawable/ic_autorenew"
+        android:title="Reset BD (Día 3)" />
+    <item
+        android:id="@+id/menu_reset_bd54"
+        android:icon="@drawable/ic_autorenew"
+        android:title="Reset BD (Día 4)" />
+    <item
+        android:id="@+id/menu_reset_bd55"
+        android:icon="@drawable/ic_autorenew"
+        android:title="Reset BD (Día 5)" />
+    <item
+        android:id="@+id/menu_cerrar_sesion45"
+        android:icon="@drawable/ic_power_settings_new"
+        android:title="Cerrar Sesión" />
+
+</menu>

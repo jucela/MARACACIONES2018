@@ -4,8 +4,8 @@
     <string name="app_name3">ASISTENCIA CAPACITACION COORDINADOR DE  SEGURIDAD REGIONAL</string>
     <string name="app_name4">ASISTENCIA CAPACITACION SUPERVISOR DE SISTEMA Y ALMACEN</string>
     <string name="app_name5">ASISTENCIA CAPACITACION NIVEL III</string>
-    <string name="app_name6">ASISTENCIA PRESELECCION NIVEL IV</string>
-    <string name="app_name7">ASISTENCIA CAPACITACION NIVEL IV</string>
+    <string name="app_name6">ASISTENCIA PRESELECCION NIVEL IV (Grupo 1)</string>
+    <string name="app_name7">ASISTENCIA CAPACITACION NIVEL IV (Grupo 2)</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

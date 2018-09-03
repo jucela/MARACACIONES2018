@@ -223,12 +223,12 @@ public class Data {
         ContentValues contentValues = asistenteModelo1.toValues();
         sqLiteDatabase.insert(SQLConstantes.tablaasistencia1,null,contentValues);
     }
-    public void insertarAsistencia2(AsistenteModelo2 asistenteModelo2){
-        ContentValues contentValues = asistenteModelo2.toValues();
+    public void insertarAsistencia2(AsistenteModelo1 asistenteModelo1){
+        ContentValues contentValues = asistenteModelo1.toValues();
         sqLiteDatabase.insert(SQLConstantes.tablaasistencia2,null,contentValues);
     }
-    public void insertarAsistencia3(AsistenteModelo3 asistenteModelo3){
-        ContentValues contentValues = asistenteModelo3.toValues();
+    public void insertarAsistencia3(AsistenteModelo2 asistenteModelo2){
+        ContentValues contentValues = asistenteModelo2.toValues();
         sqLiteDatabase.insert(SQLConstantes.tablaasistencia3,null,contentValues);
     }
     public void insertarAsistencia41(AsistenteModelo3 asistenteModelo3){

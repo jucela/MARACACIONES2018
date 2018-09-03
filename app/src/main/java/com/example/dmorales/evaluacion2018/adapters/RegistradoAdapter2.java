@@ -26,7 +26,7 @@ public class RegistradoAdapter2 extends RecyclerView.Adapter<RegistradoAdapter2.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_registrado,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_registrado2,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -39,8 +39,8 @@ public class RegistradoAdapter2 extends RecyclerView.Adapter<RegistradoAdapter2.
         holder.txtAula.setText(asistente.getAula());
         holder.txtEntrada.setText(checkDigito(asistente.getDia1()) + "-" + checkDigito(asistente.getMes1()) + "-" + (asistente.getAnio1()+1900)+"  "+checkDigito(asistente.getHora1()) + ":" + checkDigito(asistente.getMinuto1()));
         if (asistente.getSubido1() == 1){
-            holder.cv.setCardBackgroundColor(Color.rgb(201,242,193));
-            } else {holder.cv.setCardBackgroundColor(Color.rgb(251,221,221));}
+            holder.cv.setCardBackgroundColor(Color.rgb(201,242,193));//verde
+            } else {holder.cv.setCardBackgroundColor(Color.rgb(251,221,221));}//rojo
     }
 
     public String checkDigito (int number) {
@@ -60,11 +60,11 @@ public class RegistradoAdapter2 extends RecyclerView.Adapter<RegistradoAdapter2.
         CardView cv;
         public ViewHolder(View itemView) {
             super(itemView);
-            cv = itemView.findViewById(R.id.item_registrado_cv);
-            txtDni = itemView.findViewById(R.id.item_registrado_txtDni);
-            txtNombres = itemView.findViewById(R.id.item_registrado_txtNombres);
-            txtAula = itemView.findViewById(R.id.item_registrado_txtAula);
-            txtEntrada = itemView.findViewById(R.id.item_registrado_txtHentrada);
+            cv = itemView.findViewById(R.id.item_registrado_cv2);
+            txtDni = itemView.findViewById(R.id.item_registrado_txtDni2);
+            txtNombres = itemView.findViewById(R.id.item_registrado_txtNombres2);
+            txtAula = itemView.findViewById(R.id.item_registrado_txtAula2);
+            txtEntrada = itemView.findViewById(R.id.item_registrado_txtHentrada2);
         }
     }
 }

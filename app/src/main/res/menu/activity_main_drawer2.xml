@@ -7,10 +7,6 @@
         android:icon="@drawable/ic_account_box"
         android:title="Ingreso Local" />
     <item
-        android:id="@+id/menu_salidalocal2"
-        android:icon="@drawable/ic_account_box"
-        android:title="Salida Local" />
-    <item
         android:id="@+id/menu_listado2"
         android:icon="@drawable/ic_backup"
         android:title="Subir Registros" />

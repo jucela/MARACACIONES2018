@@ -18,9 +18,13 @@ import android.widget.TextView;
 
 import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment2;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment;
+import com.example.dmorales.evaluacion2018.fragments.ListadoFragment2;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment;
+import com.example.dmorales.evaluacion2018.fragments.NubeFragment2;
 import com.example.dmorales.evaluacion2018.fragments.SalidaLocalFragment;
+import com.example.dmorales.evaluacion2018.fragments.SalidaLocalFragment2;
 import com.example.dmorales.evaluacion2018.modelo.Data;
 import com.example.dmorales.evaluacion2018.modelo.SQLConstantes;
 
@@ -66,8 +70,8 @@ public class MainActivity2 extends AppCompatActivity
         txtHeaderTitulo1.setText("Asistencia "+fase);
         txtHeaderTitulo2.setText(nombrenivel);
 
-        IngresoLocalFragment ingresolocalFragment = new IngresoLocalFragment(nro_local,MainActivity2.this);
-        fragmentTransaction.replace(R.id.fragment_layout, ingresolocalFragment);
+        IngresoLocalFragment2 ingresoLocalFragment2 = new IngresoLocalFragment2(nro_local,MainActivity2.this);
+        fragmentTransaction.replace(R.id.fragment_layout, ingresoLocalFragment2);
         fragmentTransaction.commit();
 
 
@@ -93,22 +97,22 @@ public class MainActivity2 extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.menu_ingresolocal) {
-            IngresoLocalFragment ingresolocaltroFragment = new IngresoLocalFragment(nro_local,MainActivity2.this);
-            fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment);
+            IngresoLocalFragment2 ingresolocaltroFragment2 = new IngresoLocalFragment2(nro_local,MainActivity2.this);
+            fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment2);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_salidalocal) {
-            SalidaLocalFragment salidalocalFragment = new SalidaLocalFragment(nro_local,MainActivity2.this);
-            fragmentTransaction.replace(R.id.fragment_layout,salidalocalFragment);
+            SalidaLocalFragment2 salidaLocalFragment2 = new SalidaLocalFragment2(nro_local,MainActivity2.this);
+            fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment2);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_listado) {
-            ListadoFragment listadoFragment = new ListadoFragment(nro_local,MainActivity2.this);
-            fragmentTransaction.replace(R.id.fragment_layout, listadoFragment);
+            ListadoFragment2 listadoFragment2 = new ListadoFragment2(nro_local,MainActivity2.this);
+            fragmentTransaction.replace(R.id.fragment_layout, listadoFragment2);
             fragmentTransaction.commit();
         } else if (id == R.id.menu_nube) {
-            NubeFragment nubeFragment = new NubeFragment(nro_local,MainActivity2.this);
-            fragmentTransaction.replace(R.id.fragment_layout, nubeFragment);
+            NubeFragment2 nubeFragment2 = new NubeFragment2(nro_local,MainActivity2.this);
+            fragmentTransaction.replace(R.id.fragment_layout, nubeFragment2);
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_reset_bd) {
@@ -126,12 +130,12 @@ public class MainActivity2 extends AppCompatActivity
                             try {
                                 Data data = new Data(MainActivity2.this);
                                 data.open();
-                                data.deleteAllElementosFromTabla(SQLConstantes.tablafecharegistro);
+                                data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia2);
                                 data.close();
-                                ListadoFragment listadoFragment = new ListadoFragment(nro_local,MainActivity2.this);
+                                ListadoFragment2 listadoFragment2 = new ListadoFragment2(nro_local,MainActivity2.this);
                                 FragmentManager fragmentManage = getSupportFragmentManager();
                                 FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
-                                fragmentTransact.replace(R.id.fragment_layout, listadoFragment);
+                                fragmentTransact.replace(R.id.fragment_layout, listadoFragment2);
                                 fragmentTransact.commit();
                             } catch (IOException e) {
                                 e.printStackTrace();

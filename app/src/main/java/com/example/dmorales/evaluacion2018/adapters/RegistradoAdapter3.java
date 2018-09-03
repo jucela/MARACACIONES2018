@@ -26,7 +26,7 @@ public class RegistradoAdapter3 extends RecyclerView.Adapter<RegistradoAdapter3.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_registrado,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_registrado3,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -68,12 +68,12 @@ public class RegistradoAdapter3 extends RecyclerView.Adapter<RegistradoAdapter3.
         CardView cv;
         public ViewHolder(View itemView) {
             super(itemView);
-            cv = itemView.findViewById(R.id.item_registrado_cv);
-            txtDni = itemView.findViewById(R.id.item_registrado_txtDni);
-            txtNombres = itemView.findViewById(R.id.item_registrado_txtNombres);
-            txtAula = itemView.findViewById(R.id.item_registrado_txtAula);
-            txtEntrada = itemView.findViewById(R.id.item_registrado_txtHentrada);
-            txtSalida = itemView.findViewById(R.id.item_registrado_txtHsalida);
+            cv = itemView.findViewById(R.id.item_registrado_cv3);
+            txtDni = itemView.findViewById(R.id.item_registrado_txtDni3);
+            txtNombres = itemView.findViewById(R.id.item_registrado_txtNombres3);
+            txtAula = itemView.findViewById(R.id.item_registrado_txtAula3);
+            txtEntrada = itemView.findViewById(R.id.item_registrado_txtHentrada3);
+            txtSalida = itemView.findViewById(R.id.item_registrado_txtHsalida3);
         }
     }
 }

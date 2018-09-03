@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.dmorales.evaluacion2018.fragments.ListadoSalidaFragment">
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,13 +11,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ELEMENTOS DE SALIDA"
+            android:text="ELEMENTOS REGISTRADOS"
             android:layout_marginTop="@dimen/margin5dp"
             android:textSize="20sp"
             android:gravity="center"
-            android:textColor="@color/rojo"/>
+            android:textColor="@color/verde"/>
         <TextView
-            android:id="@+id/listadosalida_txtNumero"
+            android:id="@+id/listado_txtNumero2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Total registros:"
@@ -40,22 +39,17 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:textColor="@color/icons"
+                    android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:text="DNI"
                     />
                 <TextView
-                    android:layout_weight="4"
+                    android:layout_weight="4.5"
                     android:layout_width="0dp"
                     android:textColor="@color/icons"
+                    android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:text="NOMBRES Y APELLIDOS"
-                    />
-                <TextView
-                    android:layout_weight="3"
-                    android:layout_width="0dp"
-                    android:textColor="@color/icons"
-                    android:layout_height="wrap_content"
-                    android:text="SEDE"
                     />
                 <TextView
                     android:layout_weight="1"
@@ -69,7 +63,9 @@
                     android:layout_width="0dp"
                     android:textColor="@color/icons"
                     android:layout_height="wrap_content"
-                    android:text="FECHA Y HORA"
+                    android:textSize="9dp"
+                    android:textAlignment="center"
+                    android:text="INGRESO LOCAL"
                     />
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -77,12 +73,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/listadosalida_recycler"
+                android:id="@+id/listado_recycler2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"/>
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/listadosalida_btnUpload"
+                android:id="@+id/listado_btnUpload2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

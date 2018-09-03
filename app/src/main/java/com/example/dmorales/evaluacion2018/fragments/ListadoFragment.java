@@ -166,7 +166,7 @@ public class ListadoFragment extends Fragment {
                                     Log.d("FIRESTORE", "DocumentSnapshot successfully written!");
                                     if (!b) {
                                         //
-                                        Toast.makeText(context, agregados.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, agregados2.size() + "  Registros de Entrada en la Nube", Toast.LENGTH_SHORT).show();
                                         b = true;
                                     }
                                     try {

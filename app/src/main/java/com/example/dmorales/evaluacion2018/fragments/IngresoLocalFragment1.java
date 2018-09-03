@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,8 @@ public class IngresoLocalFragment1 extends Fragment {
     CardView cvYaregistrado;
     CardView cvRegistro;
     CardView cvError;
+    CardView cvRBungalow;
+    LinearLayout lyNBungalow;
 
     TextView txtErrorCargo;
     TextView txtErrorSede;
@@ -92,10 +95,6 @@ public class IngresoLocalFragment1 extends Fragment {
         cvRegistro = (CardView) rootView.findViewById(R.id.ingresolocal_cvRegistro);
         cvYaregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvYaRegistrado);
 
-        txtErrorCargo = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtCargo);
-        txtErrorLocal = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtLocal);
-        txtErrorSede = (TextView) rootView.findViewById(R.id.ingresolocal_error_txtSede);
-
         txtRegistroCargo = (TextView) rootView.findViewById(R.id.ingresolocal_txtCargo);
         txtRegistroDni = (TextView) rootView.findViewById(R.id.ingresolocal_txtDni);
         txtRegistroNombres = (TextView) rootView.findViewById(R.id.ingresolocal_txtNombres);
@@ -113,6 +112,9 @@ public class IngresoLocalFragment1 extends Fragment {
         txtErrorLocal_error = (TextView) rootView.findViewById(R.id.ingresolocal_txtLocal_error);
         txtErrorSede_error = (TextView) rootView.findViewById(R.id.ingresolocal_txtSede_error);
         txtRegistroDireccion = (TextView) rootView.findViewById(R.id.ingresolocal_txtdireccion_error);
+
+        cvRBungalow = (CardView) rootView.findViewById(R.id.ingresolocal_cvRbungalow);
+        lyNBungalow = (LinearLayout) rootView.findViewById(R.id.ingresolocal_LYNbungalow);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -223,6 +225,8 @@ public class IngresoLocalFragment1 extends Fragment {
                         cvNoregistrado.setVisibility(View.GONE);
                         cvYaregistrado.setVisibility(View.GONE);
                         cvRegistro.setVisibility(View.VISIBLE);
+                        cvRBungalow.setVisibility(View.VISIBLE);
+                        lyNBungalow.setVisibility(View.VISIBLE);
                         txtRegistroSede.setText(nacional.getSede());
                         txtRegistroNombres.setText(nacional.getApepat());
                         txtRegistroDni.setText(nacional.getNumdoc());
@@ -244,7 +248,7 @@ public class IngresoLocalFragment1 extends Fragment {
                         int estatus2 = 0;
                         //2018-08-17 15:23:41.000
                         AsistenteModelo1 asistente = new AsistenteModelo1(
-                                "44195077",
+                                dni,
                                 nacional.getSede(),
                                 nacional.getNro_local(),
                                 nacional.getLocal_aplicacion(),

@@ -35,6 +35,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textSize="20sp"
-        android:text="Nivel I y IIA"
+        android:text="COORDINADOR DE  SEGURIDAD REGIONAL"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 </LinearLayout>

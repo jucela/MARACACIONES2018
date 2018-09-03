@@ -1,0 +1,300 @@
+package com.example.dmorales.evaluacion2018.fragments;
+
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.dmorales.evaluacion2018.NumericKeyBoardTransformationMethod;
+import com.example.dmorales.evaluacion2018.R;
+import com.example.dmorales.evaluacion2018.modelo.AsistenteModelo1;
+import com.example.dmorales.evaluacion2018.modelo.Data;
+import com.example.dmorales.evaluacion2018.modelo.Nacional;
+
+import java.io.IOException;
+import java.util.Calendar;
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class IngresoLocalFragment2 extends Fragment {
+
+    ImageView btnBuscar;
+    EditText edtDni;
+
+    CardView cvNoregistrado;
+    CardView cvYaregistrado;
+    CardView cvRegistro;
+    CardView cvError;
+    CardView cvRBungalow;
+    LinearLayout lyNBungalow;
+
+    TextView txtErrorCargo;
+    TextView txtErrorSede;
+    TextView txtErrorLocal;
+
+    TextView txtRegistroCargo;
+    TextView txtRegistroDni;
+    TextView txtRegistroNombres;
+    TextView txtRegistroSede;
+    TextView txtRegistroLocal;
+    TextView txtRegistroAula;
+    TextView txtRegistroNbungalow;
+    TextView txtRegistroRbungalow;
+
+    TextView txtRegistroDni_yaregistrado;
+    TextView txtRegistroNombres_yaregistrado;
+    TextView txtRegistroFecha;
+    TextView txtRegistroDireccion;
+    TextView txtErrorSede_error;
+    TextView txtErrorLocal_error;
+
+    String sede;
+    String nro_local;
+    Context context;
+
+
+
+    public IngresoLocalFragment2() {
+        // Required empty public constructor
+    }
+
+
+    @SuppressLint("ValidFragment")
+    public IngresoLocalFragment2(String nro_local, Context context) {
+        this.nro_local = nro_local;
+        this.context = context;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_ingresolocal, container, false);
+        btnBuscar = (ImageView) rootView.findViewById(R.id.ingresolocal_btnBuscar);
+        edtDni = (EditText) rootView.findViewById(R.id.ingresolocal_edtDni);
+
+        cvError = (CardView) rootView.findViewById(R.id.ingresolocal_cvError);
+        cvNoregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvNoRegistrado);
+        cvRegistro = (CardView) rootView.findViewById(R.id.ingresolocal_cvRegistro);
+        cvYaregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvYaRegistrado);
+
+        txtRegistroCargo = (TextView) rootView.findViewById(R.id.ingresolocal_txtCargo);
+        txtRegistroDni = (TextView) rootView.findViewById(R.id.ingresolocal_txtDni);
+        txtRegistroNombres = (TextView) rootView.findViewById(R.id.ingresolocal_txtNombres);
+        txtRegistroSede = (TextView) rootView.findViewById(R.id.ingresolocal_txtSede);
+        txtRegistroLocal = (TextView) rootView.findViewById(R.id.ingresolocal_txtLocal);
+        txtRegistroAula = (TextView) rootView.findViewById(R.id.ingresolocal_txtAula);
+        txtRegistroNbungalow = (TextView) rootView.findViewById(R.id.ingresolocal_txtNbungalow);
+        txtRegistroRbungalow = (TextView) rootView.findViewById(R.id.ingresolocal_txtRbungalow);
+
+        txtRegistroDni_yaregistrado = (TextView) rootView.findViewById(R.id.ingresolocal_txtDni_yaregistrado);
+        txtRegistroNombres_yaregistrado = (TextView) rootView.findViewById(R.id.ingresolocal_txtNombres_yaregitstrado);
+        txtRegistroFecha = (TextView) rootView.findViewById(R.id.ingresolocal_txtfecha);
+
+        txtErrorLocal_error = (TextView) rootView.findViewById(R.id.ingresolocal_txtLocal_error);
+        txtErrorSede_error = (TextView) rootView.findViewById(R.id.ingresolocal_txtSede_error);
+        txtRegistroDireccion = (TextView) rootView.findViewById(R.id.ingresolocal_txtdireccion_error);
+
+        cvRBungalow = (CardView) rootView.findViewById(R.id.ingresolocal_cvRbungalow);
+        lyNBungalow = (LinearLayout) rootView.findViewById(R.id.ingresolocal_LYNbungalow);
+
+
+        edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+
+        return rootView;
+    }
+
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        edtDni.requestFocus();
+        //EDITTEXT BUSCAR
+        edtDni.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+               // edtDni.setText(" ");
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(edtDni.getText().length()==8){
+                    ocultarTeclado(edtDni);
+                    String dni = edtDni.getText().toString();
+                    if(!dni.equals("")){
+                        if(!buscarDNI(dni)) {
+                            cvRegistro.setVisibility(View.GONE);
+                            cvYaregistrado.setVisibility(View.GONE);
+                            cvError.setVisibility(View.GONE);
+                            cvNoregistrado.setVisibility(View.VISIBLE);
+                            edtDni.setText("");
+                            edtDni.requestFocus();
+                        }
+                        else{edtDni.setText("");
+                            edtDni.requestFocus();}
+                    }
+                    else {
+                        Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();
+                        edtDni.setText("");
+                        edtDni.requestFocus();}
+                }
+
+
+            }
+        });
+        //BOTON BUSCAR
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dni = edtDni.getText().toString();
+                if(!dni.equals("")){
+                    if(!buscarDNI(dni)) {
+                        //NO EXISTE EN PADRON
+                        cvRegistro.setVisibility(View.GONE);
+                        cvYaregistrado.setVisibility(View.GONE);
+                        cvError.setVisibility(View.GONE);
+                        cvNoregistrado.setVisibility(View.VISIBLE);
+                        edtDni.setText("");
+                        edtDni.requestFocus();
+                    }
+                    else{edtDni.setText("");
+                        edtDni.requestFocus();}
+                }
+                else {
+                Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();edtDni.setText("");
+                    edtDni.requestFocus();}
+            }
+        });
+    }
+
+    public boolean buscarDNI(String dni){
+        boolean encontrado = false;
+
+        try {
+            Data data = new Data(context);
+            data.open();
+            Nacional nacional = data.getNacional(dni);
+            data.close();
+            if(nacional != null){
+                encontrado = true;
+                if(nro_local.equals(String.valueOf(nacional.getNro_local()))){
+                    data = new Data(context);
+                    data.open();
+                    AsistenteModelo1 asistenteModelo1 = data.getAsistencia2(nacional.getNumdoc());
+                    if(asistenteModelo1 != null){
+                        //YA REGISTRADO
+                        cvError.setVisibility(View.GONE);
+                        cvNoregistrado.setVisibility(View.GONE);
+                        cvYaregistrado.setVisibility(View.VISIBLE);
+                        cvRegistro.setVisibility(View.GONE);
+                        txtRegistroDni_yaregistrado.setText(asistenteModelo1.getNumdoc());
+                        txtRegistroNombres_yaregistrado.setText(asistenteModelo1.getApepat());
+                        txtRegistroFecha.setText(checkDigito(asistenteModelo1.getDia1())+"/"+checkDigito(asistenteModelo1.getMes1()+1)+"/"+(asistenteModelo1.getAnio1()+1900)+"  -  "+checkDigito(asistenteModelo1.getHora1())+":"+checkDigito(asistenteModelo1.getMinuto1()));
+                    }else{
+                        //NUEVO REGISTRADO
+                        cvError.setVisibility(View.GONE);
+                        cvNoregistrado.setVisibility(View.GONE);
+                        cvYaregistrado.setVisibility(View.GONE);
+                        cvRegistro.setVisibility(View.VISIBLE);
+                        cvRBungalow.setVisibility(View.VISIBLE);
+                        lyNBungalow.setVisibility(View.VISIBLE);
+                        txtRegistroSede.setText(nacional.getSede());
+                        txtRegistroNombres.setText(nacional.getApepat());
+                        txtRegistroDni.setText(nacional.getNumdoc());
+                        txtRegistroLocal.setText(nacional.getCargo());
+                        txtRegistroCargo.setText(nacional.getCargo());
+                        txtRegistroAula.setText(nacional.getAula());
+                        txtRegistroNbungalow.setText(""+nacional.getBungalow());
+                        if(nacional.getResponsable_bungalow()==1)
+                        {txtRegistroRbungalow.setText("Responsable de Bungalow : SI ");}
+                        else {txtRegistroRbungalow.setText("Responsable de Bungalow : NO  ");}
+                        Calendar calendario = Calendar.getInstance();
+                        int yy = calendario.get(Calendar.YEAR)-1900;
+                        int mm = calendario.get(Calendar.MONTH);
+                        int dd = calendario.get(Calendar.DAY_OF_MONTH);
+                        int hora = calendario.get(Calendar.HOUR_OF_DAY);
+                        int minuto = calendario.get(Calendar.MINUTE);
+                        int segundo = calendario.get(Calendar.SECOND);
+                        int estatus1 = 1;
+                        int estatus2 = 0;
+                        //2018-08-17 15:23:41.000
+                        AsistenteModelo1 asistente = new AsistenteModelo1(
+                                dni,
+                                nacional.getSede(),
+                                nacional.getNro_local(),
+                                nacional.getLocal_aplicacion(),
+                                nacional.getDireccion_local(),
+                                nacional.getAula(),
+                                nacional.getBungalow(),
+                                nacional.getApepat(),
+                                nacional.getNumdoc(),
+                                nacional.getCargo(),
+                                nacional.getNivel(),
+                                nacional.getResponsable_bungalow(),
+                                estatus1,
+                                dd,
+                                mm,
+                                yy,
+                                hora,
+                                minuto,
+                                estatus2,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0);
+                        data.insertarAsistencia2(asistente);
+
+                    }
+                    data.close();
+                }else{
+                    //PERTENECE A OTRA SEDE
+                    cvError.setVisibility(View.VISIBLE);
+                    cvNoregistrado.setVisibility(View.GONE);
+                    cvRegistro.setVisibility(View.GONE);
+                    cvYaregistrado.setVisibility(View.GONE);
+                    txtErrorSede_error.setText(nacional.getSede());
+                    txtErrorLocal_error.setText(nacional.getSede());
+                    txtRegistroDireccion.setText(nacional.getDireccion_local());
+                }
+            }
+            else
+                { Toast.makeText(context, "EL DNI NO EXISTE EN EL MARCO", Toast.LENGTH_SHORT).show(); }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return encontrado;
+    }
+
+    public String checkDigito (int number) {
+        return number <= 9 ? "0" + number : String.valueOf(number);
+    }
+}

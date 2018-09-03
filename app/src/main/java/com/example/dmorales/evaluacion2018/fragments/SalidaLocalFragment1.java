@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,8 @@ public class SalidaLocalFragment1 extends Fragment {
     CardView cvRegistro;
     CardView cvError;
     CardView cvAviso;
+    CardView cvRBungalow;
+    LinearLayout lyNBungalow;
 
     TextView txtErrorCargo;
     TextView txtErrorSede;
@@ -114,6 +117,9 @@ public class SalidaLocalFragment1 extends Fragment {
         txtErrorLocal_error = (TextView) rootView.findViewById(R.id.salidalocal_txtLocal_error);
         txtErrorSede_error = (TextView) rootView.findViewById(R.id.salidalocal_txtSede_error);
         txtRegistroDireccion = (TextView) rootView.findViewById(R.id.salidalocal_txtdireccion_error);
+
+        cvRBungalow = (CardView) rootView.findViewById(R.id.salidalocal_cvRbungalow);
+        lyNBungalow = (LinearLayout) rootView.findViewById(R.id.salidalocal_LYNbungalow);
 
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
@@ -254,6 +260,8 @@ public class SalidaLocalFragment1 extends Fragment {
                     cvYaregistrado.setVisibility(View.GONE);
                     cvRegistro.setVisibility(View.VISIBLE);
                     cvAviso.setVisibility(View.GONE);
+                    cvRBungalow.setVisibility(View.VISIBLE);
+                    lyNBungalow.setVisibility(View.VISIBLE);
                     txtRegistroSede.setText(asistenteModelo1.getSede());
                     txtRegistroNombres.setText(asistenteModelo1.getApepat());
                     txtRegistroDni.setText(asistenteModelo1.getNumdoc());
