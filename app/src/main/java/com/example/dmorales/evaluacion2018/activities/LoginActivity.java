@@ -54,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
             UsuarioLocal usuarioLocal = data.getUsuarioLocal(clave);
             data.close();
 
-
                   if (usuarioLocal != null){
                       if(usuarioLocal.getCod_nivel().equals("I"))
                       {  Intent intent = new Intent(LoginActivity.this, MainActivity1.class);
@@ -118,59 +117,6 @@ public class LoginActivity extends AppCompatActivity {
                   }
 
 
-//            if(usuarioLocal.getCod_nivel().equals("I"))
-//              {
-//                  if (usuarioLocal != null){
-//                      Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                      intent.putExtra("sede", usuarioLocal.getSede_region());
-//                      intent.putExtra("usuario", usuarioLocal.getUsuario());
-//                      intent.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
-//                      intent.putExtra("fase", usuarioLocal.getFase());
-//                      startActivity(intent);
-//                  }else{
-//                      Toast.makeText(this, "CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
-//                  }
-//              }
-//            else if(usuarioLocal.getCod_nivel().equals("II"))
-//                   {
-//                       if (usuarioLocal != null){
-//                           Intent intent2 = new Intent(LoginActivity.this, MainActivity2.class);
-//                           intent2.putExtra("sede", usuarioLocal.getSede_region());
-//                           intent2.putExtra("usuario", usuarioLocal.getUsuario());
-//                           intent2.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
-//                           intent2.putExtra("fase", usuarioLocal.getFase());
-//                           startActivity(intent2);
-//                       }else{
-//                           Toast.makeText(this, "CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
-//                       }
-//
-//                   }
-//            else  if(usuarioLocal.getCod_nivel().equals("III"))
-//               {
-//                if (usuarioLocal != null){
-//                    Intent intent3 = new Intent(LoginActivity.this, MainActivity3.class);
-//                    intent3.putExtra("sede", usuarioLocal.getSede_region());
-//                    intent3.putExtra("usuario", usuarioLocal.getUsuario());
-//                    intent3.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
-//                    intent3.putExtra("fase", usuarioLocal.getFase());
-//                    startActivity(intent3);
-//                }else{
-//                    Toast.makeText(this, "CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
-//                }
-//
-//            }
-//            else {Toast.makeText(this, "CLAVE NO REGISTRADA", Toast.LENGTH_SHORT).show();}
-
-//            if (usuarioLocal != null){
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                intent.putExtra("sede", usuarioLocal.getSede_region());
-//                intent.putExtra("usuario", usuarioLocal.getUsuario());
-//                intent.putExtra("nombrenivel", usuarioLocal.getNom_nivel());
-//                intent.putExtra("fase", usuarioLocal.getFase());
-//                startActivity(intent);
-//            }else{
-//                Toast.makeText(this, "CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
-//            }
         } catch (IOException e){
             e.printStackTrace();
         }
