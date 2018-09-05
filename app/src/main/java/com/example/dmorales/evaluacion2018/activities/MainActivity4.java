@@ -125,7 +125,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment41);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO1:
-                ListadoFragment41 listadoFragment41 = new ListadoFragment41(nro_local,MainActivity4.this);
+                ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local,MainActivity4.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment41);
                 break;
             case TipoFragment.ASISTENCIA_NUBE1:
@@ -141,7 +141,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment42);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO2:
-                ListadoFragment42 listadoFragment42 = new ListadoFragment42(nro_local,MainActivity4.this);
+                ListadoFragment42 listadoFragment42 = new ListadoFragment42(usuario,nro_local,MainActivity4.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment42);
                 break;
             case TipoFragment.ASISTENCIA_NUBE2:
@@ -157,7 +157,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment43);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO3:
-                ListadoFragment43 listadoFragment43 = new ListadoFragment43(nro_local,MainActivity4.this);
+                ListadoFragment43 listadoFragment43 = new ListadoFragment43(usuario,nro_local,MainActivity4.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment43);
                 break;
             case TipoFragment.ASISTENCIA_NUBE3:
@@ -213,7 +213,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia41);
                                                     data.close();
-                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(nro_local, MainActivity4.this);
+                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local, MainActivity4.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment41);
@@ -258,7 +258,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia42);
                                                     data.close();
-                                                    ListadoFragment42 listadoFragment42 = new ListadoFragment42(nro_local, MainActivity4.this);
+                                                    ListadoFragment42 listadoFragment42 = new ListadoFragment42(usuario,nro_local, MainActivity4.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment42);
@@ -305,7 +305,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia43);
                                                     data.close();
-                                                    ListadoFragment43 listadoFragment43 = new ListadoFragment43(nro_local, MainActivity4.this);
+                                                    ListadoFragment43 listadoFragment43 = new ListadoFragment43(usuario,nro_local, MainActivity4.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment43);

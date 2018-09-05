@@ -26,4 +26,12 @@
     <color name="letraaviso">#8A6D3B</color>
     <color name="letraerror">#F25A57</color>
     <color name="letracorrecto">#497D43</color>
+
+    <color name="color1">#D5160A</color>
+    <color name="color2">#497D43</color>
+    <color name="color3">#8A6D3B</color>
+    <color name="color4">#F0AD4E</color>
+    <color name="color5">#8829AB</color>
+    <color name="color6">#FFC300  </color>
+
 </resources>

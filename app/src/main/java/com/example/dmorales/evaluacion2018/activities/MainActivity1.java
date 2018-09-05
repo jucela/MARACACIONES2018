@@ -107,7 +107,7 @@ public class MainActivity1 extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.menu_listado) {
-            ListadoFragment1 listadoFragment1 = new ListadoFragment1(nro_local,MainActivity1.this);
+            ListadoFragment1 listadoFragment1 = new ListadoFragment1(usuario,nro_local,MainActivity1.this);
             fragmentTransaction.replace(R.id.fragment_layout, listadoFragment1);
             fragmentTransaction.commit();
         } else if (id == R.id.menu_nube) {
@@ -132,7 +132,7 @@ public class MainActivity1 extends AppCompatActivity
                                 data.open();
                                 data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia1);
                                 data.close();
-                                ListadoFragment1 listadoFragment1 = new ListadoFragment1(nro_local,MainActivity1.this);
+                                ListadoFragment1 listadoFragment1 = new ListadoFragment1(usuario,nro_local,MainActivity1.this);
                                 FragmentManager fragmentManage = getSupportFragmentManager();
                                 FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                 fragmentTransact.replace(R.id.fragment_layout, listadoFragment1);

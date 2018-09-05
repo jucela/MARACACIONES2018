@@ -339,6 +339,25 @@ public class SalidaLocalFragment72 extends Fragment {
         return encontrado;
     }
 
+    public boolean validardiaanterior(String dni){
+        boolean encontrado = false;
+
+        try {
+            Data data = new Data(context);
+            data.open();
+            Nacional nacional = data.getNacional(dni);
+            data.close();
+            if(nro_local.equals(String.valueOf(nacional.getNro_local()))){
+                encontrado = true;
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return encontrado;
+    }
+
 
     public String checkDigito (int number) {
         return number <= 9 ? "0" + number : String.valueOf(number);

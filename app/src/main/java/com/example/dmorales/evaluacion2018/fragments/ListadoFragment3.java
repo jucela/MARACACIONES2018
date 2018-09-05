@@ -51,6 +51,7 @@ public class ListadoFragment3 extends Fragment {
     ArrayList<AsistenteModelo2> asistentes1;
     ArrayList<AsistenteModelo2> asistentes2;
     String cod_local;
+    String usuario;
     String sede;
     Data data;
     FloatingActionButton fabUpLoad;
@@ -63,9 +64,10 @@ public class ListadoFragment3 extends Fragment {
 
 
     @SuppressLint("ValidFragment")
-    public ListadoFragment3(String cod_local, Context context) {
+    public ListadoFragment3(String usuario,String cod_local, Context context) {
         this.context = context;
         this.cod_local = cod_local;
+        this.usuario = usuario;
     }
 
     @Override
@@ -109,11 +111,13 @@ public class ListadoFragment3 extends Fragment {
                         if(asistenteModelo2.getSubido1()==0) {
                             asistenteModelo2.setSubido1(1);
                             String coleccion = "ASISTENCIA_CAPACITACION_ECE2018";
+                            String coleccion2 = "SINNIVEL";
                             WriteBatch batch = db.batch();
-                            DocumentReference documentReference = db.collection(coleccion).document(asistenteModelo2.get_id());
+                            DocumentReference documentReference = db.collection(coleccion).document(coleccion2).collection("asistentes").document(asistenteModelo2.get_id());
                             batch.update(documentReference,"fecha_registro1", new Timestamp(new Date(asistenteModelo2.getAnio1(),asistenteModelo2.getMes1(),asistenteModelo2.getDia1(),asistenteModelo2.getHora1(),asistenteModelo2.getMinuto1())));
-                            batch.update(documentReference,"estatus1",asistenteModelo2.getEstatus1());
-                            batch.update(documentReference,"hora_transferencia_entrada", FieldValue.serverTimestamp());
+                            batch.update(documentReference,"estatus_registro1",asistenteModelo2.getEstatus1());
+                            batch.update(documentReference,"hora_transferencia_registro1", FieldValue.serverTimestamp());
+                            batch.update(documentReference,"usuario1", usuario);
                             final String c = asistenteModelo2.getNumdoc();
                             batch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
