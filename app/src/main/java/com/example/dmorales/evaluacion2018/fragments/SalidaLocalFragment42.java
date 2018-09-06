@@ -42,6 +42,7 @@ public class SalidaLocalFragment42 extends Fragment {
     CardView cvRegistro;
     CardView cvError;
     CardView cvAviso;
+    TextView txtReingreso;
 
     TextView txtErrorCargo;
     TextView txtErrorSede;
@@ -338,6 +339,8 @@ public class SalidaLocalFragment42 extends Fragment {
 
         return encontrado;
     }
+
+
 
 
     public String checkDigito (int number) {

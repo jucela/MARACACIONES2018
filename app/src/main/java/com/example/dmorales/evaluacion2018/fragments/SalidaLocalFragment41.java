@@ -47,6 +47,7 @@ public class SalidaLocalFragment41 extends Fragment {
     TextView txtErrorCargo;
     TextView txtErrorSede;
     TextView txtErrorLocal;
+    TextView txtReingreso;
 
     TextView txtRegistroCargo;
     TextView txtRegistroDni;
@@ -115,6 +116,8 @@ public class SalidaLocalFragment41 extends Fragment {
         txtErrorSede_error = (TextView) rootView.findViewById(R.id.salidalocal_txtSede_error);
         txtRegistroDireccion = (TextView) rootView.findViewById(R.id.salidalocal_txtdireccion_error);
 
+        txtReingreso = (TextView) rootView.findViewById(R.id.txt_salidalocal);
+
 
         edtDni.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
@@ -130,6 +133,7 @@ public class SalidaLocalFragment41 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         edtDni.requestFocus();
+        txtReingreso.setText("REINGRESO LOCAL (DIA 1)");
         //EDITTEXT BUSCAR
         edtDni.addTextChangedListener(new TextWatcher() {
             @Override

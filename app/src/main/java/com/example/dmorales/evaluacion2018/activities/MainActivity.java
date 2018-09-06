@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity
     String nro_local;
     String nombrenivel;
     String fase;
+    String rol;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         usuario = getIntent().getExtras().getString("usuario");
         nombrenivel = getIntent().getExtras().getString("nombrenivel");
         fase = getIntent().getExtras().getString("fase");
+        rol = getIntent().getExtras().getString("rol");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

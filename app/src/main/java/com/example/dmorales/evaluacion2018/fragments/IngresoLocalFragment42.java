@@ -40,6 +40,7 @@ public class IngresoLocalFragment42 extends Fragment {
     CardView cvYaregistrado;
     CardView cvRegistro;
     CardView cvError;
+    CardView cvAviso;
 
     TextView txtErrorCargo;
     TextView txtErrorSede;
@@ -90,6 +91,7 @@ public class IngresoLocalFragment42 extends Fragment {
         cvNoregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvNoRegistrado);
         cvRegistro = (CardView) rootView.findViewById(R.id.ingresolocal_cvRegistro);
         cvYaregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvYaRegistrado);
+        cvAviso = (CardView) rootView.findViewById(R.id.ingresolocal_cvAviso);
 
 
         txtRegistroCargo = (TextView) rootView.findViewById(R.id.ingresolocal_txtCargo);
@@ -142,17 +144,33 @@ public class IngresoLocalFragment42 extends Fragment {
                 if(edtDni.getText().length()==8){
                     ocultarTeclado(edtDni);
                     String dni = edtDni.getText().toString();
-                    if(!dni.equals("")){
-                        if(!buscarDNI(dni)) {
+                    if(!dni.equals("")) {
+
+                        if (validarDIA()) {
+
+                        if (!buscarDNI(dni)) {
                             cvRegistro.setVisibility(View.GONE);
                             cvYaregistrado.setVisibility(View.GONE);
                             cvError.setVisibility(View.GONE);
                             cvNoregistrado.setVisibility(View.VISIBLE);
                             edtDni.setText("");
                             edtDni.requestFocus();
+                        } else {
+                            edtDni.setText("");
+                            edtDni.requestFocus();
+                               }
                         }
-                        else{edtDni.setText("");
-                            edtDni.requestFocus();}
+                        else {
+                            edtDni.setText("");
+                            edtDni.requestFocus();
+                            cvError.setVisibility(View.GONE);
+                            cvNoregistrado.setVisibility(View.GONE);
+                            cvYaregistrado.setVisibility(View.GONE);
+                            cvRegistro.setVisibility(View.GONE);
+                            cvAviso.setVisibility(View.VISIBLE);
+                            //Toast.makeText(context, "NO SE REGISTRO EL DIA ANTERIOR ", Toast.LENGTH_SHORT).show();
+                            }
+
                     }
                     else {
                         Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();
@@ -273,8 +291,26 @@ public class IngresoLocalFragment42 extends Fragment {
                     txtRegistroDireccion.setText(nacional.getDireccion_local());
                 }
             }
-            else
-                { Toast.makeText(context, "EL DNI NO EXISTE EN EL MARCO", Toast.LENGTH_SHORT).show(); }
+            //else
+                //{ Toast.makeText(context, "EL DNI NO EXISTE EN EL MARCO", Toast.LENGTH_SHORT).show(); }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return encontrado;
+    }
+
+    public boolean validarDIA(){
+        boolean encontrado = false;
+
+        try {
+            Data data = new Data(context);
+            data.open();
+            AsistenteModelo3 modelo3 = data.getValidacionDia41();
+            data.close();
+            if(modelo3 !=null){
+                encontrado = true;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

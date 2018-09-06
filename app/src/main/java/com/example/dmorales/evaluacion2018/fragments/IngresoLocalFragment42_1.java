@@ -31,7 +31,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IngresoLocalFragment55 extends Fragment {
+public class IngresoLocalFragment42_1 extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -68,13 +68,13 @@ public class IngresoLocalFragment55 extends Fragment {
 
 
 
-    public IngresoLocalFragment55() {
+    public IngresoLocalFragment42_1() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public IngresoLocalFragment55(String nro_local, Context context) {
+    public IngresoLocalFragment42_1(String nro_local, Context context) {
         this.nro_local = nro_local;
         this.context = context;
     }
@@ -144,29 +144,20 @@ public class IngresoLocalFragment55 extends Fragment {
                 if(edtDni.getText().length()==8){
                     ocultarTeclado(edtDni);
                     String dni = edtDni.getText().toString();
-                    if(!dni.equals("")){
-                        if (validarDIA()) {
-                        if(!buscarDNI(dni)) {
+                    if(!dni.equals("")) {
+
+                        if (!buscarDNI(dni)) {
                             cvRegistro.setVisibility(View.GONE);
                             cvYaregistrado.setVisibility(View.GONE);
                             cvError.setVisibility(View.GONE);
                             cvNoregistrado.setVisibility(View.VISIBLE);
                             edtDni.setText("");
                             edtDni.requestFocus();
-                        }
-                        else{edtDni.setText("");
-                            edtDni.requestFocus();}
-                        }
-                        else {
+                        } else {
                             edtDni.setText("");
                             edtDni.requestFocus();
-                            cvError.setVisibility(View.GONE);
-                            cvNoregistrado.setVisibility(View.GONE);
-                            cvYaregistrado.setVisibility(View.GONE);
-                            cvRegistro.setVisibility(View.GONE);
-                            cvAviso.setVisibility(View.VISIBLE);
-                            //Toast.makeText(context, "NO SE REGISTRO EL DIA ANTERIOR ", Toast.LENGTH_SHORT).show();
-                        }
+                               }
+
                     }
                     else {
                         Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();
@@ -215,7 +206,7 @@ public class IngresoLocalFragment55 extends Fragment {
                 if(nro_local.equals(String.valueOf(nacional.getNro_local()))){
                     data = new Data(context);
                     data.open();
-                    AsistenteModelo3 asistenteModelo3 = data.getAsistencia55(nacional.getNumdoc());
+                    AsistenteModelo3 asistenteModelo3 = data.getAsistencia42(nacional.getNumdoc());
                     if(asistenteModelo3 != null){
                         //YA REGISTRADO
                         cvError.setVisibility(View.GONE);
@@ -272,7 +263,7 @@ public class IngresoLocalFragment55 extends Fragment {
                                 0,
                                 0,
                                 0);
-                        data.insertarAsistencia55(asistente);
+                        data.insertarAsistencia42(asistente);
 
                     }
                     data.close();
@@ -287,8 +278,8 @@ public class IngresoLocalFragment55 extends Fragment {
                     txtRegistroDireccion.setText(nacional.getDireccion_local());
                 }
             }
-            else
-                { Toast.makeText(context, "EL DNI NO EXISTE EN EL MARCO", Toast.LENGTH_SHORT).show(); }
+            //else
+                //{ Toast.makeText(context, "EL DNI NO EXISTE EN EL MARCO", Toast.LENGTH_SHORT).show(); }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -296,23 +287,7 @@ public class IngresoLocalFragment55 extends Fragment {
         return encontrado;
     }
 
-    public boolean validarDIA(){
-        boolean encontrado = false;
 
-        try {
-            Data data = new Data(context);
-            data.open();
-            AsistenteModelo3 modelo3 = data.getValidacionDia54();
-            data.close();
-            if(modelo3 !=null){
-                encontrado = true;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return encontrado;
-    }
 
     public String checkDigito (int number) {
         return number <= 9 ? "0" + number : String.valueOf(number);

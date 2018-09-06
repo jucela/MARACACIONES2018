@@ -120,6 +120,7 @@ public class Data {
                 usuario.setCod_nivel(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_cod_nivel)));
                 usuario.setNom_nivel(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_nom_nivel)));
                 usuario.setFase(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_fase)));
+                usuario.setRol(cursor.getString(cursor.getColumnIndex(SQLConstantes.usuario_local_rol)));
             }
         }finally{
             if(cursor != null) cursor.close();
@@ -161,6 +162,281 @@ public class Data {
             if(cursor != null) cursor.close();
         }
         return nacional;
+    }
+
+    //VALIDACIONES DE DIAS
+    public AsistenteModelo3 getValidacionDia41(){
+        AsistenteModelo3  asistenteModelo3 = null;
+        String[] whereArgs = new String[]{"1","1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaasistencia41,
+                    SQLConstantes.COLUMNAS_ASISTENCIATIPO3,SQLConstantes.WHERE_CLAUSE_DIA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                asistenteModelo3 = new AsistenteModelo3();
+                asistenteModelo3.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
+                asistenteModelo3.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                asistenteModelo3.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
+                asistenteModelo3.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
+                asistenteModelo3.setDireccion_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion_local)));
+                asistenteModelo3.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                asistenteModelo3.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
+                asistenteModelo3.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
+                asistenteModelo3.setNivel(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nivel)));
+                asistenteModelo3.setEstatus1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus1)));
+                asistenteModelo3.setDia1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                asistenteModelo3.setMes1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                asistenteModelo3.setAnio1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                asistenteModelo3.setHora1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                asistenteModelo3.setMinuto1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                asistenteModelo3.setEstatus2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus2)));
+                asistenteModelo3.setDia2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                asistenteModelo3.setMes2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                asistenteModelo3.setAnio2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                asistenteModelo3.setHora2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                asistenteModelo3.setMinuto2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                asistenteModelo3.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                asistenteModelo3.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return asistenteModelo3;
+    }
+    public AsistenteModelo3 getValidacionDia42(){
+        AsistenteModelo3  asistenteModelo3 = null;
+        String[] whereArgs = new String[]{"1","1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaasistencia42,
+                    SQLConstantes.COLUMNAS_ASISTENCIATIPO3,SQLConstantes.WHERE_CLAUSE_DIA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                asistenteModelo3 = new AsistenteModelo3();
+                asistenteModelo3.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
+                asistenteModelo3.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                asistenteModelo3.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
+                asistenteModelo3.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
+                asistenteModelo3.setDireccion_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion_local)));
+                asistenteModelo3.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                asistenteModelo3.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
+                asistenteModelo3.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
+                asistenteModelo3.setNivel(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nivel)));
+                asistenteModelo3.setEstatus1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus1)));
+                asistenteModelo3.setDia1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                asistenteModelo3.setMes1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                asistenteModelo3.setAnio1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                asistenteModelo3.setHora1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                asistenteModelo3.setMinuto1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                asistenteModelo3.setEstatus2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus2)));
+                asistenteModelo3.setDia2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                asistenteModelo3.setMes2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                asistenteModelo3.setAnio2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                asistenteModelo3.setHora2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                asistenteModelo3.setMinuto2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                asistenteModelo3.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                asistenteModelo3.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return asistenteModelo3;
+    }
+    public AsistenteModelo3 getValidacionDia51(){
+        AsistenteModelo3  asistenteModelo3 = null;
+        String[] whereArgs = new String[]{"1","1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaasistencia51,
+                    SQLConstantes.COLUMNAS_ASISTENCIATIPO3,SQLConstantes.WHERE_CLAUSE_DIA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                asistenteModelo3 = new AsistenteModelo3();
+                asistenteModelo3.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
+                asistenteModelo3.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                asistenteModelo3.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
+                asistenteModelo3.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
+                asistenteModelo3.setDireccion_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion_local)));
+                asistenteModelo3.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                asistenteModelo3.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
+                asistenteModelo3.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
+                asistenteModelo3.setNivel(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nivel)));
+                asistenteModelo3.setEstatus1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus1)));
+                asistenteModelo3.setDia1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                asistenteModelo3.setMes1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                asistenteModelo3.setAnio1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                asistenteModelo3.setHora1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                asistenteModelo3.setMinuto1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                asistenteModelo3.setEstatus2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus2)));
+                asistenteModelo3.setDia2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                asistenteModelo3.setMes2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                asistenteModelo3.setAnio2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                asistenteModelo3.setHora2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                asistenteModelo3.setMinuto2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                asistenteModelo3.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                asistenteModelo3.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return asistenteModelo3;
+    }
+    public AsistenteModelo3 getValidacionDia52(){
+        AsistenteModelo3  asistenteModelo3 = null;
+        String[] whereArgs = new String[]{"1","1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaasistencia52,
+                    SQLConstantes.COLUMNAS_ASISTENCIATIPO3,SQLConstantes.WHERE_CLAUSE_DIA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                asistenteModelo3 = new AsistenteModelo3();
+                asistenteModelo3.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
+                asistenteModelo3.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                asistenteModelo3.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
+                asistenteModelo3.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
+                asistenteModelo3.setDireccion_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion_local)));
+                asistenteModelo3.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                asistenteModelo3.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
+                asistenteModelo3.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
+                asistenteModelo3.setNivel(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nivel)));
+                asistenteModelo3.setEstatus1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus1)));
+                asistenteModelo3.setDia1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                asistenteModelo3.setMes1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                asistenteModelo3.setAnio1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                asistenteModelo3.setHora1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                asistenteModelo3.setMinuto1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                asistenteModelo3.setEstatus2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus2)));
+                asistenteModelo3.setDia2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                asistenteModelo3.setMes2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                asistenteModelo3.setAnio2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                asistenteModelo3.setHora2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                asistenteModelo3.setMinuto2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                asistenteModelo3.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                asistenteModelo3.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return asistenteModelo3;
+    }
+    public AsistenteModelo3 getValidacionDia53(){
+        AsistenteModelo3  asistenteModelo3 = null;
+        String[] whereArgs = new String[]{"1","1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaasistencia53,
+                    SQLConstantes.COLUMNAS_ASISTENCIATIPO3,SQLConstantes.WHERE_CLAUSE_DIA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                asistenteModelo3 = new AsistenteModelo3();
+                asistenteModelo3.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
+                asistenteModelo3.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                asistenteModelo3.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
+                asistenteModelo3.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
+                asistenteModelo3.setDireccion_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion_local)));
+                asistenteModelo3.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                asistenteModelo3.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
+                asistenteModelo3.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
+                asistenteModelo3.setNivel(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nivel)));
+                asistenteModelo3.setEstatus1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus1)));
+                asistenteModelo3.setDia1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                asistenteModelo3.setMes1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                asistenteModelo3.setAnio1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                asistenteModelo3.setHora1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                asistenteModelo3.setMinuto1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                asistenteModelo3.setEstatus2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus2)));
+                asistenteModelo3.setDia2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                asistenteModelo3.setMes2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                asistenteModelo3.setAnio2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                asistenteModelo3.setHora2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                asistenteModelo3.setMinuto2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                asistenteModelo3.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                asistenteModelo3.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return asistenteModelo3;
+    }
+    public AsistenteModelo3 getValidacionDia54(){
+        AsistenteModelo3  asistenteModelo3 = null;
+        String[] whereArgs = new String[]{"1","1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaasistencia54,
+                    SQLConstantes.COLUMNAS_ASISTENCIATIPO3,SQLConstantes.WHERE_CLAUSE_DIA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                asistenteModelo3 = new AsistenteModelo3();
+                asistenteModelo3.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
+                asistenteModelo3.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                asistenteModelo3.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
+                asistenteModelo3.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
+                asistenteModelo3.setDireccion_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion_local)));
+                asistenteModelo3.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                asistenteModelo3.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
+                asistenteModelo3.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
+                asistenteModelo3.setNivel(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nivel)));
+                asistenteModelo3.setEstatus1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus1)));
+                asistenteModelo3.setDia1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                asistenteModelo3.setMes1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                asistenteModelo3.setAnio1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                asistenteModelo3.setHora1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                asistenteModelo3.setMinuto1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                asistenteModelo3.setEstatus2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus2)));
+                asistenteModelo3.setDia2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                asistenteModelo3.setMes2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                asistenteModelo3.setAnio2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                asistenteModelo3.setHora2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                asistenteModelo3.setMinuto2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                asistenteModelo3.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                asistenteModelo3.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return asistenteModelo3;
+    }
+    public AsistenteModelo3 getValidacionDia71(){
+        AsistenteModelo3  asistenteModelo3 = null;
+        String[] whereArgs = new String[]{"1","1"};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tablaasistencia71,
+                    SQLConstantes.COLUMNAS_ASISTENCIATIPO3,SQLConstantes.WHERE_CLAUSE_DIA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                asistenteModelo3 = new AsistenteModelo3();
+                asistenteModelo3.setNumdoc(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_numdoc)));
+                asistenteModelo3.setSede(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_sede)));
+                asistenteModelo3.setNro_local(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nro_local)));
+                asistenteModelo3.setLocal_aplicacion(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_local_aplicacion)));
+                asistenteModelo3.setDireccion_local(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_direccion_local)));
+                asistenteModelo3.setAula(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_aula)));
+                asistenteModelo3.setApepat(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_apepat)));
+                asistenteModelo3.setCargo(cursor.getString(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_cargo)));
+                asistenteModelo3.setNivel(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_nivel)));
+                asistenteModelo3.setEstatus1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus1)));
+                asistenteModelo3.setDia1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia1)));
+                asistenteModelo3.setMes1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes1)));
+                asistenteModelo3.setAnio1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio1)));
+                asistenteModelo3.setHora1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora1)));
+                asistenteModelo3.setMinuto1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto1)));
+                asistenteModelo3.setEstatus2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_estatus2)));
+                asistenteModelo3.setDia2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_dia2)));
+                asistenteModelo3.setMes2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_mes2)));
+                asistenteModelo3.setAnio2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_anio2)));
+                asistenteModelo3.setHora2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_hora2)));
+                asistenteModelo3.setMinuto2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_minuto2)));
+                asistenteModelo3.setSubido1(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido1)));
+                asistenteModelo3.setSubido2(cursor.getInt(cursor.getColumnIndex(SQLConstantes.fecha_de_registro_subido2)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return asistenteModelo3;
     }
     //REGISTRADO-SALIDA LOCAL
     public Registrado getRegistrado(String dni){
@@ -2179,7 +2455,6 @@ public class Data {
         }
         return registrados;
     }
-
     public ArrayList<AsistenteModelo1> getAllEstado2Asistentes1(){
         ArrayList<AsistenteModelo1> asistentes = new ArrayList<>();
         String[] whereArgs = new String[]{"0","1"};

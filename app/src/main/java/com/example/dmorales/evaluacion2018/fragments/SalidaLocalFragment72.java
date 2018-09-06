@@ -42,6 +42,7 @@ public class SalidaLocalFragment72 extends Fragment {
     CardView cvRegistro;
     CardView cvError;
     CardView cvAviso;
+    TextView txtReingreso;
 
     TextView txtErrorCargo;
     TextView txtErrorSede;

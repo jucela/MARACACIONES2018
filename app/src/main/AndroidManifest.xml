@@ -40,7 +40,19 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
         <activity
-            android:name=".activities.MainActivity5"
+            android:name=".activities.MainActivity4_1"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name4"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+        android:name=".activities.MainActivity5"
+        android:configChanges="screenSize|orientation|keyboardHidden"
+        android:label="@string/app_name5"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity5_1"
             android:configChanges="screenSize|orientation|keyboardHidden"
             android:label="@string/app_name5"
             android:theme="@style/AppTheme.NoActionBar"
@@ -53,6 +65,12 @@
             android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
         <activity
             android:name=".activities.MainActivity7"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name7"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.MainActivity7_1"
             android:configChanges="screenSize|orientation|keyboardHidden"
             android:label="@string/app_name7"
             android:theme="@style/AppTheme.NoActionBar"

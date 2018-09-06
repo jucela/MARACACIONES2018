@@ -24,6 +24,7 @@ import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.adapters.ExpandListAdapter;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment71;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment72;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment72_1;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment71;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment72;
 import com.example.dmorales.evaluacion2018.fragments.NubeFragment71;
@@ -40,7 +41,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity7 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity7_1 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     String usuario;
     String sede;
@@ -118,35 +119,35 @@ public class MainActivity7 extends AppCompatActivity implements NavigationView.O
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (tipoFragment){
             case TipoFragment.ASISTENCIA_INGRESO1:
-                IngresoLocalFragment71 ingresolocaltroFragment71 = new IngresoLocalFragment71(nro_local,MainActivity7.this);
+                IngresoLocalFragment71 ingresolocaltroFragment71 = new IngresoLocalFragment71(nro_local,MainActivity7_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment71);
                 break;
             case TipoFragment.ASISTENCIA_SALIDA1 :
-                SalidaLocalFragment71 salidaLocalFragment71 = new SalidaLocalFragment71(nro_local,MainActivity7.this);
+                SalidaLocalFragment71 salidaLocalFragment71 = new SalidaLocalFragment71(nro_local,MainActivity7_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment71);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO1:
-                ListadoFragment71 listadoFragment71 = new ListadoFragment71(usuario,nro_local,MainActivity7.this);
+                ListadoFragment71 listadoFragment71 = new ListadoFragment71(usuario,nro_local,MainActivity7_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment71);
                 break;
             case TipoFragment.ASISTENCIA_NUBE1:
-                NubeFragment71 nubeFragment71 = new NubeFragment71(nro_local,MainActivity7.this);
+                NubeFragment71 nubeFragment71 = new NubeFragment71(nro_local,MainActivity7_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, nubeFragment71);
                 break;
             case TipoFragment.ASISTENCIA_INGRESO2:
-                IngresoLocalFragment72 ingresolocaltroFragment72 = new IngresoLocalFragment72(nro_local,MainActivity7.this);
-                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment72);
+                IngresoLocalFragment72_1 ingresolocaltroFragment72_1 = new IngresoLocalFragment72_1(nro_local,MainActivity7_1.this);
+                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment72_1);
                 break;
             case TipoFragment.ASISTENCIA_SALIDA2 :
-                SalidaLocalFragment72 salidaLocalFragment72 = new SalidaLocalFragment72(nro_local,MainActivity7.this);
+                SalidaLocalFragment72 salidaLocalFragment72 = new SalidaLocalFragment72(nro_local,MainActivity7_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment72);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO2:
-                ListadoFragment72 listadoFragment72 = new ListadoFragment72(usuario,nro_local,MainActivity7.this);
+                ListadoFragment72 listadoFragment72 = new ListadoFragment72(usuario,nro_local,MainActivity7_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment72);
                 break;
             case TipoFragment.ASISTENCIA_NUBE2:
-                NubeFragment72 nubeFragment72 = new NubeFragment72(nro_local,MainActivity7.this);
+                NubeFragment72 nubeFragment72 = new NubeFragment72(nro_local,MainActivity7_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, nubeFragment72);
                 break;
 
@@ -182,7 +183,7 @@ public class MainActivity7 extends AppCompatActivity implements NavigationView.O
                                 setFragment(TipoFragment.ASISTENCIA_NUBE1);
                                 break;
                             case 4:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity7.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity7_1.this);
                                 builder.setMessage("¿Está seguro que desea borrar los datos del DIA 1?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -194,11 +195,11 @@ public class MainActivity7 extends AppCompatActivity implements NavigationView.O
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
                                                 try {
-                                                    Data data = new Data(MainActivity7.this);
+                                                    Data data = new Data(MainActivity7_1.this);
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia71);
                                                     data.close();
-                                                    ListadoFragment71 listadoFragment71 = new ListadoFragment71(usuario,nro_local, MainActivity7.this);
+                                                    ListadoFragment71 listadoFragment71 = new ListadoFragment71(usuario,nro_local, MainActivity7_1.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment71);
@@ -227,7 +228,7 @@ public class MainActivity7 extends AppCompatActivity implements NavigationView.O
                                 setFragment(TipoFragment.ASISTENCIA_NUBE2);
                                 break;
                             case 4:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity7.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity7_1.this);
                                 builder.setMessage("¿Está seguro que desea borrar los datos del DIA 2?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -239,11 +240,11 @@ public class MainActivity7 extends AppCompatActivity implements NavigationView.O
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
                                                 try {
-                                                    Data data = new Data(MainActivity7.this);
+                                                    Data data = new Data(MainActivity7_1.this);
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia72);
                                                     data.close();
-                                                    ListadoFragment72 listadoFragment72 = new ListadoFragment72(usuario,nro_local, MainActivity7.this);
+                                                    ListadoFragment72 listadoFragment72 = new ListadoFragment72(usuario,nro_local, MainActivity7_1.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment72);
@@ -262,7 +263,7 @@ public class MainActivity7 extends AppCompatActivity implements NavigationView.O
                     case 2:
                         switch (childPosition) {
                             case 0:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity7.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity7_1.this);
                                 builder.setMessage("¿Está seguro que desea cerrar sesión en la aplicación?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -273,7 +274,7 @@ public class MainActivity7 extends AppCompatActivity implements NavigationView.O
                                         })
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
-                                                Intent intent = new Intent(MainActivity7.this,LoginActivity.class);
+                                                Intent intent = new Intent(MainActivity7_1.this,LoginActivity.class);
                                                 startActivity(intent);
                                                 finish();
                                             }

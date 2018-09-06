@@ -20,15 +20,29 @@
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/logo_ece" />
-    <TextView
-        android:id="@+id/titulo31"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="0dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:textSize="18sp"
-        android:text="Asistencia Capacitaciòn"
-        android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_person"
+            android:tint="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/titulo31"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="Usuario: Global"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    </LinearLayout>
     <TextView
         android:id="@+id/titulo32"
         android:layout_width="match_parent"

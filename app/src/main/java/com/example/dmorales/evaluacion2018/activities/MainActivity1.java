@@ -37,6 +37,7 @@ public class MainActivity1 extends AppCompatActivity
     String nro_local;
     String nombrenivel;
     String fase;
+    String rol;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,7 @@ public class MainActivity1 extends AppCompatActivity
         usuario = getIntent().getExtras().getString("usuario");
         nombrenivel = getIntent().getExtras().getString("nombrenivel");
         fase = getIntent().getExtras().getString("fase");
+        rol = getIntent().getExtras().getString("rol");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -67,7 +69,10 @@ public class MainActivity1 extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView txtHeaderTitulo1 = (TextView) headerView.findViewById(R.id.titulo11);
         TextView txtHeaderTitulo2 = (TextView) headerView.findViewById(R.id.titulo12);
-        txtHeaderTitulo1.setText("Asistencia "+fase);
+        if(rol.equals("1"))
+        {txtHeaderTitulo1.setText("Usuario: Administrador");}
+        else
+        {txtHeaderTitulo1.setText("Usuario: Operador");}
         txtHeaderTitulo2.setText(nombrenivel);
 
         IngresoLocalFragment1 ingresolocalFragment1 = new IngresoLocalFragment1(nro_local,MainActivity1.this);

@@ -51,6 +51,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
     String nro_local;
     String nombrenivel;
     String fase;
+    String rol;
     private ArrayList<String> listDataHeader;
     private ExpandableListView expListView;
     private HashMap<String, List<String>> listDataChild;
@@ -66,6 +67,7 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
         usuario = getIntent().getExtras().getString("usuario");
         nombrenivel = getIntent().getExtras().getString("nombrenivel");
         fase = getIntent().getExtras().getString("fase");
+        rol = getIntent().getExtras().getString("rol");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -89,7 +91,10 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
         View headerView = navigationView.getHeaderView(0);
         TextView txtHeaderTitulo1 = (TextView) headerView.findViewById(R.id.titulo431);
         TextView txtHeaderTitulo2 = (TextView) headerView.findViewById(R.id.titulo432);
-        txtHeaderTitulo1.setText("Asistencia "+fase);
+        if(rol.equals("1"))
+        {txtHeaderTitulo1.setText("Usuario: Administrador");}
+        else
+        {txtHeaderTitulo1.setText("Usuario: Operador");}
         txtHeaderTitulo2.setText(nombrenivel);
 
 
@@ -364,21 +369,21 @@ public class MainActivity4 extends AppCompatActivity implements NavigationView.O
         // Adding child data
         List<String> dia1 = new ArrayList<String>();
         dia1.add("Ingreso Local (Día 1)");
-        dia1.add("Salida Local (Día 1)");
+        dia1.add("Reingreso Local (Día 1)");
         dia1.add("Subir Registros (Día 1)");
         dia1.add("Reporte de Marcación (Día 1)");
         dia1.add("Reset BD (Día 1)");
 
         List<String> dia2 = new ArrayList<String>();
         dia2.add("Ingreso Local (Día 2)");
-        dia2.add("Salida Local (Día 2)");
+        dia2.add("Reingreso Local (Día 2)");
         dia2.add("Subir Registros (Día 2)");
         dia2.add("Reporte de Marcación (Día 2)");
         dia2.add("Reset BD (Día 2)");
 
         List<String> dia3 = new ArrayList<String>();
         dia3.add("Ingreso Local (Día 3)");
-        dia3.add("Salida Local (Día 3)");
+        dia3.add("Reingreso Local (Día 3)");
         dia3.add("Subir Registros (Día 3)");
         dia3.add("Reporte de Marcación (Día 3)");
         dia3.add("Reset BD (Día 3)");

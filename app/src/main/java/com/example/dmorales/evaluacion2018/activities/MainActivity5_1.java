@@ -24,9 +24,13 @@ import com.example.dmorales.evaluacion2018.R;
 import com.example.dmorales.evaluacion2018.adapters.ExpandListAdapter;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment51;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment52;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment52_1;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment53;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment53_1;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment54;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment54_1;
 import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment55;
+import com.example.dmorales.evaluacion2018.fragments.IngresoLocalFragment55_1;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment41;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment51;
 import com.example.dmorales.evaluacion2018.fragments.ListadoFragment52;
@@ -53,7 +57,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity5 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity5_1 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     String usuario;
     String sede;
@@ -76,7 +80,6 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
         usuario = getIntent().getExtras().getString("usuario");
         nombrenivel = getIntent().getExtras().getString("nombrenivel");
         fase = getIntent().getExtras().getString("fase");
-        rol = getIntent().getExtras().getString("rol");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -100,10 +103,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
         View headerView = navigationView.getHeaderView(0);
         TextView txtHeaderTitulo1 = (TextView) headerView.findViewById(R.id.titulo551);
         TextView txtHeaderTitulo2 = (TextView) headerView.findViewById(R.id.titulo552);
-        if(rol.equals("1"))
-        {txtHeaderTitulo1.setText("Usuario: Administrador");}
-        else
-        {txtHeaderTitulo1.setText("Usuario: Operador");}
+        txtHeaderTitulo1.setText("Asistencia "+fase);
         txtHeaderTitulo2.setText(nombrenivel);
 
 
@@ -131,83 +131,83 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (tipoFragment){
             case TipoFragment.ASISTENCIA_INGRESO1:
-                IngresoLocalFragment51 ingresolocaltroFragment51 = new IngresoLocalFragment51(nro_local,MainActivity5.this);
+                IngresoLocalFragment51 ingresolocaltroFragment51 = new IngresoLocalFragment51(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment51);
                 break;
             case TipoFragment.ASISTENCIA_SALIDA1 :
-                SalidaLocalFragment51 salidaLocalFragment51 = new SalidaLocalFragment51(nro_local,MainActivity5.this);
+                SalidaLocalFragment51 salidaLocalFragment51 = new SalidaLocalFragment51(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment51);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO1:
-                ListadoFragment51 listadoFragment51 = new ListadoFragment51(usuario,nro_local,MainActivity5.this);
+                ListadoFragment51 listadoFragment51 = new ListadoFragment51(usuario,nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment51);
                 break;
             case TipoFragment.ASISTENCIA_NUBE1:
-                NubeFragment51 nubeFragment51 = new NubeFragment51(nro_local,MainActivity5.this);
+                NubeFragment51 nubeFragment51 = new NubeFragment51(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, nubeFragment51);
                 break;
             case TipoFragment.ASISTENCIA_INGRESO2:
-                IngresoLocalFragment52 ingresolocaltroFragment52 = new IngresoLocalFragment52(nro_local,MainActivity5.this);
-                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment52);
+                IngresoLocalFragment52_1 ingresolocaltroFragment52_1 = new IngresoLocalFragment52_1(nro_local,MainActivity5_1.this);
+                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment52_1);
                 break;
             case TipoFragment.ASISTENCIA_SALIDA2 :
-                SalidaLocalFragment52 salidaLocalFragment52 = new SalidaLocalFragment52(nro_local,MainActivity5.this);
+                SalidaLocalFragment52 salidaLocalFragment52 = new SalidaLocalFragment52(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment52);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO2:
-                ListadoFragment52 listadoFragment52 = new ListadoFragment52(usuario,nro_local,MainActivity5.this);
+                ListadoFragment52 listadoFragment52 = new ListadoFragment52(usuario,nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment52);
                 break;
             case TipoFragment.ASISTENCIA_NUBE2:
-                NubeFragment52 nubeFragment52 = new NubeFragment52(nro_local,MainActivity5.this);
+                NubeFragment52 nubeFragment52 = new NubeFragment52(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, nubeFragment52);
                 break;
             case TipoFragment.ASISTENCIA_INGRESO3:
-                IngresoLocalFragment53 ingresolocaltroFragment53 = new IngresoLocalFragment53(nro_local,MainActivity5.this);
-                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment53);
+                IngresoLocalFragment53_1 ingresolocaltroFragment53_1 = new IngresoLocalFragment53_1(nro_local,MainActivity5_1.this);
+                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment53_1);
                 break;
             case TipoFragment.ASISTENCIA_SALIDA3 :
-                SalidaLocalFragment53 salidaLocalFragment53 = new SalidaLocalFragment53(nro_local,MainActivity5.this);
+                SalidaLocalFragment53 salidaLocalFragment53 = new SalidaLocalFragment53(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment53);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO3:
-                ListadoFragment53 listadoFragment53 = new ListadoFragment53(usuario,nro_local,MainActivity5.this);
+                ListadoFragment53 listadoFragment53 = new ListadoFragment53(usuario,nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment53);
                 break;
             case TipoFragment.ASISTENCIA_NUBE3:
-                NubeFragment53 nubeFragment53 = new NubeFragment53(nro_local,MainActivity5.this);
+                NubeFragment53 nubeFragment53 = new NubeFragment53(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, nubeFragment53);
                 break;
             case TipoFragment.ASISTENCIA_INGRESO4:
-                IngresoLocalFragment54 ingresolocaltroFragment54 = new IngresoLocalFragment54(nro_local,MainActivity5.this);
-                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment54);
+                IngresoLocalFragment54_1 ingresolocaltroFragment54_1 = new IngresoLocalFragment54_1(nro_local,MainActivity5_1.this);
+                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment54_1);
                 break;
             case TipoFragment.ASISTENCIA_SALIDA4 :
-                SalidaLocalFragment54 salidaLocalFragment54 = new SalidaLocalFragment54(nro_local,MainActivity5.this);
+                SalidaLocalFragment54 salidaLocalFragment54 = new SalidaLocalFragment54(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment54);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO4:
-                ListadoFragment54 listadoFragment54 = new ListadoFragment54(usuario,nro_local,MainActivity5.this);
+                ListadoFragment54 listadoFragment54 = new ListadoFragment54(usuario,nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment54);
                 break;
             case TipoFragment.ASISTENCIA_NUBE4:
-                NubeFragment54 nubeFragment54 = new NubeFragment54(nro_local,MainActivity5.this);
+                NubeFragment54 nubeFragment54 = new NubeFragment54(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, nubeFragment54);
                 break;
             case TipoFragment.ASISTENCIA_INGRESO5:
-                IngresoLocalFragment55 ingresolocaltroFragment55 = new IngresoLocalFragment55(nro_local,MainActivity5.this);
-                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment55);
+                IngresoLocalFragment55_1 ingresolocaltroFragment55_1 = new IngresoLocalFragment55_1(nro_local,MainActivity5_1.this);
+                fragmentTransaction.replace(R.id.fragment_layout, ingresolocaltroFragment55_1);
                 break;
             case TipoFragment.ASISTENCIA_SALIDA5 :
-                SalidaLocalFragment55 salidaLocalFragment55 = new SalidaLocalFragment55(nro_local,MainActivity5.this);
+                SalidaLocalFragment55 salidaLocalFragment55 = new SalidaLocalFragment55(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout,salidaLocalFragment55);
                 break;
             case TipoFragment.ASISTENCIA_LISTADO5:
-                ListadoFragment55 listadoFragment55 = new ListadoFragment55(usuario,nro_local,MainActivity5.this);
+                ListadoFragment55 listadoFragment55 = new ListadoFragment55(usuario,nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, listadoFragment55);
                 break;
             case TipoFragment.ASISTENCIA_NUBE5:
-                NubeFragment55 nubeFragment55 = new NubeFragment55(nro_local,MainActivity5.this);
+                NubeFragment55 nubeFragment55 = new NubeFragment55(nro_local,MainActivity5_1.this);
                 fragmentTransaction.replace(R.id.fragment_layout, nubeFragment55);
                 break;
 
@@ -243,7 +243,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                 setFragment(TipoFragment.ASISTENCIA_NUBE1);
                                 break;
                             case 4:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5_1.this);
                                 builder.setMessage("¿Está seguro que desea borrar los datos del DIA 1?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -255,11 +255,11 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
                                                 try {
-                                                    Data data = new Data(MainActivity5.this);
+                                                    Data data = new Data(MainActivity5_1.this);
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia51);
                                                     data.close();
-                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local, MainActivity5.this);
+                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local, MainActivity5_1.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment41);
@@ -288,7 +288,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                 setFragment(TipoFragment.ASISTENCIA_NUBE2);
                                 break;
                             case 4:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5_1.this);
                                 builder.setMessage("¿Está seguro que desea borrar los datos del DIA 2?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -300,11 +300,11 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
                                                 try {
-                                                    Data data = new Data(MainActivity5.this);
+                                                    Data data = new Data(MainActivity5_1.this);
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia52);
                                                     data.close();
-                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local, MainActivity5.this);
+                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local, MainActivity5_1.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment41);
@@ -335,7 +335,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                 setFragment(TipoFragment.ASISTENCIA_NUBE3);
                                 break;
                             case 4:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5_1.this);
                                 builder.setMessage("¿Está seguro que desea borrar los datos del DIA 3?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -347,11 +347,11 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
                                                 try {
-                                                    Data data = new Data(MainActivity5.this);
+                                                    Data data = new Data(MainActivity5_1.this);
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia53);
                                                     data.close();
-                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local, MainActivity5.this);
+                                                    ListadoFragment41 listadoFragment41 = new ListadoFragment41(usuario,nro_local, MainActivity5_1.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment41);
@@ -381,7 +381,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                 setFragment(TipoFragment.ASISTENCIA_NUBE4);
                                 break;
                             case 4:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5_1.this);
                                 builder.setMessage("¿Está seguro que desea borrar los datos del DIA 4?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -393,11 +393,11 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
                                                 try {
-                                                    Data data = new Data(MainActivity5.this);
+                                                    Data data = new Data(MainActivity5_1.this);
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia54);
                                                     data.close();
-                                                    ListadoFragment54 listadoFragment54 = new ListadoFragment54(usuario,nro_local, MainActivity5.this);
+                                                    ListadoFragment54 listadoFragment54 = new ListadoFragment54(usuario,nro_local, MainActivity5_1.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment54);
@@ -426,7 +426,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                 setFragment(TipoFragment.ASISTENCIA_NUBE5);
                                 break;
                             case 4:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5_1.this);
                                 builder.setMessage("¿Está seguro que desea borrar los datos del DIA 5?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -438,11 +438,11 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
                                                 try {
-                                                    Data data = new Data(MainActivity5.this);
+                                                    Data data = new Data(MainActivity5_1.this);
                                                     data.open();
                                                     data.deleteAllElementosFromTabla(SQLConstantes.tablaasistencia55);
                                                     data.close();
-                                                    ListadoFragment55 listadoFragment55 = new ListadoFragment55(usuario,nro_local, MainActivity5.this);
+                                                    ListadoFragment55 listadoFragment55 = new ListadoFragment55(usuario,nro_local, MainActivity5_1.this);
                                                     FragmentManager fragmentManage = getSupportFragmentManager();
                                                     FragmentTransaction fragmentTransact = fragmentManage.beginTransaction();
                                                     fragmentTransact.replace(R.id.fragment_layout, listadoFragment55);
@@ -459,7 +459,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                     case 5:
                         switch (childPosition) {
                             case 0:
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity5_1.this);
                                 builder.setMessage("¿Está seguro que desea cerrar sesión en la aplicación?")
                                         .setTitle("Aviso")
                                         .setCancelable(false)
@@ -470,7 +470,7 @@ public class MainActivity5 extends AppCompatActivity implements NavigationView.O
                                         })
                                         .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int id) {
-                                                Intent intent = new Intent(MainActivity5.this,LoginActivity.class);
+                                                Intent intent = new Intent(MainActivity5_1.this,LoginActivity.class);
                                                 startActivity(intent);
                                                 finish();
                                             }

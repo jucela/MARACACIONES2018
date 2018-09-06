@@ -62,6 +62,7 @@ public class SQLConstantes {
     public static String usuario_local_cod_nivel = "cod_nivel";
     public static String usuario_local_nom_nivel = "nom_nivel";
     public static String usuario_local_fase = "fase";
+    public static String usuario_local_rol = "rol";
 
     //TABLA SQLITE FECHA_REGISTRO
     public static String fecha_de_registro_id = "_id";
@@ -615,6 +616,8 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_SEDESUBIDO1 = "nro_local=?  and subido1=?";
     public static final String WHERE_CLAUSE_AULA = "aula=?";
 
+    public static final String WHERE_CLAUSE_DIA = "estatus1=? and estatus2=?";
+
 
     public static final String[] COLUMNAS_NACIONAL = {
             nacional_id ,
@@ -649,7 +652,8 @@ public class SQLConstantes {
             usuario_local_sede_region,
             usuario_local_cod_nivel,
             usuario_local_nom_nivel,
-            usuario_local_fase
+            usuario_local_fase,
+            usuario_local_rol
 
     };
 

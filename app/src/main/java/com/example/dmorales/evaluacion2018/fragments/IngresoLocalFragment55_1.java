@@ -31,7 +31,7 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IngresoLocalFragment55 extends Fragment {
+public class IngresoLocalFragment55_1 extends Fragment {
 
     ImageView btnBuscar;
     EditText edtDni;
@@ -40,7 +40,6 @@ public class IngresoLocalFragment55 extends Fragment {
     CardView cvYaregistrado;
     CardView cvRegistro;
     CardView cvError;
-    CardView cvAviso;
 
     TextView txtErrorCargo;
     TextView txtErrorSede;
@@ -68,13 +67,13 @@ public class IngresoLocalFragment55 extends Fragment {
 
 
 
-    public IngresoLocalFragment55() {
+    public IngresoLocalFragment55_1() {
         // Required empty public constructor
     }
 
 
     @SuppressLint("ValidFragment")
-    public IngresoLocalFragment55(String nro_local, Context context) {
+    public IngresoLocalFragment55_1(String nro_local, Context context) {
         this.nro_local = nro_local;
         this.context = context;
     }
@@ -91,7 +90,6 @@ public class IngresoLocalFragment55 extends Fragment {
         cvNoregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvNoRegistrado);
         cvRegistro = (CardView) rootView.findViewById(R.id.ingresolocal_cvRegistro);
         cvYaregistrado = (CardView) rootView.findViewById(R.id.ingresolocal_cvYaRegistrado);
-        cvAviso = (CardView) rootView.findViewById(R.id.ingresolocal_cvAviso);
 
 
         txtRegistroCargo = (TextView) rootView.findViewById(R.id.ingresolocal_txtCargo);
@@ -145,7 +143,6 @@ public class IngresoLocalFragment55 extends Fragment {
                     ocultarTeclado(edtDni);
                     String dni = edtDni.getText().toString();
                     if(!dni.equals("")){
-                        if (validarDIA()) {
                         if(!buscarDNI(dni)) {
                             cvRegistro.setVisibility(View.GONE);
                             cvYaregistrado.setVisibility(View.GONE);
@@ -156,17 +153,6 @@ public class IngresoLocalFragment55 extends Fragment {
                         }
                         else{edtDni.setText("");
                             edtDni.requestFocus();}
-                        }
-                        else {
-                            edtDni.setText("");
-                            edtDni.requestFocus();
-                            cvError.setVisibility(View.GONE);
-                            cvNoregistrado.setVisibility(View.GONE);
-                            cvYaregistrado.setVisibility(View.GONE);
-                            cvRegistro.setVisibility(View.GONE);
-                            cvAviso.setVisibility(View.VISIBLE);
-                            //Toast.makeText(context, "NO SE REGISTRO EL DIA ANTERIOR ", Toast.LENGTH_SHORT).show();
-                        }
                     }
                     else {
                         Toast.makeText(context, "Ingrese DNI ", Toast.LENGTH_SHORT).show();
@@ -289,24 +275,6 @@ public class IngresoLocalFragment55 extends Fragment {
             }
             else
                 { Toast.makeText(context, "EL DNI NO EXISTE EN EL MARCO", Toast.LENGTH_SHORT).show(); }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return encontrado;
-    }
-
-    public boolean validarDIA(){
-        boolean encontrado = false;
-
-        try {
-            Data data = new Data(context);
-            data.open();
-            AsistenteModelo3 modelo3 = data.getValidacionDia54();
-            data.close();
-            if(modelo3 !=null){
-                encontrado = true;
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }

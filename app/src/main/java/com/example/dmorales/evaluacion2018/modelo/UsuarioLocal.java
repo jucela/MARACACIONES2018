@@ -12,8 +12,9 @@ public class UsuarioLocal {
     private String cod_nivel;
     private String nom_nivel;
     private String fase;
+    private String rol;
 
-    public UsuarioLocal(String _id, String usuario, String clave, String nro_local, String local_aplicacion, String cod_sede_reg, String sede_region, String cod_nivel, String nom_nivel, String fase) {
+    public UsuarioLocal(String _id, String usuario, String clave, String nro_local, String local_aplicacion, String cod_sede_reg, String sede_region, String cod_nivel, String nom_nivel, String fase, String rol) {
         this._id = _id;
         this.usuario = usuario;
         this.clave = clave;
@@ -24,6 +25,7 @@ public class UsuarioLocal {
         this.cod_nivel = cod_nivel;
         this.nom_nivel = nom_nivel;
         this.fase = fase;
+        this.rol = rol;
     }
 
     public UsuarioLocal() {
@@ -37,6 +39,7 @@ public class UsuarioLocal {
         this.cod_nivel = "";
         this.nom_nivel = "";
         this.fase = "";
+        this.rol = "";
     }
 
     public String get_id() {
@@ -117,5 +120,13 @@ public class UsuarioLocal {
 
     public void setFase(String fase) {
         this.fase = fase;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }
